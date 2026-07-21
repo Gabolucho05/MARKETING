@@ -1,6 +1,6 @@
 ---
 name: analytics
-description: When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions "set up tracking," "GA4," "Google Analytics," "conversion tracking," "event tracking," "UTM parameters," "tag manager," "GTM," "analytics implementation," "tracking plan," "how do I measure this," "track conversions," "attribution," "Mixpanel," "Segment," "are my events firing," or "analytics isn't working." Use this whenever someone asks how to know if something is working or wants to measure marketing results. For A/B test measurement, see ab-testing.
+description: When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions "set up tracking," "GA4," "Google Analytics," "conversion tracking," "event tracking," "UTM parameters," "tag manager," "GTM," "analytics implementation," "tracking plan," "how do I measure this," "track conversions," "attribution," "Mixpanel," "Segment," "are my events firing," or "analytics isn't working." Use this whenever someone asks how to know if something is working or wants to measure marketing results.
 metadata:
   version: 2.0.0
 ---
@@ -289,21 +289,15 @@ dataLayer.push({
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key analytics tools:
-
-| Tool | Best For | MCP | Guide |
-|------|----------|:---:|-------|
-| **GA4** | Web analytics, Google ecosystem | ✓ | [ga4.md](../../tools/integrations/ga4.md) |
-| **Mixpanel** | Product analytics, event tracking | - | [mixpanel.md](../../tools/integrations/mixpanel.md) |
-| **Amplitude** | Product analytics, cohort analysis | - | [amplitude.md](../../tools/integrations/amplitude.md) |
-| **PostHog** | Open-source analytics, session replay | - | [posthog.md](../../tools/integrations/posthog.md) |
-| **Segment** | Customer data platform, routing | - | [segment.md](../../tools/integrations/segment.md) |
+For choosing between GA4, Mixpanel, Amplitude, PostHog and Segment, and for auditing an existing implementation in any of them, see [references/tool-integrations.md](references/tool-integrations.md). None of these platforms has a live MCP connector in this repo yet — this skill produces implementation plans and audit findings, not direct API calls.
 
 ---
 
 ## Related Skills
 
-- **ab-testing**: For experiment tracking
-- **seo-audit**: For organic traffic analysis
-- **cro**: For conversion optimization (uses this data)
-- **revops**: For pipeline metrics, CRM tracking, and revenue attribution
+Within this repo's agency skill set (see `AGENCIA-360-ARQUITECTURA.md`):
+
+- **market-seo**: organic traffic and SEO analysis — this skill's tracking plan is what tells you whether that organic traffic converts.
+- **market-landing** / **market-funnel**: conversion rate optimization — both consume the event data this skill helps you capture; run this skill first if tracking is missing or unreliable.
+- **paid-media**: Meta Ads performance (CPA, CPL, ROAS) — depends on the conversion events and UTM discipline this skill sets up.
+- Experiment (A/B test) measurement and revenue-ops/CRM pipeline attribution are not yet covered by a skill in this repo.

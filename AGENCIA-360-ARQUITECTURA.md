@@ -75,10 +75,9 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 
 **Por qué siguen faltando dos piezas distintas:** `analytics` responde "¿está bien instrumentado el tracking y estoy capturando los eventos correctos?" (trabajo de implementación técnica, orientado a devs/GTM). No responde "¿cuánto ROI/ROAS estoy generando y qué debo pausar o escalar?" — eso requiere una capa de **reporting y toma de decisiones** que consuma los datos que `analytics` ya captura. Sin `analitica-rendimiento`, el departamento sabe medir pero no sabe todavía convertir esa medición en el reporte de negocio (ROI/ROAS/CAC) que le vendes al cliente.
 
-**Gaps concretos dentro de `analytics` tal como llegó:**
-- Referencia 3 archivos en `references/` (`event-library.md`, `ga4-implementation.md`, `gtm-implementation.md`) que no existen todavía en el repo — los pasos que apuntan ahí no tienen contenido que consultar.
-- Referencia `../../tools/REGISTRY.md` y `../../tools/integrations/*.md` (GA4, Mixpanel, Amplitude, PostHog, Segment) — esa carpeta `tools/` no existe en este repo; son enlaces rotos hasta que se cree o se quiten.
-- La sección "Related Skills" nombra `ab-testing`, `seo-audit`, `cro` y `revops` — ninguna existe en este repo. `seo-audit` en particular debería apuntar a `market-seo`, que sí existe pero con otro nombre.
+**Gaps ya resueltos dentro de `analytics`:**
+- ✅ Se crearon los 3 archivos que faltaban en `references/` (`event-library.md` con librería de eventos por tipo de negocio alineada a la taxonomía de `market/SKILL.md`, `ga4-implementation.md`, `gtm-implementation.md`), más un cuarto (`tool-integrations.md`) que reemplaza el link roto a `../../tools/REGISTRY.md`.
+- ✅ La sección "Related Skills" ahora apunta a los skills reales del repo (`market-seo`, `market-landing`/`market-funnel`, `paid-media`) y aclara que A/B testing y RevOps todavía no tienen skill propia aquí.
 
 **Limitación real a anunciar:** Claude Code no tiene por defecto conexión en vivo a Meta Ads/Google Ads/GA4/Search Console. Sin un MCP conector a esas APIs, esta skill funcionará **importando datos** (CSV/Excel vía la skill `xlsx`, o pegados en el chat), no leyéndolos en tiempo real. Si el plan es venderlo como "monitoreo en vivo" a empresas, ese conector es un prerrequisito técnico, no un detalle menor.
 
