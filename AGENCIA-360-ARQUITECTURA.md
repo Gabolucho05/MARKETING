@@ -23,6 +23,7 @@ Ya existe el patrón: `estrategia-planificacion` menciona explícitamente "eso e
 | `market-audit` + 5 subagentes (`market-content`, `market-conversion`, `market-competitive`, `market-technical`, `market-strategy`) | Skill + Agents | Auditoría 360 de un sitio web |
 | `market-copy`, `market-emails`, `market-social`, `market-ads`, `market-seo`, `market-funnel`, `market-landing`, `market-competitors`, `market-brand`, `market-launch`, `market-proposal`, `market-report`, `market-report-pdf` | Skills | Generación de contenido y análisis puntual |
 | `dataviz`, `xlsx`, `pptx`, `docx`, `pdf` | Skills de soporte | Visualización de datos y generación de documentos/entregables |
+| `paid-media` | Skill | Media buyer senior — Meta Ads Venezuela (Departamento 3, primera pieza operativa construida) |
 
 Todo esto cubre **análisis, copywriting y planificación**. No cubre ejecución operativa de pauta, gestión diaria de RRSS, automatizaciones de CRM, ni un dashboard de analítica consolidado. Ahí están los huecos reales.
 
@@ -54,11 +55,13 @@ Lo que **ya cubres** con la suite `market-*`:
 
 Lo que **falta** porque son disciplinas operativas distintas del copy/planificación, y merecen skill propia:
 
-| Skill nueva propuesta | Cubre | Por qué no la cubre lo existente |
+| Skill | Cubre | Estado |
 |---|---|---|
-| `paid-media-ops` | Estructura de campañas Meta Ads/Google Ads (estructura de cuenta, segmentación de audiencias, estrategia de puja, distribución de presupuesto, calendario de testing A/B, reglas de optimización/pausado) | `market-ads` genera **copy y conceptos creativos** de anuncios, no la arquitectura de cuenta ni las reglas de gestión diaria de pauta |
-| `community-manager` | Rutina diaria: respuesta a comentarios/DMs, tono en tiempo real, gestión de crisis/reputación, moderación, engagement proactivo | `market-social` genera el **calendario de contenido**, no la operación diaria de comunidad ni protocolos de crisis |
-| `marketing-automation` | Flujos de CRM/WhatsApp/email marketing (triggers, lead scoring, segmentación dinámica, chatbots, integraciones entre plataformas) | `market-emails` genera **secuencias de copy**, no la lógica de automatización/triggers ni la integración entre herramientas |
+| `paid-media` | Meta Ads (Venezuela): investigación de competencia, ángulos/creativos, estructura y montaje de campaña, optimización y escalado, disciplina de invalidadores | ✅ Construida — vive en `.claude/skills/paid-media/SKILL.md` |
+| `community-manager` | Rutina diaria: respuesta a comentarios/DMs, tono en tiempo real, gestión de crisis/reputación, moderación, engagement proactivo | 🔧 Pendiente — `market-social` genera el **calendario de contenido**, no la operación diaria de comunidad ni protocolos de crisis |
+| `marketing-automation` | Flujos de CRM/WhatsApp/email marketing (triggers, lead scoring, segmentación dinámica, chatbots, integraciones entre plataformas) | 🔧 Pendiente — `market-emails` genera **secuencias de copy**, no la lógica de automatización/triggers ni la integración entre herramientas |
+
+**Nota sobre `paid-media`:** hoy cubre Meta Ads; le falta un módulo equivalente para Google Ads (Search/Performance Max) si quieres que el departamento cubra "paid media" completo y no solo Meta. Además, su SKILL.md referencia 4 archivos en `references/` (`investigacion-competencia.md`, `creativos-angulos.md`, `estructura-y-montaje.md`, `optimizacion-escalado.md`) que todavía no existen — los pasos 2 a 5 de su flujo no tienen contenido que consultar hasta que se creen.
 
 **Sobre tu pregunta de "uso las skills que hay o falta algo":** usa `market-ads`, `market-social`, `market-seo`, `market-emails`, `market-funnel` como la capa de **contenido y estrategia de canal**, y construye las 3 de la tabla como la capa de **operación**. Son complementarias, no redundantes.
 
