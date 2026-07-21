@@ -1,13 +1,18 @@
 ---
 name: analytics
-description: When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions "set up tracking," "GA4," "Google Analytics," "conversion tracking," "event tracking," "UTM parameters," "tag manager," "GTM," "analytics implementation," "tracking plan," "how do I measure this," "track conversions," "attribution," "Mixpanel," "Segment," "are my events firing," or "analytics isn't working." Use this whenever someone asks how to know if something is working or wants to measure marketing results.
+description: When the user wants to set up, improve, or audit analytics tracking and measurement, or wants to know how marketing is actually performing. Also use when the user mentions "set up tracking," "GA4," "Google Analytics," "conversion tracking," "event tracking," "UTM parameters," "tag manager," "GTM," "analytics implementation," "tracking plan," "how do I measure this," "track conversions," "attribution," "Mixpanel," "Segment," "are my events firing," "analytics isn't working," "ROI," "ROAS," "CAC," "LTV," "MER," "marketing dashboard," "performance report," "cuánto estoy rindiendo," "cuánto retorno," or "qué canal está funcionando." Use this whenever someone asks how to know if something is working, wants to measure marketing results, or wants a report/dashboard on revenue, spend efficiency, or channel performance.
 metadata:
-  version: 2.0.0
+  version: 3.0.0
 ---
 
 # Analytics Tracking
 
-You are an expert in analytics implementation and measurement. Your goal is to help set up tracking that provides actionable insights for marketing and product decisions.
+You are an expert in analytics implementation and measurement. Your goal is to help set up tracking that provides actionable insights for marketing and product decisions, and to turn that tracked data into ROI/ROAS reporting and dashboards the client can act on.
+
+This skill covers two distinct jobs — do not skip straight to reporting if instrumentation is missing or unverified, since a dashboard built on broken tracking is worse than no dashboard:
+
+1. **Instrumentation** ("is this measured correctly?") — tracking plans, GA4/GTM implementation, UTMs, debugging. Covered in the sections from "Core Principles" through "Privacy and Compliance" below.
+2. **Reporting** ("given clean data, what's the ROI and what should we do?") — ROI/ROAS/CAC/LTV calculation and dashboards. Covered in "ROI, ROAS & Performance Dashboards" below.
 
 ## Initial Assessment
 
@@ -244,6 +249,35 @@ dataLayer.push({
 
 ---
 
+## ROI, ROAS & Performance Dashboards
+
+Once tracking is in place (or verified), this is where the client's actual question lives: "is this working, and what should I do about it?"
+
+### Core metrics (always show the formula, not just the number)
+
+| Metric | Formula |
+|---|---|
+| ROAS (platform-reported) | revenue attributed by the ad platform / ad spend |
+| Blended ROAS | total business revenue / total ad spend |
+| MER (Marketing Efficiency Ratio) | total revenue / total marketing spend (all channels) |
+| ROI | (revenue − total cost) / total cost |
+| CAC | total acquisition cost / new customers |
+| LTV | avg order value × purchase frequency × avg lifespan (or cohort-based) |
+| LTV:CAC ratio | LTV / CAC — below 1 is losing money, 3+ is healthy |
+| Payback period | CAC / monthly gross margin per customer |
+
+**For full formulas, a consolidated multi-channel reporting table, attribution-model guidance, invalidadores (alert thresholds), common pitfalls, and a worked example**: see [references/roi-roas-dashboards.md](references/roi-roas-dashboards.md).
+
+### Building the dashboard
+
+- Consolidate every channel (paid, organic, email, direct) into one table before writing any narrative — never let a single channel's self-reported metric stand alone.
+- Use the `dataviz` skill for charts/stat tiles so this reads as one visual system with the rest of the agency's deliverables; use `market-report-pdf` for the polished client-facing export.
+- Two cadences, two audiences: a **weekly/operational** dashboard (spend, ROAS, CPA trend, creative fatigue — for the team running `paid-media`) and a **monthly/strategic** dashboard (blended ROAS/MER trend, CAC/LTV trend, channel mix, a written recommendation — for the client, and feeding back into `estrategia-planificacion`).
+- Declare the attribution model used, explicitly, every time — last-click, platform-reported, GA4 data-driven, or a stated weighted model. Never present a precise-looking number without saying which model produced it.
+- Every recurring report carries numeric invalidadores (e.g. "if blended ROAS < 3x for 2 weeks → pause and escalate") — same discipline `estrategia-planificacion` and `paid-media` already use, so a report says what to do, not just what happened.
+
+---
+
 ## Output Format
 
 ### Tracking Plan Document
@@ -274,16 +308,51 @@ dataLayer.push({
 | Signup | signup_completed | Once per session |
 ```
 
+### Performance Dashboard Report
+
+```markdown
+# [Client] Performance Report — [Period]
+
+## Summary
+- Blended ROAS: [x] · MER: [x] · CAC: $[x] · LTV:CAC: [x]
+- Attribution model used: [last-click / platform-reported / GA4 data-driven / weighted — state which]
+- Recommendation: [scale / hold / cut / pivot — one paragraph, tied to the numbers below]
+
+## Channel Breakdown
+
+| Channel | Spend | Revenue (attributed) | Orders | ROAS (platform) | ROAS (blended contribution, est.) | CAC |
+|---|---|---|---|---|---|---|
+| Meta Ads | | | | | | |
+| Google Ads | | | | | | |
+| Email/Automation | | | | | | |
+| Organic/SEO | $0 | | | — | | — |
+| TOTAL / Blended | | | | — | | |
+
+## Invalidadores Crossed This Period
+- [None / list which threshold was crossed and the recommended action]
+
+## Trend (last 3-6 periods)
+- [Blended ROAS/MER trend, CAC trend — chart via `dataviz`]
+```
+
 ---
 
 ## Task-Specific Questions
 
+**Instrumentation:**
 1. What tools are you using (GA4, Mixpanel, etc.)?
 2. What key actions do you want to track?
 3. What decisions will this data inform?
 4. Who implements - dev team or marketing?
 5. Are there privacy/consent requirements?
 6. What's already tracked?
+
+**ROI/ROAS Reporting:**
+7. What counts as "revenue" for this report — gross, net of refunds, margin-adjusted?
+8. What's the client's gross margin % (needed to tell ROI from vanity ROAS)?
+9. Which attribution model does the client already trust/expect (their own platform dashboards, GA4, none yet)?
+10. What are the agreed invalidadores/thresholds — or do they need to be set now with the client?
+11. Weekly operational cadence, monthly strategic cadence, or both?
 
 ---
 
@@ -299,5 +368,8 @@ Within this repo's agency skill set (see `AGENCIA-360-ARQUITECTURA.md`):
 
 - **market-seo**: organic traffic and SEO analysis — this skill's tracking plan is what tells you whether that organic traffic converts.
 - **market-landing** / **market-funnel**: conversion rate optimization — both consume the event data this skill helps you capture; run this skill first if tracking is missing or unreliable.
-- **paid-media**: Meta Ads performance (CPA, CPL, ROAS) — depends on the conversion events and UTM discipline this skill sets up.
+- **paid-media**: Meta Ads performance (CPA, CPL, ROAS) — depends on the conversion events and UTM discipline this skill sets up, and its kill/hold/scale rules should be triggered by this skill's invalidadores.
+- **dataviz**: shared visual language for any chart/stat tile in a performance dashboard.
+- **market-report-pdf**: polished client-facing export of the monthly performance report.
+- **estrategia-planificacion**: the monthly strategic dashboard feeds back into this department's planning — invalidadores crossed here should trigger a pivot conversation there.
 - Experiment (A/B test) measurement and revenue-ops/CRM pipeline attribution are not yet covered by a skill in this repo.

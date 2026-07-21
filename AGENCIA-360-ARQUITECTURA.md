@@ -24,7 +24,7 @@ Ya existe el patrón: `estrategia-planificacion` menciona explícitamente "eso e
 | `market-copy`, `market-emails`, `market-social`, `market-ads`, `market-seo`, `market-funnel`, `market-landing`, `market-competitors`, `market-brand`, `market-launch`, `market-proposal`, `market-report`, `market-report-pdf` | Skills | Generación de contenido y análisis puntual |
 | `dataviz`, `xlsx`, `pptx`, `docx`, `pdf` | Skills de soporte | Visualización de datos y generación de documentos/entregables |
 | `paid-media` | Skill | Media buyer senior — Meta Ads Venezuela (Departamento 3, primera pieza operativa construida) |
-| `analytics` | Skill | Tracking/medición — GA4, GTM, UTMs, tracking plan (Departamento 4, primera pieza construida) |
+| `analytics` | Skill | Tracking/medición + reporting de ROI/ROAS/CAC/LTV y dashboards (Departamento 4, completo) |
 
 Todo esto cubre **análisis, copywriting y planificación**. No cubre ejecución operativa de pauta, gestión diaria de RRSS, automatizaciones de CRM, ni un dashboard de analítica consolidado. Ahí están los huecos reales.
 
@@ -66,14 +66,13 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 
 **Sobre tu pregunta de "uso las skills que hay o falta algo":** usa `market-ads`, `market-social`, `market-seo`, `market-emails`, `market-funnel` como la capa de **contenido y estrategia de canal**, y construye las 3 de la tabla como la capa de **operación**. Son complementarias, no redundantes.
 
-### Departamento 4 — Analítica 🔧 (primera skill construida, cubre solo la mitad del departamento)
+### Departamento 4 — Analítica ✅ (completo, una sola skill cubre las dos mitades)
 
 | Skill | Cubre | Estado |
 |---|---|---|
-| `analytics` | Instrumentación y medición: tracking plan, eventos, GA4, GTM, data layer, UTMs, debugging/validación de tags, privacidad/consentimiento | ✅ Construida — vive en `.claude/skills/analytics/SKILL.md` |
-| `analitica-rendimiento` (o el nombre que prefieras) | Consolidación de métricas por canal, cálculo de ROI/ROAS/CAC/LTV, dashboards, atribución, cadencia de reporte, invalidadores de rendimiento | 🔧 Pendiente |
+| `analytics` | **Instrumentación:** tracking plan, eventos, GA4, GTM, data layer, UTMs, debugging/validación de tags, privacidad/consentimiento. **Reporting:** ROI/ROAS/MER/CAC/LTV, consolidación multi-canal, dashboards semanales/mensuales, modelo de atribución declarado, invalidadores de rendimiento | ✅ Construida — vive en `.claude/skills/analytics/SKILL.md` (v3.0.0) |
 
-**Por qué siguen faltando dos piezas distintas:** `analytics` responde "¿está bien instrumentado el tracking y estoy capturando los eventos correctos?" (trabajo de implementación técnica, orientado a devs/GTM). No responde "¿cuánto ROI/ROAS estoy generando y qué debo pausar o escalar?" — eso requiere una capa de **reporting y toma de decisiones** que consuma los datos que `analytics` ya captura. Sin `analitica-rendimiento`, el departamento sabe medir pero no sabe todavía convertir esa medición en el reporte de negocio (ROI/ROAS/CAC) que le vendes al cliente.
+`analytics` responde ahora las dos preguntas del departamento: "¿está bien instrumentado el tracking?" y "dado ese dato limpio, ¿cuánto ROI/ROAS hay y qué se pausa o escala?". La sección "ROI, ROAS & Performance Dashboards" y `references/roi-roas-dashboards.md` cubren fórmulas, tabla de consolidación por canal, guía de atribución, invalidadores (mismo lenguaje que `estrategia-planificacion` y `paid-media`) y un ejemplo resuelto. El dashboard se apoya en `dataviz` para gráficos y en `market-report-pdf` para el export final a cliente, y la cadencia mensual retroalimenta a Estrategia (Departamento 1).
 
 **Gaps ya resueltos dentro de `analytics`:**
 - ✅ Se crearon los 3 archivos que faltaban en `references/` (`event-library.md` con librería de eventos por tipo de negocio alineada a la taxonomía de `market/SKILL.md`, `ga4-implementation.md`, `gtm-implementation.md`), más un cuarto (`tool-integrations.md`) que reemplaza el link roto a `../../tools/REGISTRY.md`.
@@ -95,10 +94,10 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 
 | Fase | Entregable |
 |---|---|
-| 1 | Construir `agencia-360` (router maestro) enlazando los 3 departamentos existentes/anunciados + expediente de cliente básico |
+| 1 | Construir `agencia-360` (router maestro) enlazando los departamentos existentes + expediente de cliente básico |
 | 2 | Tú construyes el skill de Diseño (Claude Design) — se integra al router |
-| 3 | Construir `paid-media-ops`, `community-manager`, `marketing-automation` (Departamento 3) |
-| 4 | Construir `analitica-rendimiento` (Departamento 4), inicialmente con importación manual de datos |
+| 3 | Construir `community-manager`, `marketing-automation` (Departamento 3 — `paid-media` ya está) |
+| 4 | ~~Construir `analitica-rendimiento`~~ ✅ Hecho — integrado dentro de `analytics` (reporting de ROI/ROAS/CAC/LTV y dashboards), inicialmente con importación manual de datos |
 | 5 | Evaluar conectores MCP a Meta Ads/Google Ads/GA4 para analítica en vivo |
 | 6 | Empaquetado comercial (paquetes de servicio) + decisión sobre interfaz web/SaaS si aplica |
 
