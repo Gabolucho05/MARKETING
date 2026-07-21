@@ -24,6 +24,7 @@ Ya existe el patrón: `estrategia-planificacion` menciona explícitamente "eso e
 | `market-copy`, `market-emails`, `market-social`, `market-ads`, `market-seo`, `market-funnel`, `market-landing`, `market-competitors`, `market-brand`, `market-launch`, `market-proposal`, `market-report`, `market-report-pdf` | Skills | Generación de contenido y análisis puntual |
 | `dataviz`, `xlsx`, `pptx`, `docx`, `pdf` | Skills de soporte | Visualización de datos y generación de documentos/entregables |
 | `paid-media` | Skill | Media buyer senior — Meta Ads Venezuela (Departamento 3, primera pieza operativa construida) |
+| `analytics` | Skill | Tracking/medición — GA4, GTM, UTMs, tracking plan (Departamento 4, primera pieza construida) |
 
 Todo esto cubre **análisis, copywriting y planificación**. No cubre ejecución operativa de pauta, gestión diaria de RRSS, automatizaciones de CRM, ni un dashboard de analítica consolidado. Ahí están los huecos reales.
 
@@ -65,16 +66,19 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 
 **Sobre tu pregunta de "uso las skills que hay o falta algo":** usa `market-ads`, `market-social`, `market-seo`, `market-emails`, `market-funnel` como la capa de **contenido y estrategia de canal**, y construye las 3 de la tabla como la capa de **operación**. Son complementarias, no redundantes.
 
-### Departamento 4 — Analítica 🔧 (no existe, hay que construirlo desde cero)
+### Departamento 4 — Analítica 🔧 (primera skill construida, cubre solo la mitad del departamento)
 
-Skill nueva propuesta: `analitica-rendimiento`. Debe cubrir:
+| Skill | Cubre | Estado |
+|---|---|---|
+| `analytics` | Instrumentación y medición: tracking plan, eventos, GA4, GTM, data layer, UTMs, debugging/validación de tags, privacidad/consentimiento | ✅ Construida — vive en `.claude/skills/analytics/SKILL.md` |
+| `analitica-rendimiento` (o el nombre que prefieras) | Consolidación de métricas por canal, cálculo de ROI/ROAS/CAC/LTV, dashboards, atribución, cadencia de reporte, invalidadores de rendimiento | 🔧 Pendiente |
 
-- **Consolidación de métricas** por canal (paid, orgánico, email, web) en un formato único de reporte.
-- **Cálculo de ROI/ROAS/CAC/LTV** con fórmulas explícitas y supuestos declarados (igual disciplina que `estrategia-planificacion` con sus "invalidadores").
-- **Dashboards** — apoyarse en la skill `dataviz` para gráficos consistentes, y en `market-report-pdf` para el formato de entrega a cliente.
-- **Atribución**: al menos un modelo simple declarado (last-click, o ponderado) — declarar limitaciones si no hay tracking completo.
-- **Cadencia de reporte**: semanal (operativo, para ajustar pauta) vs. mensual (estratégico, para retroalimentar al Departamento 1).
-- **Alertas/invalidadores de rendimiento**: umbrales que dispararían una alerta a Estrategia o Paid Media (ej. "CPA > X por 5 días" — mismo lenguaje que ya usa `estrategia-planificacion`, para que los 4 departamentos hablen el mismo idioma de gestión de riesgo).
+**Por qué siguen faltando dos piezas distintas:** `analytics` responde "¿está bien instrumentado el tracking y estoy capturando los eventos correctos?" (trabajo de implementación técnica, orientado a devs/GTM). No responde "¿cuánto ROI/ROAS estoy generando y qué debo pausar o escalar?" — eso requiere una capa de **reporting y toma de decisiones** que consuma los datos que `analytics` ya captura. Sin `analitica-rendimiento`, el departamento sabe medir pero no sabe todavía convertir esa medición en el reporte de negocio (ROI/ROAS/CAC) que le vendes al cliente.
+
+**Gaps concretos dentro de `analytics` tal como llegó:**
+- Referencia 3 archivos en `references/` (`event-library.md`, `ga4-implementation.md`, `gtm-implementation.md`) que no existen todavía en el repo — los pasos que apuntan ahí no tienen contenido que consultar.
+- Referencia `../../tools/REGISTRY.md` y `../../tools/integrations/*.md` (GA4, Mixpanel, Amplitude, PostHog, Segment) — esa carpeta `tools/` no existe en este repo; son enlaces rotos hasta que se cree o se quiten.
+- La sección "Related Skills" nombra `ab-testing`, `seo-audit`, `cro` y `revops` — ninguna existe en este repo. `seo-audit` en particular debería apuntar a `market-seo`, que sí existe pero con otro nombre.
 
 **Limitación real a anunciar:** Claude Code no tiene por defecto conexión en vivo a Meta Ads/Google Ads/GA4/Search Console. Sin un MCP conector a esas APIs, esta skill funcionará **importando datos** (CSV/Excel vía la skill `xlsx`, o pegados en el chat), no leyéndolos en tiempo real. Si el plan es venderlo como "monitoreo en vivo" a empresas, ese conector es un prerrequisito técnico, no un detalle menor.
 
