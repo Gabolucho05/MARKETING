@@ -13,7 +13,7 @@ No todos los objetivos se miden con el mismo número. Definir el KPI maestro ANT
 | Catálogo/Shop | ROAS | Frecuencia de recompra |
 | Awareness/tráfico a WhatsApp | CPM + tasa de inicio de conversación | Tiempo de respuesta del negocio |
 
-El ROAS que reporta la plataforma no es el número final — para el reporte de negocio completo (ROI, ROAS ciego, CAC, LTV), usar la skill `analytics` (sección "ROI, ROAS & Performance Dashboards"), que consolida esto con el resto de canales.
+El ROAS que reporta la plataforma no es el número final — para el reporte de negocio completo (ROI, ROAS ciego, CAC, LTV), usar la skill `analitica-metricas` (`references/reporte-de-metricas.md`), que consolida esto con el resto de canales.
 
 ## 2. Reglas de matar / mantener / escalar
 
@@ -53,7 +53,7 @@ El retargeting suele tener el CPA más bajo del embudo — protegerlo con presup
 
 ## 5. Invalidadores medibles (obligatorio en todo reporte)
 
-Mismo lenguaje que `estrategia-planificacion` y `analytics`: cada campaña activa debe tener condiciones numéricas explícitas que disparan pausa o pivote, declaradas antes de que ocurran, no decididas en caliente:
+Mismo lenguaje que `estrategia-planificacion` y `analitica-metricas`: cada campaña activa debe tener condiciones numéricas explícitas que disparan pausa o pivote, declaradas antes de que ocurran, no decididas en caliente:
 
 - "Si el CPL supera $X por 3 días seguidos con gasto acumulado significativo → pausar y revisar ángulo/segmentación."
 - "Si la frecuencia supera Y en el conjunto sin conversión creciente → señal de fatiga, refrescar creativos antes de seguir gastando."
