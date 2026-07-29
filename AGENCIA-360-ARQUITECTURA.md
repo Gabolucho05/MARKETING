@@ -24,9 +24,10 @@ Ya existe el patrón: `estrategia-planificacion` menciona explícitamente "eso e
 | `market-copy`, `market-emails`, `market-social`, `market-ads`, `market-seo`, `market-funnel`, `market-landing`, `market-competitors`, `market-brand`, `market-launch`, `market-proposal`, `market-report`, `market-report-pdf` | Skills | Generación de contenido y análisis puntual |
 | `dataviz`, `xlsx`, `pptx`, `docx`, `pdf` | Skills de soporte | Visualización de datos y generación de documentos/entregables |
 | `paid-media` | Skill | Media buyer senior — Meta Ads Venezuela (Departamento 3, primera pieza operativa construida) |
-| `analytics` | Skill | Tracking/medición + reporting de ROI/ROAS/CAC/LTV y dashboards (Departamento 4, completo) |
+| `diseno-creativo` | Skill | Director de Arte — Claude Design vs. generador de imágenes, sistema de marca, auditoría de piezas (Departamento 2, completo) |
+| `analitica-metricas` | Skill | Instrumentación (con/sin sitio web) + reporting de ROI/ROAS/CAC/LTV y dashboards (Departamento 4, completo) |
 
-Todo esto cubre **análisis, copywriting y planificación**. No cubre ejecución operativa de pauta, gestión diaria de RRSS, automatizaciones de CRM, ni un dashboard de analítica consolidado. Ahí están los huecos reales.
+Con esto, los 4 departamentos tienen al menos una skill completa cada uno. Lo que falta ya no es "cubrir el departamento desde cero" sino: completar Digital/RRSS (`community-manager`, `marketing-automation`), construir el router maestro `agencia-360`, y resolver los gaps transversales (§4).
 
 ## 3. Los 4 departamentos
 
@@ -36,18 +37,13 @@ Motor: `estrategia-planificacion`. No requiere trabajo adicional de construcció
 
 **Acción sugerida:** ninguna nueva skill; sí actualizar su sección "Lo que esta skill NO hace" para que apunte por nombre a los skills reales una vez existan (`diseño-creativo`, `paid-media`, etc.) en vez de la referencia genérica actual.
 
-### Departamento 2 — Creativo y Diseño 🔧 (a construir por ti, con Claude Design)
+### Departamento 2 — Creativo y Diseño ✅ (completo)
 
-Cuando crees la skill, para que encaje como departamento y no como isla, debería:
+| Skill | Cubre | Estado |
+|---|---|---|
+| `diseno-creativo` | Director de Arte senior: decide y prepara el trabajo para Claude Design (piezas de código/interactivas) o generador de imágenes (piezas rasterizadas), sistema de marca, auditoría de piezas existentes, formatos por plataforma | ✅ Construida — vive en `.claude/skills/diseno-creativo/SKILL.md`, con sus 6 `references/` completas |
 
-- **Recibir** el brief creativo en el formato que ya produce `references/briefings.md` de `estrategia-planificacion` (para no reinventar el formulario de entrada).
-- **Consultar siempre** `market-brand` (voz de marca) y cualquier `BRAND-VOICE.md` guardado del cliente antes de producir piezas — así Diseño nunca contradice la identidad ya definida.
-- **Producir** dos tipos de salida distintos:
-  - Especificaciones de diseño (moodboard, paleta, tipografía, dirección de arte) como documento — puede apoyarse en `docx`/`pptx` para presentarlo a cliente.
-  - Piezas ejecutables (posts, banners, guiones de video, mockups) en el formato que el canal destino necesite (specs de Meta/Google Ads, dimensiones de RRSS por plataforma).
-- **Entregar** un handoff claro hacia Digital: qué pieza va en qué plataforma, con qué copy y qué CTA (Diseño no debería inventar copy final, solo proponerlo — el copy fino es de `market-copy`/Digital).
-
-**Falta que definas tú:** si "Claude Design" es una skill que envuelve generación de imágenes (vía algún modelo/API de imágenes) o si es solo dirección de arte + specs para que un diseñador humano ejecute. Eso cambia si el output final es un archivo de imagen o un documento de especificaciones.
+Resuelve la ambigüedad que este documento señalaba antes ("¿Claude Design genera la imagen final o solo la especificación?"): la skill nunca genera la imagen/código final ella misma — decide el motor correcto (Claude Design para código vivo/interactivo, generador de imágenes para arte final rasterizado) y entrega la especificación exacta (`DESIGN.md` o prompt completo) para que el usuario la ejecute en la herramienta correspondiente. Consulta siempre `market-brand`/`BRAND-VOICE.md` antes de producir, y recibe los ángulos de venta de `paid-media` para traducirlos a visual. También cubre auditoría: si se pega una imagen de una pieza ya hecha, el modo por defecto es revisarla con una rúbrica concreta, no regenerarla.
 
 ### Departamento 3 — Digital y RRSS 🔧 (parcialmente cubierto, necesita 3 skills nuevas)
 
@@ -70,15 +66,11 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 
 | Skill | Cubre | Estado |
 |---|---|---|
-| `analytics` | **Instrumentación:** tracking plan, eventos, GA4, GTM, data layer, UTMs, debugging/validación de tags, privacidad/consentimiento. **Reporting:** ROI/ROAS/MER/CAC/LTV, consolidación multi-canal, dashboards semanales/mensuales, modelo de atribución declarado, invalidadores de rendimiento | ✅ Construida — vive en `.claude/skills/analytics/SKILL.md` (v3.0.0) |
+| `analitica-metricas` | **Instrumentación** (con sitio web vía GA4/GTM/píxel de Meta+CAPI, o sin sitio web vía UTMs de WhatsApp/Instagram y registro manual conversación→cierre) + **Reporting** (ROI/ROAS/MER/CAC/LTV, consolidación multi-canal, dashboards semanales/mensuales, modelo de atribución declarado, invalidadores de rendimiento) | ✅ Construida — vive en `.claude/skills/analitica-metricas/SKILL.md` (v2.0.0), con sus 5 `references/` completas |
 
-`analytics` responde ahora las dos preguntas del departamento: "¿está bien instrumentado el tracking?" y "dado ese dato limpio, ¿cuánto ROI/ROAS hay y qué se pausa o escala?". La sección "ROI, ROAS & Performance Dashboards" y `references/roi-roas-dashboards.md` cubren fórmulas, tabla de consolidación por canal, guía de atribución, invalidadores (mismo lenguaje que `estrategia-planificacion` y `paid-media`) y un ejemplo resuelto. El dashboard se apoya en `dataviz` para gráficos y en `market-report-pdf` para el export final a cliente, y la cadencia mensual retroalimenta a Estrategia (Departamento 1).
+Esta skill reemplazó a una versión anterior (`analytics`, genérica y en inglés, importada de una plantilla) que llegó a existir brevemente en este repo: se fusionó su contenido útil (fórmulas ROI/ROAS/CAC/LTV, guía de atribución, invalidadores) dentro de `analitica-metricas`, que además cubre algo que la versión genérica no cubría — el caso de negocio sin sitio web que opera 100% por WhatsApp/Instagram (el caso de ManoTv y la mayoría de clientes de agencia en Venezuela). El dashboard se apoya en `dataviz` para gráficos y en `market-report`/`market-report-pdf` para el export final a cliente, y la cadencia mensual retroalimenta a Estrategia (Departamento 1).
 
-**Gaps ya resueltos dentro de `analytics`:**
-- ✅ Se crearon los 3 archivos que faltaban en `references/` (`event-library.md` con librería de eventos por tipo de negocio alineada a la taxonomía de `market/SKILL.md`, `ga4-implementation.md`, `gtm-implementation.md`), más un cuarto (`tool-integrations.md`) que reemplaza el link roto a `../../tools/REGISTRY.md`.
-- ✅ La sección "Related Skills" ahora apunta a los skills reales del repo (`market-seo`, `market-landing`/`market-funnel`, `paid-media`) y aclara que A/B testing y RevOps todavía no tienen skill propia aquí.
-
-**Limitación real a anunciar:** Claude Code no tiene por defecto conexión en vivo a Meta Ads/Google Ads/GA4/Search Console. Sin un MCP conector a esas APIs, esta skill funcionará **importando datos** (CSV/Excel vía la skill `xlsx`, o pegados en el chat), no leyéndolos en tiempo real. Si el plan es venderlo como "monitoreo en vivo" a empresas, ese conector es un prerrequisito técnico, no un detalle menor.
+**Limitación real a anunciar:** Claude Code no tiene por defecto conexión en vivo a Meta Ads/Google Ads/GA4/Search Console. Sin un MCP conector a esas APIs, esta skill funcionará **importando datos** (CSV/Excel vía la skill `xlsx`, planilla manual, o pegados en el chat), no leyéndolos en tiempo real. Si el plan es venderlo como "monitoreo en vivo" a empresas, ese conector es un prerrequisito técnico, no un detalle menor.
 
 ## 4. Lo que falta a nivel transversal (no es de un departamento, es de la agencia completa)
 
@@ -94,10 +86,10 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 
 | Fase | Entregable |
 |---|---|
-| 1 | Construir `agencia-360` (router maestro) enlazando los departamentos existentes + expediente de cliente básico |
-| 2 | Tú construyes el skill de Diseño (Claude Design) — se integra al router |
+| 1 | ~~Construir `agencia-360` (router maestro)~~ 🔧 Pendiente — enlazar los 4 departamentos (todos con al menos una skill completa) + expediente de cliente básico |
+| 2 | ~~Tú construyes el skill de Diseño~~ ✅ Hecho — `diseno-creativo` completo con sus 6 references |
 | 3 | Construir `community-manager`, `marketing-automation` (Departamento 3 — `paid-media` ya está) |
-| 4 | ~~Construir `analitica-rendimiento`~~ ✅ Hecho — integrado dentro de `analytics` (reporting de ROI/ROAS/CAC/LTV y dashboards), inicialmente con importación manual de datos |
+| 4 | ~~Construir la pieza de reporting de analítica~~ ✅ Hecho — `analitica-metricas` fusionada, cubre instrumentación + ROI/ROAS/CAC/LTV/dashboards |
 | 5 | Evaluar conectores MCP a Meta Ads/Google Ads/GA4 para analítica en vivo |
 | 6 | Empaquetado comercial (paquetes de servicio) + decisión sobre interfaz web/SaaS si aplica |
 
@@ -113,14 +105,14 @@ Cliente pide campaña de lanzamiento
 [2. Diseño]      → dirección de arte + piezas ejecutables por canal
         │
         ▼
-[3. Digital/RRSS]→ paid-media-ops monta campaña · community-manager gestiona
-        │           publicación y respuesta · market-automation dispara emails/WhatsApp
+[3. Digital/RRSS]→ paid-media monta campaña · community-manager gestiona
+        │           publicación y respuesta · marketing-automation dispara emails/WhatsApp
         ▼
-[4. Analítica]   → mide ROI/ROAS semanal, dispara alerta si se cruza invalidador
+[4. Analítica]   → analitica-metricas mide ROI/ROAS semanal, dispara alerta si se cruza invalidador
         │
         └──► retroalimenta a [1. Estrategia] para pivotar o escalar
 ```
 
 ## 7. Próximo paso concreto
 
-Si quieres, el siguiente paso ejecutable es construir el skill `agencia-360` (el router) ahora mismo, dejando "placeholders" claros para Diseño (departamento 2, que tú vas a construir) y armando la primera versión de `analitica-rendimiento` y las 3 skills de Digital. Dime con cuál departamento quieres que empiece.
+Con los 4 departamentos cubiertos por al menos una skill completa (`estrategia-planificacion`, `diseno-creativo`, `paid-media`, `analitica-metricas`), lo que queda es: (a) `community-manager` y `marketing-automation` para redondear el Departamento 3, y (b) el router maestro `agencia-360` que los enlaza a todos como una sola "agencia". Este último es el paso que hace que el sistema se sienta como una interfaz unificada en vez de una carpeta de skills sueltas — es el candidato natural para construir a continuación.
