@@ -1,0 +1,15 @@
+{
+  "name": "agencia-360-chat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interfaz de chat independiente para la Agencia 360, powered by la API de Claude.",
+  "scripts": {
+    "start": "node server.js",
+    "start:env": "node --env-file=.env server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.70.0",
+    "express": "^4.21.0"
+  }
+}
