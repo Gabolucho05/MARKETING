@@ -23,11 +23,12 @@ Ya existe el patrón: `estrategia-planificacion` menciona explícitamente "eso e
 | `market-audit` + 5 subagentes (`market-content`, `market-conversion`, `market-competitive`, `market-technical`, `market-strategy`) | Skill + Agents | Auditoría 360 de un sitio web |
 | `market-copy`, `market-emails`, `market-social`, `market-ads`, `market-seo`, `market-funnel`, `market-landing`, `market-competitors`, `market-brand`, `market-launch`, `market-proposal`, `market-report`, `market-report-pdf` | Skills | Generación de contenido y análisis puntual |
 | `dataviz`, `xlsx`, `pptx`, `docx`, `pdf` | Skills de soporte | Visualización de datos y generación de documentos/entregables |
-| `paid-media` | Skill | Media buyer senior — Meta Ads Venezuela (Departamento 3, primera pieza operativa construida) |
+| `paid-media` | Skill | Media buyer senior — Meta Ads Venezuela (Departamento 3) |
+| `community-manager` | Skill | Community Manager senior — copy, calendario, gestión de comunidad, crisis, métricas orgánicas (Departamento 3) |
 | `diseno-creativo` | Skill | Director de Arte — Claude Design vs. generador de imágenes, sistema de marca, auditoría de piezas (Departamento 2, completo) |
 | `analitica-metricas` | Skill | Instrumentación (con/sin sitio web) + reporting de ROI/ROAS/CAC/LTV y dashboards (Departamento 4, completo) |
 
-Con esto, los 4 departamentos tienen al menos una skill completa cada uno. Lo que falta ya no es "cubrir el departamento desde cero" sino: completar Digital/RRSS (`community-manager`, `marketing-automation`), construir el router maestro `agencia-360`, y resolver los gaps transversales (§4).
+Con esto, los 4 departamentos tienen al menos una skill completa cada uno, y Digital/RRSS ya tiene dos de sus tres piezas operativas (`paid-media`, `community-manager`). Lo que falta ya no es "cubrir el departamento desde cero" sino: `marketing-automation` para redondear Digital/RRSS, construir el router maestro `agencia-360`, y resolver los gaps transversales (§4).
 
 ## 3. Los 4 departamentos
 
@@ -55,12 +56,14 @@ Lo que **falta** porque son disciplinas operativas distintas del copy/planificac
 | Skill | Cubre | Estado |
 |---|---|---|
 | `paid-media` | Meta Ads (Venezuela): investigación de competencia, ángulos/creativos, estructura y montaje de campaña, optimización y escalado, disciplina de invalidadores | ✅ Construida — vive en `.claude/skills/paid-media/SKILL.md` |
-| `community-manager` | Rutina diaria: respuesta a comentarios/DMs, tono en tiempo real, gestión de crisis/reputación, moderación, engagement proactivo | 🔧 Pendiente — `market-social` genera el **calendario de contenido**, no la operación diaria de comunidad ni protocolos de crisis |
+| `community-manager` | Rutina diaria: copy/captions con framework de persuasión (AIDA/PAS/etc.), calendario y horarios de publicación, gestión de comentarios/DMs, protocolo de crisis, formatos/hashtags/tendencias, métricas orgánicas | ✅ Construida — vive en `.claude/skills/community-manager/SKILL.md`, con sus 5 `references/` completas |
 | `marketing-automation` | Flujos de CRM/WhatsApp/email marketing (triggers, lead scoring, segmentación dinámica, chatbots, integraciones entre plataformas) | 🔧 Pendiente — `market-emails` genera **secuencias de copy**, no la lógica de automatización/triggers ni la integración entre herramientas |
 
 **Nota sobre `paid-media`:** ✅ ya tiene sus 4 archivos de `references/` (`investigacion-competencia.md`, `creativos-angulos.md`, `estructura-y-montaje.md`, `optimizacion-escalado.md`), así que los 6 pasos del flujo ya tienen contenido real que consultar. Sigue pendiente un módulo equivalente para Google Ads (Search/Performance Max) si quieres que el departamento cubra "paid media" completo y no solo Meta.
 
-**Sobre tu pregunta de "uso las skills que hay o falta algo":** usa `market-ads`, `market-social`, `market-seo`, `market-emails`, `market-funnel` como la capa de **contenido y estrategia de canal**, y construye las 3 de la tabla como la capa de **operación**. Son complementarias, no redundantes.
+**Nota sobre `community-manager`:** cubre exactamente lo que `market-social` no cubre — la operación diaria (copy con objetivo de comportamiento declarado, ventanas de respuesta a comunidad, protocolo de crisis) en vez del calendario estratégico de contenido. Entrega los datos orgánicos crudos (alcance, guardados, clics) a `analitica-metricas`, que es quien calcula ROI/ROAS/CAC consolidado — esta skill no calcula esas métricas, solo mide y ajusta el contenido día a día.
+
+**Sobre tu pregunta original de "uso las skills que hay o falta algo":** usa `market-ads`, `market-social`, `market-seo`, `market-emails`, `market-funnel` como la capa de **contenido y estrategia de canal**, y `paid-media`/`community-manager`/`marketing-automation` como la capa de **operación**. Son complementarias, no redundantes. Con `community-manager` sumado, solo falta `marketing-automation` para que el Departamento 3 quede completo.
 
 ### Departamento 4 — Analítica ✅ (completo, una sola skill cubre las dos mitades)
 
@@ -88,7 +91,7 @@ Esta skill reemplazó a una versión anterior (`analytics`, genérica y en ingl�
 |---|---|
 | 1 | ~~Construir `agencia-360` (router maestro)~~ 🔧 Pendiente — enlazar los 4 departamentos (todos con al menos una skill completa) + expediente de cliente básico |
 | 2 | ~~Tú construyes el skill de Diseño~~ ✅ Hecho — `diseno-creativo` completo con sus 6 references |
-| 3 | Construir `community-manager`, `marketing-automation` (Departamento 3 — `paid-media` ya está) |
+| 3 | ~~Construir `community-manager`, `marketing-automation`~~ ✅ `community-manager` hecho — 🔧 falta `marketing-automation` (Departamento 3) |
 | 4 | ~~Construir la pieza de reporting de analítica~~ ✅ Hecho — `analitica-metricas` fusionada, cubre instrumentación + ROI/ROAS/CAC/LTV/dashboards |
 | 5 | Evaluar conectores MCP a Meta Ads/Google Ads/GA4 para analítica en vivo |
 | 6 | Empaquetado comercial (paquetes de servicio) + decisión sobre interfaz web/SaaS si aplica |
@@ -115,4 +118,4 @@ Cliente pide campaña de lanzamiento
 
 ## 7. Próximo paso concreto
 
-Con los 4 departamentos cubiertos por al menos una skill completa (`estrategia-planificacion`, `diseno-creativo`, `paid-media`, `analitica-metricas`), lo que queda es: (a) `community-manager` y `marketing-automation` para redondear el Departamento 3, y (b) el router maestro `agencia-360` que los enlaza a todos como una sola "agencia". Este último es el paso que hace que el sistema se sienta como una interfaz unificada en vez de una carpeta de skills sueltas — es el candidato natural para construir a continuación.
+Con los 4 departamentos cubiertos por al menos una skill completa (`estrategia-planificacion`, `diseno-creativo`, `paid-media` + `community-manager`, `analitica-metricas`), lo que queda es: (a) `marketing-automation` para redondear del todo el Departamento 3, y (b) el router maestro `agencia-360` que los enlaza a todos como una sola "agencia". Este último es el paso que hace que el sistema se sienta como una interfaz unificada en vez de una carpeta de skills sueltas — es el candidato natural para construir a continuación.
