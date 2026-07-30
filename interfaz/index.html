@@ -1,0 +1,1350 @@
+<title>Agencia 360 — Panel de Control</title>
+
+<style>
+  /* ============ Tokens ============ */
+  :root {
+    --accent: #96590F;
+    --accent-strong: #7A480A;
+    --accent-soft: #F0DCB9;
+
+    --dept-estrategia: #0D8C79;
+    --dept-diseno: #B3563A;
+    --dept-digital: #2F5FA3;
+    --dept-analitica: #A98424;
+
+    --status-good: #3F7D52;
+    --status-good-soft: #E1EEE3;
+    --status-warning: #A6690E;
+    --status-warning-soft: #F3E6CE;
+    --status-critical: #B23B3B;
+    --status-critical-soft: #F5E1DF;
+
+    --bg: #F1EDE3;
+    --surface: #FFFFFF;
+    --surface-2: #FAF6EC;
+    --border: #E3DDCC;
+    --text: #1F1B15;
+    --text-2: #5B5548;
+    --text-3: #8B8577;
+
+    --font-display: "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    --font-body: Optima, Candara, "Noto Sans", "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, monospace;
+
+    --shadow-card: 0 1px 2px rgba(31, 27, 21, 0.06), 0 8px 24px -12px rgba(31, 27, 21, 0.18);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #E3A24B;
+      --accent-strong: #F0B565;
+      --accent-soft: #3A2C15;
+
+      --dept-estrategia: #16A38C;
+      --dept-diseno: #C96A46;
+      --dept-digital: #4C7AC6;
+      --dept-analitica: #B08429;
+
+      --status-good: #4FAE68;
+      --status-good-soft: #223227;
+      --status-warning: #D99A46;
+      --status-warning-soft: #362C1A;
+      --status-critical: #E06767;
+      --status-critical-soft: #3A2321;
+
+      --bg: #16130E;
+      --surface: #201B14;
+      --surface-2: #241F17;
+      --border: #332C20;
+      --text: #F3EFE6;
+      --text-2: #C9C2B2;
+      --text-3: #8F8975;
+
+      --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 28px -14px rgba(0, 0, 0, 0.55);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --accent: #E3A24B;
+    --accent-strong: #F0B565;
+    --accent-soft: #3A2C15;
+    --dept-estrategia: #16A38C;
+    --dept-diseno: #C96A46;
+    --dept-digital: #4C7AC6;
+    --dept-analitica: #B08429;
+    --status-good: #4FAE68;
+    --status-good-soft: #223227;
+    --status-warning: #D99A46;
+    --status-warning-soft: #362C1A;
+    --status-critical: #E06767;
+    --status-critical-soft: #3A2321;
+    --bg: #16130E;
+    --surface: #201B14;
+    --surface-2: #241F17;
+    --border: #332C20;
+    --text: #F3EFE6;
+    --text-2: #C9C2B2;
+    --text-3: #8F8975;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 28px -14px rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --accent: #96590F;
+    --accent-strong: #7A480A;
+    --accent-soft: #F0DCB9;
+    --dept-estrategia: #0D8C79;
+    --dept-diseno: #B3563A;
+    --dept-digital: #2F5FA3;
+    --dept-analitica: #A98424;
+    --status-good: #3F7D52;
+    --status-good-soft: #E1EEE3;
+    --status-warning: #A6690E;
+    --status-warning-soft: #F3E6CE;
+    --status-critical: #B23B3B;
+    --status-critical-soft: #F5E1DF;
+    --bg: #F1EDE3;
+    --surface: #FFFFFF;
+    --surface-2: #FAF6EC;
+    --border: #E3DDCC;
+    --text: #1F1B15;
+    --text-2: #5B5548;
+    --text-3: #8B8577;
+    --shadow-card: 0 1px 2px rgba(31, 27, 21, 0.06), 0 8px 24px -12px rgba(31, 27, 21, 0.18);
+    color-scheme: light;
+  }
+
+  /* ============ Reset-ish ============ */
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; margin: 0; text-wrap: balance; }
+  p { margin: 0; line-height: 1.55; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+  a { color: inherit; }
+  table { border-collapse: collapse; width: 100%; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* ============ App shell ============ */
+  .app {
+    display: grid;
+    grid-template-columns: 264px 1fr;
+    min-height: 100vh;
+  }
+  @media (max-width: 860px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  .sidebar {
+    background: var(--surface-2);
+    border-right: 1px solid var(--border);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .brand { display: flex; flex-direction: column; gap: 4px; }
+  .brand-mark {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  .brand-mark strong { color: var(--accent); }
+  .brand-tag { font-size: 0.8rem; color: var(--text-3); }
+
+  .nav-group-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+    padding: 0 10px;
+    margin-bottom: 6px;
+  }
+  .nav { display: flex; flex-direction: column; gap: 2px; }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: var(--text-2);
+    text-align: left;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-item:hover { background: var(--surface); color: var(--text); }
+  .nav-item[aria-current="page"] {
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1px var(--border);
+  }
+  .nav-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .sidebar-footer {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-3);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sidebar-footer .mono { font-family: var(--font-mono); }
+
+  main {
+    padding: 36px 44px 80px;
+    max-width: 1080px;
+  }
+  @media (max-width: 640px) {
+    main { padding: 24px 18px 60px; }
+  }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-head { margin-bottom: 28px; display: flex; flex-direction: column; gap: 8px; }
+  .eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .section-head h1 { font-size: 2rem; }
+  .section-head .lede { color: var(--text-2); font-size: 1rem; max-width: 62ch; }
+
+  /* ============ Pills / status ============ */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .pill-good { background: var(--status-good-soft); color: var(--status-good); }
+  .pill-warning { background: var(--status-warning-soft); color: var(--status-warning); }
+  .pill-critical { background: var(--status-critical-soft); color: var(--status-critical); }
+  .pill-neutral { background: var(--surface-2); color: var(--text-2); box-shadow: inset 0 0 0 1px var(--border); }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    box-shadow: inset 0 0 0 1px var(--border);
+  }
+
+  /* ============ Cards ============ */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .dept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 640px) { .dept-grid { grid-template-columns: 1fr; } }
+
+  .dept-card {
+    padding: 20px;
+    border-top: 3px solid var(--dept-color, var(--accent));
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dept-card .dept-num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-3); }
+  .dept-card h3 { font-size: 1.15rem; }
+  .dept-card p { font-size: 0.88rem; color: var(--text-2); }
+  .dept-card .skills-line { font-size: 0.78rem; color: var(--text-3); font-family: var(--font-mono); }
+  .dept-card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px; }
+  .link-btn {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--dept-color, var(--accent));
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .link-btn:hover { text-decoration: underline; }
+
+  /* ============ Pipeline strip ============ */
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding: 4px 0 12px;
+  }
+  .pipeline-step {
+    flex: 1 1 0;
+    min-width: 150px;
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--step-color, var(--accent));
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .pipeline-step + .pipeline-step { border-left: none; }
+  .pipeline-step:first-child { border-radius: 10px 0 0 10px; }
+  .pipeline-step:last-child { border-radius: 0 10px 10px 0; }
+  .pipeline-step .num { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-3); }
+  .pipeline-step .name { font-weight: 600; font-size: 0.9rem; }
+  .pipeline-arrow {
+    display: flex; align-items: center; justify-content: center;
+    width: 22px; color: var(--text-3); font-size: 0.9rem; flex-shrink: 0;
+  }
+
+  /* ============ Department detail ============ */
+  .dept-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; }
+  .dept-tab {
+    padding: 8px 14px;
+    border-radius: 9px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-2);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dept-tab .nav-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .dept-tab[aria-selected="true"] {
+    color: var(--text);
+    box-shadow: inset 0 0 0 2px var(--tab-color, var(--accent));
+    background: var(--surface);
+  }
+
+  .skill-card {
+    padding: 22px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--dept-color, var(--accent));
+  }
+  .skill-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .skill-name { font-family: var(--font-mono); font-size: 1rem; font-weight: 600; }
+  .skill-desc { color: var(--text-2); font-size: 0.92rem; margin-bottom: 14px; }
+  .skill-sub { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-3); margin-bottom: 8px; margin-top: 16px; }
+  .skill-list { display: flex; flex-direction: column; gap: 6px; }
+  .skill-list li { font-size: 0.86rem; color: var(--text-2); padding-left: 14px; position: relative; }
+  .skill-list li::before { content: "—"; position: absolute; left: 0; color: var(--text-3); }
+  .ref-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .no-list li { font-size: 0.86rem; color: var(--text-3); padding-left: 14px; position: relative; }
+  .no-list li::before { content: "×"; position: absolute; left: 0; color: var(--status-critical); }
+
+  /* ============ Expediente ============ */
+  .expediente-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 780px) { .expediente-grid { grid-template-columns: 1fr; } }
+  .panel { padding: 22px; margin-bottom: 16px; }
+  .panel h3 { font-size: 1rem; margin-bottom: 14px; }
+
+  .estado-table th, .estado-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); font-size: 0.86rem; }
+  .estado-table th { color: var(--text-3); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .estado-table td:last-child, .estado-table th:last-child { color: var(--text-2); }
+  .estado-table tr:last-child td { border-bottom: none; }
+
+  .history-list { display: flex; flex-direction: column; gap: 12px; }
+  .history-item { display: flex; gap: 10px; font-size: 0.85rem; }
+  .history-date { font-family: var(--font-mono); color: var(--text-3); flex-shrink: 0; width: 84px; }
+  .history-body { color: var(--text-2); }
+  .history-dept { color: var(--text-3); }
+
+  .checklist { display: flex; flex-direction: column; gap: 10px; }
+  .check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.87rem; cursor: pointer; }
+  .check-box {
+    width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--border);
+    margin-top: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    transition: background 0.12s ease, border-color 0.12s ease;
+  }
+  .check-item.done .check-box { background: var(--status-good); border-color: var(--status-good); }
+  .check-box svg { width: 10px; height: 10px; opacity: 0; }
+  .check-item.done .check-box svg { opacity: 1; }
+  .check-item.done .check-label { color: var(--text-3); text-decoration: line-through; }
+  .check-label { color: var(--text); }
+  .check-dept { color: var(--text-3); font-size: 0.78rem; }
+
+  .invalidador-box {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--status-warning-soft);
+    color: var(--status-warning);
+    font-size: 0.84rem;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .invalidador-box:last-child { margin-bottom: 0; }
+
+  .tree {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-2);
+    line-height: 1.75;
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .tree .folder { color: var(--accent); font-weight: 600; }
+  .tree .file { color: var(--text-3); }
+
+  /* ============ Flujo ============ */
+  .checkpoint-flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-node {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+  }
+  .flow-rail { display: flex; flex-direction: column; align-items: center; }
+  .flow-dot {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--dept-color, var(--accent));
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .flow-line { width: 2px; flex: 1; background: var(--border); min-height: 24px; }
+  .flow-content { padding-bottom: 28px; }
+  .flow-content h4 { font-size: 1.02rem; margin-bottom: 4px; }
+  .flow-content .flow-skill { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-3); margin-bottom: 8px; }
+  .flow-content p { font-size: 0.88rem; color: var(--text-2); }
+
+  .checkpoint-card {
+    margin: 10px 0 22px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: var(--surface-2);
+    box-shadow: inset 0 0 0 1px var(--border);
+  }
+  .checkpoint-card summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.86rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+  .checkpoint-card summary::-webkit-details-marker { display: none; }
+  .checkpoint-card summary::before { content: "▸"; color: var(--accent); transition: transform 0.15s ease; }
+  .checkpoint-card[open] summary::before { transform: rotate(90deg); }
+  .checkpoint-card ul { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .checkpoint-card li { font-size: 0.84rem; color: var(--text-2); padding-left: 16px; position: relative; }
+  .checkpoint-card li::before { content: "?"; position: absolute; left: 0; color: var(--text-3); font-family: var(--font-mono); }
+
+  .loopback {
+    margin-top: 4px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 0.86rem;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  /* ============ Dashboard ============ */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat-tile { padding: 16px 18px; }
+  .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); margin-bottom: 8px; }
+  .stat-value { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 600; }
+  .stat-delta { font-size: 0.76rem; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+  .stat-delta.good { color: var(--status-good); }
+  .stat-delta.warning { color: var(--status-warning); }
+  .stat-note { font-size: 0.74rem; color: var(--text-3); margin-top: 4px; }
+
+  .chart-card { padding: 22px; margin-bottom: 24px; }
+  .chart-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+  .chart-head h3 { font-size: 1rem; }
+  .chart-head .chart-sub { font-size: 0.8rem; color: var(--text-3); }
+  .chart-wrap { position: relative; width: 100%; overflow-x: auto; }
+  #roasChart { width: 100%; height: 220px; display: block; }
+  .chart-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 0.76rem;
+    padding: 6px 9px;
+    border-radius: 6px;
+    transform: translate(-50%, -130%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    font-family: var(--font-mono);
+    z-index: 5;
+  }
+
+  .table-card { padding: 22px; margin-bottom: 24px; overflow-x: auto; }
+  .channel-table th, .channel-table td { padding: 10px 12px; font-size: 0.85rem; text-align: right; border-bottom: 1px solid var(--border); }
+  .channel-table th:first-child, .channel-table td:first-child { text-align: left; }
+  .channel-table th { color: var(--text-3); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .channel-table tbody tr:hover { background: var(--surface-2); }
+  .channel-table tfoot td { font-weight: 700; border-top: 2px solid var(--border); border-bottom: none; }
+  .channel-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+
+  .disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-3);
+    padding: 12px 14px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px var(--border);
+    display: flex;
+    gap: 8px;
+  }
+
+  .callout {
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: var(--surface-2);
+    box-shadow: inset 0 0 0 1px var(--border);
+    font-size: 0.86rem;
+    color: var(--text-2);
+    margin-bottom: 24px;
+  }
+  .callout strong { color: var(--text); }
+
+  .status-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--status-good-soft);
+    color: var(--status-good);
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+</style>
+
+<div class="app">
+  <nav class="sidebar" aria-label="Navegación principal">
+    <div class="brand">
+      <div class="brand-mark"><strong>AGENCIA</strong> 360</div>
+      <div class="brand-tag">Panel de control · demo interna</div>
+    </div>
+
+    <div>
+      <div class="nav-group-label">Sistema</div>
+      <div class="nav">
+        <button class="nav-item" data-section="resumen" aria-current="page">
+          <span class="nav-dot" style="background:var(--accent)"></span> Resumen
+        </button>
+        <button class="nav-item" data-section="departamentos">
+          <span class="nav-dot" style="background:var(--dept-estrategia)"></span> Departamentos
+        </button>
+        <button class="nav-item" data-section="expediente">
+          <span class="nav-dot" style="background:var(--dept-diseno)"></span> Expediente de cliente
+        </button>
+        <button class="nav-item" data-section="flujo">
+          <span class="nav-dot" style="background:var(--dept-digital)"></span> Flujo de trabajo
+        </button>
+        <button class="nav-item" data-section="dashboard">
+          <span class="nav-dot" style="background:var(--dept-analitica)"></span> Dashboard
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <span>4 departamentos · 6 skills · 1 router</span>
+      <span class="mono">clientes/manotv/</span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ RESUMEN ============ -->
+    <section class="section active" id="resumen">
+      <div class="section-head">
+        <div class="eyebrow">Agencia 360</div>
+        <h1>Un sistema de 4 departamentos operando como una sola agencia</h1>
+        <p class="lede">Cada departamento es una skill especializada de Claude Code. <span class="chip">agencia-360</span> las enruta, mantiene el expediente de cada cliente y encadena el trabajo entre departamentos con checkpoints de aprobación.</p>
+      </div>
+
+      <div class="status-banner">
+        <span>●</span> Sistema completo — los 4 departamentos y el router maestro están construidos
+      </div>
+
+      <div class="dept-grid">
+        <article class="dept-card" style="--dept-color: var(--dept-estrategia)">
+          <span class="dept-num">DEPARTAMENTO 1</span>
+          <h3>Planificación y Estrategia</h3>
+          <p>Briefings, planes de marketing, posicionamiento, calendario de efemérides, presupuesto e invalidadores. La puerta de entrada de casi todo trabajo de agencia.</p>
+          <span class="skills-line">estrategia-planificacion</span>
+          <div class="dept-card-foot">
+            <span class="pill pill-good">Operativo</span>
+            <button class="link-btn" data-goto="departamentos" data-dept="estrategia">Ver detalle →</button>
+          </div>
+        </article>
+
+        <article class="dept-card" style="--dept-color: var(--dept-diseno)">
+          <span class="dept-num">DEPARTAMENTO 2</span>
+          <h3>Creativo y Diseño</h3>
+          <p>Decide entre Claude Design y generador de imágenes, arma el sistema de marca, y audita piezas ya producidas con una rúbrica concreta.</p>
+          <span class="skills-line">diseno-creativo</span>
+          <div class="dept-card-foot">
+            <span class="pill pill-good">Operativo</span>
+            <button class="link-btn" data-goto="departamentos" data-dept="diseno">Ver detalle →</button>
+          </div>
+        </article>
+
+        <article class="dept-card" style="--dept-color: var(--dept-digital)">
+          <span class="dept-num">DEPARTAMENTO 3</span>
+          <h3>Digital y RRSS</h3>
+          <p>Pauta en Meta Ads, contenido y comunidad día a día, y agentes de IA conversacionales en WhatsApp — la capa operativa del marketing digital.</p>
+          <span class="skills-line">paid-media · community-manager · automatizacion-ia</span>
+          <div class="dept-card-foot">
+            <span class="pill pill-good">Operativo</span>
+            <button class="link-btn" data-goto="departamentos" data-dept="digital">Ver detalle →</button>
+          </div>
+        </article>
+
+        <article class="dept-card" style="--dept-color: var(--dept-analitica)">
+          <span class="dept-num">DEPARTAMENTO 4</span>
+          <h3>Analítica</h3>
+          <p>Instrumentación de tracking con o sin sitio web, y reporting de ROI/ROAS/CAC/LTV con invalidadores de rendimiento.</p>
+          <span class="skills-line">analitica-metricas</span>
+          <div class="dept-card-foot">
+            <span class="pill pill-good">Operativo</span>
+            <button class="link-btn" data-goto="departamentos" data-dept="analitica">Ver detalle →</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>Cómo se coordinan:</strong> un proyecto completo (lanzamiento, campaña integral) recorre los 4 departamentos en orden, con un checkpoint de aprobación entre cada uno. Un pedido puntual ("hazme un flyer", "cuánto gasté en Meta Ads") va directo al departamento correspondiente, sin pasar por todo el flujo.
+      </div>
+
+      <h3 style="font-size:0.95rem; margin-bottom:12px; color:var(--text-2)">Flujo de un proyecto completo</h3>
+      <div class="pipeline">
+        <div class="pipeline-step" style="--step-color:var(--dept-estrategia)">
+          <span class="num">01</span>
+          <span class="name">Estrategia</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step" style="--step-color:var(--dept-diseno)">
+          <span class="num">02</span>
+          <span class="name">Diseño</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step" style="--step-color:var(--dept-digital)">
+          <span class="num">03</span>
+          <span class="name">Digital / RRSS</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step" style="--step-color:var(--dept-analitica)">
+          <span class="num">04</span>
+          <span class="name">Analítica</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEPARTAMENTOS ============ -->
+    <section class="section" id="departamentos">
+      <div class="section-head">
+        <div class="eyebrow">Departamentos</div>
+        <h1>Las 6 skills de la agencia, a detalle</h1>
+        <p class="lede">Cada skill tiene un rol, principios propios y archivos de referencia. Ninguna reemplaza a otra — el handoff entre ellas es explícito.</p>
+      </div>
+
+      <div class="dept-tabs" role="tablist">
+        <button class="dept-tab" data-dept-tab="estrategia" style="--tab-color:var(--dept-estrategia)" aria-selected="true">
+          <span class="nav-dot" style="background:var(--dept-estrategia)"></span>1. Estrategia
+        </button>
+        <button class="dept-tab" data-dept-tab="diseno" style="--tab-color:var(--dept-diseno)" aria-selected="false">
+          <span class="nav-dot" style="background:var(--dept-diseno)"></span>2. Diseño
+        </button>
+        <button class="dept-tab" data-dept-tab="digital" style="--tab-color:var(--dept-digital)" aria-selected="false">
+          <span class="nav-dot" style="background:var(--dept-digital)"></span>3. Digital / RRSS
+        </button>
+        <button class="dept-tab" data-dept-tab="analitica" style="--tab-color:var(--dept-analitica)" aria-selected="false">
+          <span class="nav-dot" style="background:var(--dept-analitica)"></span>4. Analítica
+        </button>
+        <button class="dept-tab" data-dept-tab="router" style="--tab-color:var(--accent)" aria-selected="false">
+          <span class="nav-dot" style="background:var(--accent)"></span>Router
+        </button>
+      </div>
+
+      <!-- Estrategia -->
+      <div class="dept-panel" data-dept-panel="estrategia">
+        <div class="card skill-card" style="--dept-color:var(--dept-estrategia)">
+          <div class="skill-card-head">
+            <span class="skill-name">estrategia-planificacion</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Director de Estrategia senior con contexto venezolano por defecto: briefings de todo tipo, planes de campaña, FODA/Porter, buyer personas, calendario de efemérides y gestión de presupuesto.</p>
+          <div class="skill-sub">Principios</div>
+          <ul class="skill-list">
+            <li>Insight antes que ejecución — nunca tácticas sin el problema de negocio definido</li>
+            <li>Todo objetivo es SMART y todo plan lleva invalidadores explícitos con número</li>
+            <li>Contexto venezolano por defecto: precios en USD, Pago Móvil/Zelle/Cashea, WhatsApp como canal dominante</li>
+            <li>Un solo mensaje por pieza — si hay dos mensajes, hay dos campañas</li>
+          </ul>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">briefings.md</span>
+            <span class="chip">frameworks.md</span>
+            <span class="chip">calendario-venezuela.md</span>
+          </div>
+          <div class="skill-sub">No hace</div>
+          <ul class="no-list">
+            <li>No ejecuta campañas en plataformas (eso es paid-media)</li>
+            <li>No diseña piezas gráficas finales (eso es diseno-creativo)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Diseño -->
+      <div class="dept-panel" data-dept-panel="diseno" hidden>
+        <div class="card skill-card" style="--dept-color:var(--dept-diseno)">
+          <div class="skill-card-head">
+            <span class="skill-name">diseno-creativo</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Director de Arte senior. Decide entre dos motores — Claude Design (piezas de código/interactivas) o generador de imágenes (arte final rasterizado) — y entrega la especificación exacta, nunca la pieza final ella misma.</p>
+          <div class="skill-sub">Principios</div>
+          <ul class="skill-list">
+            <li>Dos motores, un solo sistema de marca — elegir el correcto es la decisión más importante</li>
+            <li>Un anclaje visual por pieza, jerarquía título → apoyo → CTA → legal</li>
+            <li>Prohibido el look genérico de IA sin razón de marca</li>
+            <li>Si se pega una imagen sin pedir nada más, el modo por defecto es auditarla, no rehacerla</li>
+          </ul>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">enrutador-herramientas.md</span>
+            <span class="chip">sistema-de-marca.md</span>
+            <span class="chip">claude-design-specs.md</span>
+            <span class="chip">prompts-generador-imagenes.md</span>
+            <span class="chip">formatos-plataformas.md</span>
+            <span class="chip">auditoria-piezas.md</span>
+          </div>
+          <div class="skill-sub">No hace</div>
+          <ul class="no-list">
+            <li>No genera la imagen ni el código final — entrega la especificación</li>
+            <li>No decide ángulos de venta (los recibe de paid-media)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Digital -->
+      <div class="dept-panel" data-dept-panel="digital" hidden>
+        <div class="card skill-card" style="--dept-color:var(--dept-digital)">
+          <div class="skill-card-head">
+            <span class="skill-name">paid-media</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Media buyer senior de Meta Ads. Investigación de competencia vía Biblioteca de Anuncios, mínimo 3 ángulos de venta distintos, estructura y montaje de campaña, reglas de matar/mantener/escalar por caja neta.</p>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">investigacion-competencia.md</span>
+            <span class="chip">creativos-angulos.md</span>
+            <span class="chip">estructura-y-montaje.md</span>
+            <span class="chip">optimizacion-escalado.md</span>
+          </div>
+        </div>
+
+        <div class="card skill-card" style="--dept-color:var(--dept-digital)">
+          <div class="skill-card-head">
+            <span class="skill-name">community-manager</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Copy con objetivo de comportamiento declarado (AIDA/PAS/antes-después), calendario y horarios, gestión de comentarios/DMs con ventanas de respuesta, protocolo de crisis, métricas orgánicas.</p>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">copywriting-persuasion.md</span>
+            <span class="chip">calendario-y-horarios.md</span>
+            <span class="chip">gestion-comunidad.md</span>
+            <span class="chip">formatos-y-tendencias.md</span>
+            <span class="chip">metricas-organicas.md</span>
+          </div>
+        </div>
+
+        <div class="card skill-card" style="--dept-color:var(--dept-digital)">
+          <div class="skill-card-head">
+            <span class="skill-name">automatizacion-ia</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Ingeniero de automatización. Agente de IA conversacional en WhatsApp (nunca bot de menús), arquitectura de conexión oficial vs. no oficial, flujo de ventas con objeciones, base de conocimiento sin alucinación, flujos n8n/Make/Zapier.</p>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">arquitectura-whatsapp.md</span>
+            <span class="chip">flujo-ventas-conversacional.md</span>
+            <span class="chip">base-de-conocimiento.md</span>
+            <span class="chip">automatizacion-flujos.md</span>
+            <span class="chip">mejora-continua.md</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analítica -->
+      <div class="dept-panel" data-dept-panel="analitica" hidden>
+        <div class="card skill-card" style="--dept-color:var(--dept-analitica)">
+          <div class="skill-card-head">
+            <span class="skill-name">analitica-metricas</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Cubre instrumentación (GA4/GTM/píxel de Meta con sitio web, o UTMs de WhatsApp/Instagram y registro manual conversación→cierre sin sitio web) y reporting (ROI/ROAS/MER/CAC/LTV, invalidadores de rendimiento, dashboards).</p>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">plan-de-medicion.md</span>
+            <span class="chip">ga4-gtm-implementacion.md</span>
+            <span class="chip">utm-y-whatsapp.md</span>
+            <span class="chip">validacion-y-debugging.md</span>
+            <span class="chip">reporte-de-metricas.md</span>
+          </div>
+          <div class="skill-sub">No hace</div>
+          <ul class="no-list">
+            <li>No tiene conector en vivo a GA4/Meta Ads/Google Ads — trabaja con datos importados</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Router -->
+      <div class="dept-panel" data-dept-panel="router" hidden>
+        <div class="card skill-card" style="--dept-color:var(--accent)">
+          <div class="skill-card-head">
+            <span class="skill-name">agencia-360</span>
+            <span class="pill pill-good">Operativo</span>
+          </div>
+          <p class="skill-desc">Director General / orquestador. Enruta al departamento correcto, mantiene el expediente de cliente persistente en disco, y encadena departamentos con 4 checkpoints de aprobación cuando el trabajo lo requiere.</p>
+          <div class="skill-sub">Referencias</div>
+          <div class="ref-chips">
+            <span class="chip">expediente-cliente.md</span>
+            <span class="chip">flujo-multidepartamento.md</span>
+          </div>
+          <div class="skill-sub">No hace</div>
+          <ul class="no-list">
+            <li>No sustituye el criterio especializado de cada departamento</li>
+            <li>No publica, pautea ni envía nada de forma autónoma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPEDIENTE ============ -->
+    <section class="section" id="expediente">
+      <div class="section-head">
+        <div class="eyebrow">Expediente de cliente · demo</div>
+        <h1>ManoTv</h1>
+        <p class="lede">Streaming en vivo y entretenimiento vía Instagram/TikTok. Cliente de ejemplo para verificar cómo el expediente mantiene a los 4 departamentos coordinados entre sesiones.</p>
+      </div>
+
+      <div class="expediente-grid">
+        <div>
+          <div class="card panel">
+            <h3>Estado por departamento</h3>
+            <table class="estado-table">
+              <thead>
+                <tr><th>Departamento</th><th>Estado</th><th>Notas</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="channel-dot" style="background:var(--dept-estrategia)"></span>1. Estrategia</td>
+                  <td><span class="pill pill-good">Al día</span></td>
+                  <td>Brief de aniversario del canal aprobado (02/06)</td>
+                </tr>
+                <tr>
+                  <td><span class="channel-dot" style="background:var(--dept-diseno)"></span>2. Diseño</td>
+                  <td><span class="pill pill-good">Al día</span></td>
+                  <td>Sistema de marca v2 vigente (20/06)</td>
+                </tr>
+                <tr>
+                  <td><span class="channel-dot" style="background:var(--dept-digital)"></span>3. Digital/RRSS</td>
+                  <td><span class="pill pill-warning">En curso</span></td>
+                  <td>Campaña activa, agente de WhatsApp en diseño</td>
+                </tr>
+                <tr>
+                  <td><span class="channel-dot" style="background:var(--dept-analitica)"></span>4. Analítica</td>
+                  <td><span class="pill pill-good">Al día</span></td>
+                  <td>Reporte de julio entregado (28/07)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card panel">
+            <h3>Historial de decisiones</h3>
+            <div class="history-list">
+              <div class="history-item">
+                <span class="history-date tabular">02 jun</span>
+                <span class="history-body">Aprobado brief de campaña de aniversario del canal. <span class="history-dept">— Estrategia</span></span>
+              </div>
+              <div class="history-item">
+                <span class="history-date tabular">20 jun</span>
+                <span class="history-body">Sistema de marca actualizado con nueva paleta. <span class="history-dept">— Diseño</span></span>
+              </div>
+              <div class="history-item">
+                <span class="history-date tabular">10 jul</span>
+                <span class="history-body">Campaña de Meta Ads de suscripción trimestral encendida (checkpoint C confirmado). <span class="history-dept">— Digital/RRSS</span></span>
+              </div>
+              <div class="history-item">
+                <span class="history-date tabular">28 jul</span>
+                <span class="history-body">Reporte mensual generado — LTV:CAC señala oportunidad de escalar pauta. <span class="history-dept">— Analítica</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card panel">
+            <h3>Próximos pasos</h3>
+            <div class="checklist" id="checklist"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card panel">
+            <h3>Invalidadores activos</h3>
+            <div class="invalidador-box">Si el ROAS ciego cae bajo 3x por 2 semanas seguidas → pausar canal y escalar a Estrategia.</div>
+            <div class="invalidador-box">Si el LTV:CAC cae bajo 1.5 → advertir antes de comprometer presupuesto del mes siguiente.</div>
+          </div>
+
+          <div class="card panel">
+            <h3>Carpeta del expediente</h3>
+            <div class="tree">clientes/<span class="folder">manotv</span>/
+├── <span class="file">EXPEDIENTE.md</span>
+├── <span class="folder">01-estrategia</span>/
+│   ├── <span class="file">brief.md</span>
+│   └── <span class="file">calendario.md</span>
+├── <span class="folder">02-diseno</span>/
+│   ├── <span class="file">sistema-de-marca.md</span>
+│   └── <span class="folder">piezas</span>/
+├── <span class="folder">03-digital</span>/
+│   ├── <span class="folder">paid-media</span>/
+│   ├── <span class="folder">community-manager</span>/
+│   └── <span class="folder">automatizacion-ia</span>/
+└── <span class="folder">04-analitica</span>/
+    ├── <span class="file">plan-de-medicion.md</span>
+    └── <span class="folder">reportes</span>/
+        └── <span class="file">2026-07-reporte.md</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLUJO ============ -->
+    <section class="section" id="flujo">
+      <div class="section-head">
+        <div class="eyebrow">Flujo de trabajo</div>
+        <h1>Cuatro checkpoints, no un batch de skills sueltas</h1>
+        <p class="lede">Este es el recorrido por defecto para un proyecto que abarca toda la agencia — un lanzamiento o campaña integral. Un pedido puntual no recorre los 4 pasos.</p>
+      </div>
+
+      <div class="checkpoint-flow">
+        <div class="flow-node">
+          <div class="flow-rail">
+            <div class="flow-dot" style="background:var(--dept-estrategia)">1</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-content">
+            <h4>Estrategia</h4>
+            <div class="flow-skill">estrategia-planificacion</div>
+            <p>Brief, insight, objetivo SMART, invalidadores y presupuesto.</p>
+            <details class="checkpoint-card">
+              <summary>Checkpoint A — antes de pasar a Diseño</summary>
+              <ul>
+                <li>¿El brief tiene objetivo, insight, presupuesto e invalidadores definidos?</li>
+                <li>¿El usuario confirmó el brief, o sigue en borrador?</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="flow-node">
+          <div class="flow-rail">
+            <div class="flow-dot" style="background:var(--dept-diseno)">2</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-content">
+            <h4>Diseño</h4>
+            <div class="flow-skill">diseno-creativo</div>
+            <p>Sistema de marca (si no existe) y piezas ejecutables por canal.</p>
+            <details class="checkpoint-card">
+              <summary>Checkpoint B — antes de pasar a Digital/RRSS</summary>
+              <ul>
+                <li>¿Las piezas están especificadas y aprobadas por el usuario?</li>
+                <li>¿El sistema de marca quedó guardado en el expediente?</li>
+                <li>¿Se identificó qué pieza va a cada canal?</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="flow-node">
+          <div class="flow-rail">
+            <div class="flow-dot" style="background:var(--dept-digital)">3</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-content">
+            <h4>Digital / RRSS</h4>
+            <div class="flow-skill">paid-media · community-manager · automatizacion-ia</div>
+            <p>Se monta la campaña (en pausa), se arma el calendario orgánico y, si aplica, se diseña el agente de WhatsApp.</p>
+            <details class="checkpoint-card">
+              <summary>Checkpoint C — antes de pasar a Analítica</summary>
+              <ul>
+                <li>¿Las campañas están montadas y pendientes de aprobación — nunca encendidas solas?</li>
+                <li>¿El calendario de contenido tiene piezas asignadas a fecha/hora?</li>
+                <li>¿El tracking (UTMs, píxel) está listo antes del lanzamiento, no después?</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="flow-node">
+          <div class="flow-rail">
+            <div class="flow-dot" style="background:var(--dept-analitica)">4</div>
+          </div>
+          <div class="flow-content">
+            <h4>Analítica</h4>
+            <div class="flow-skill">analitica-metricas</div>
+            <p>Mide ROI/ROAS semanal y mensual, dispara alerta si se cruza un invalidador.</p>
+            <details class="checkpoint-card">
+              <summary>Checkpoint D — de vuelta a Estrategia</summary>
+              <ul>
+                <li>¿Se cruzó algún invalidador del brief original?</li>
+                <li>¿El reporte quedó guardado en el expediente con fecha?</li>
+              </ul>
+            </details>
+            <div class="loopback">↺ Si se cruza un invalidador, esto reabre la conversación con Estrategia para pivotar o escalar — no sigue ejecutándose en automático.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DASHBOARD ============ -->
+    <section class="section" id="dashboard">
+      <div class="section-head">
+        <div class="eyebrow">Analítica · analitica-metricas</div>
+        <h1>Reporte de rendimiento — julio 2026</h1>
+        <p class="lede">ManoTv · consolidado de Meta Ads, Google Ads y WhatsApp/Orgánico.</p>
+      </div>
+
+      <div class="disclaimer" style="margin-bottom:20px">⚠ Datos de ejemplo para verificar el diseño. En un cliente real, estas cifras vienen de la planilla de cierres y de las plataformas de pauta que analitica-metricas consolida — no hay conector en vivo todavía.</div>
+
+      <div class="stat-grid">
+        <div class="card stat-tile">
+          <div class="stat-label">ROAS ciego</div>
+          <div class="stat-value tabular">3.27×</div>
+          <div class="stat-delta good">▲ +12.8% vs. jun</div>
+        </div>
+        <div class="card stat-tile">
+          <div class="stat-label">MER</div>
+          <div class="stat-value tabular">2.88×</div>
+          <div class="stat-delta good">▲ +10.8% vs. jun</div>
+          <div class="stat-note">incl. $400 de producción</div>
+        </div>
+        <div class="card stat-tile">
+          <div class="stat-label">CAC</div>
+          <div class="stat-value tabular">$24.29</div>
+          <div class="stat-delta good">▼ −10.4% vs. jun</div>
+        </div>
+        <div class="card stat-tile">
+          <div class="stat-label">LTV : CAC</div>
+          <div class="stat-value tabular">7.4×</div>
+          <div class="stat-delta warning">▲ por encima de 5</div>
+          <div class="stat-note">posible sub-inversión en pauta</div>
+        </div>
+        <div class="card stat-tile">
+          <div class="stat-label">Payback</div>
+          <div class="stat-value tabular">1.35 <span style="font-size:0.85rem;font-weight:400">meses</span></div>
+          <div class="stat-delta good">Rápido</div>
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <div class="chart-head">
+          <h3>ROAS ciego — últimos 6 meses</h3>
+          <span class="chart-sub">Modelo de atribución: ingreso real del negocio / gasto en pauta</span>
+        </div>
+        <div class="chart-wrap">
+          <svg id="roasChart" viewBox="0 0 640 220" preserveAspectRatio="none" role="img" aria-label="Tendencia de ROAS ciego de febrero a julio 2026, de 2.6x a 3.27x"></svg>
+          <div class="chart-tooltip" id="chartTooltip"></div>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="chart-head">
+          <h3>Desglose por canal</h3>
+          <span class="chart-sub">Julio 2026</span>
+        </div>
+        <table class="channel-table">
+          <thead>
+            <tr>
+              <th>Canal</th>
+              <th>Gasto</th>
+              <th>Ingreso atribuido</th>
+              <th>ROAS plataforma</th>
+              <th>CAC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="channel-dot" style="background:var(--dept-digital)"></span>Meta Ads</td>
+              <td class="tabular">$2,000</td>
+              <td class="tabular">$9,000</td>
+              <td class="tabular">4.5×</td>
+              <td class="tabular">—</td>
+            </tr>
+            <tr>
+              <td><span class="channel-dot" style="background:var(--dept-analitica)"></span>Google Ads</td>
+              <td class="tabular">$1,000</td>
+              <td class="tabular">$3,500</td>
+              <td class="tabular">3.5×</td>
+              <td class="tabular">—</td>
+            </tr>
+            <tr>
+              <td><span class="channel-dot" style="background:var(--dept-estrategia)"></span>WhatsApp / Orgánico</td>
+              <td class="tabular">$0</td>
+              <td class="tabular">$700</td>
+              <td class="tabular">—</td>
+              <td class="tabular">—</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total / ciego</td>
+              <td class="tabular">$3,000</td>
+              <td class="tabular">$9,800</td>
+              <td class="tabular">3.27×</td>
+              <td class="tabular">$24.29</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Invalidadores este periodo:</strong> ninguno cruzado. El LTV:CAC de 7.4× está por encima del rango saludable (3–5×) — según <span class="chip">reporte-de-metricas.md</span>, esto suele señalar que hay espacio para escalar presupuesto de pauta antes de que la eficiencia se resienta.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    "use strict";
+
+    // ---------- Section nav ----------
+    var navItems = document.querySelectorAll(".nav-item");
+    var sections = document.querySelectorAll(".section");
+
+    function showSection(id) {
+      sections.forEach(function (s) { s.classList.toggle("active", s.id === id); });
+      navItems.forEach(function (b) {
+        if (b.dataset.section === id) { b.setAttribute("aria-current", "page"); }
+        else { b.removeAttribute("aria-current"); }
+      });
+    }
+    navItems.forEach(function (btn) {
+      btn.addEventListener("click", function () { showSection(btn.dataset.section); });
+    });
+    document.querySelectorAll("[data-goto]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        showSection(btn.dataset.goto);
+        var dept = btn.dataset.dept;
+        if (dept) { selectDeptTab(dept); }
+      });
+    });
+
+    // ---------- Department tabs ----------
+    var deptTabs = document.querySelectorAll("[data-dept-tab]");
+    var deptPanels = document.querySelectorAll("[data-dept-panel]");
+    function selectDeptTab(name) {
+      deptTabs.forEach(function (t) { t.setAttribute("aria-selected", t.dataset.deptTab === name ? "true" : "false"); });
+      deptPanels.forEach(function (p) { p.hidden = p.dataset.deptPanel !== name; });
+    }
+    deptTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () { selectDeptTab(tab.dataset.deptTab); });
+    });
+
+    // ---------- Checklist (localStorage) ----------
+    var checklistData = [
+      { id: "c1", label: "Confirmar brief de campaña de aniversario del canal", dept: "Estrategia", done: true },
+      { id: "c2", label: "Aprobar piezas de carrusel para el lanzamiento", dept: "Diseño", done: true },
+      { id: "c3", label: "Subir presupuesto de Meta Ads +15% según regla de escalado", dept: "Digital/RRSS · paid-media", done: false },
+      { id: "c4", label: "Configurar agente de WhatsApp para preguntas de suscripción", dept: "Digital/RRSS · automatizacion-ia", done: false },
+      { id: "c5", label: "Confirmar modelo de atribución del próximo reporte con el cliente", dept: "Analítica", done: false }
+    ];
+    var STORAGE_KEY = "agencia360-checklist-manotv";
+    function loadChecklistState() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) { return {}; }
+    }
+    function saveChecklistState(state) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+    function renderChecklist() {
+      var state = loadChecklistState();
+      var container = document.getElementById("checklist");
+      container.innerHTML = "";
+      checklistData.forEach(function (item) {
+        var done = state.hasOwnProperty(item.id) ? state[item.id] : item.done;
+        var row = document.createElement("div");
+        row.className = "check-item" + (done ? " done" : "");
+        row.innerHTML =
+          '<span class="check-box"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+          '<span><span class="check-label">' + item.label + "</span><br>" +
+          '<span class="check-dept">' + item.dept + "</span></span>";
+        row.addEventListener("click", function () {
+          var s = loadChecklistState();
+          var current = s.hasOwnProperty(item.id) ? s[item.id] : item.done;
+          s[item.id] = !current;
+          saveChecklistState(s);
+          renderChecklist();
+        });
+        container.appendChild(row);
+      });
+    }
+    renderChecklist();
+
+    // ---------- ROAS trend chart ----------
+    var chartData = [
+      { m: "Feb", v: 2.6 }, { m: "Mar", v: 2.8 }, { m: "Abr", v: 2.9 },
+      { m: "May", v: 3.0 }, { m: "Jun", v: 2.9 }, { m: "Jul", v: 3.27 }
+    ];
+    var svgNS = "http://www.w3.org/2000/svg";
+    var svg = document.getElementById("roasChart");
+    var tooltip = document.getElementById("chartTooltip");
+
+    function computedVar(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+
+    function drawChart() {
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      var W = 640, H = 220, padL = 36, padR = 12, padT = 16, padB = 28;
+      var minV = 2.2, maxV = 3.6;
+      var xs = chartData.map(function (d, i) { return padL + (i * (W - padL - padR)) / (chartData.length - 1); });
+      var ys = chartData.map(function (d) { return padT + (H - padT - padB) * (1 - (d.v - minV) / (maxV - minV)); });
+
+      var accent = computedVar("--accent");
+      var border = computedVar("--border");
+      var textMuted = computedVar("--text-3");
+
+      // gridlines
+      [2.5, 3.0, 3.5].forEach(function (gv) {
+        var gy = padT + (H - padT - padB) * (1 - (gv - minV) / (maxV - minV));
+        var line = document.createElementNS(svgNS, "line");
+        line.setAttribute("x1", padL); line.setAttribute("x2", W - padR);
+        line.setAttribute("y1", gy); line.setAttribute("y2", gy);
+        line.setAttribute("stroke", border); line.setAttribute("stroke-width", "1");
+        svg.appendChild(line);
+        var label = document.createElementNS(svgNS, "text");
+        label.setAttribute("x", 4); label.setAttribute("y", gy + 3);
+        label.setAttribute("font-size", "10"); label.setAttribute("fill", textMuted);
+        label.setAttribute("font-family", "var(--font-mono)");
+        label.textContent = gv.toFixed(1) + "x";
+        svg.appendChild(label);
+      });
+
+      // area fill
+      var areaPath = "M" + xs[0] + "," + ys[0];
+      for (var i = 1; i < xs.length; i++) areaPath += " L" + xs[i] + "," + ys[i];
+      areaPath += " L" + xs[xs.length - 1] + "," + (H - padB) + " L" + xs[0] + "," + (H - padB) + " Z";
+      var area = document.createElementNS(svgNS, "path");
+      area.setAttribute("d", areaPath);
+      area.setAttribute("fill", accent);
+      area.setAttribute("opacity", "0.12");
+      svg.appendChild(area);
+
+      // line
+      var linePath = "M" + xs[0] + "," + ys[0];
+      for (var j = 1; j < xs.length; j++) linePath += " L" + xs[j] + "," + ys[j];
+      var line2 = document.createElementNS(svgNS, "path");
+      line2.setAttribute("d", linePath);
+      line2.setAttribute("fill", "none");
+      line2.setAttribute("stroke", accent);
+      line2.setAttribute("stroke-width", "2");
+      line2.setAttribute("stroke-linecap", "round");
+      line2.setAttribute("stroke-linejoin", "round");
+      svg.appendChild(line2);
+
+      // x labels + points + hover targets
+      chartData.forEach(function (d, i) {
+        var xlabel = document.createElementNS(svgNS, "text");
+        xlabel.setAttribute("x", xs[i]); xlabel.setAttribute("y", H - 8);
+        xlabel.setAttribute("font-size", "10"); xlabel.setAttribute("fill", textMuted);
+        xlabel.setAttribute("text-anchor", "middle");
+        xlabel.setAttribute("font-family", "var(--font-mono)");
+        xlabel.textContent = d.m;
+        svg.appendChild(xlabel);
+
+        var isLast = i === chartData.length - 1;
+        var dot = document.createElementNS(svgNS, "circle");
+        dot.setAttribute("cx", xs[i]); dot.setAttribute("cy", ys[i]);
+        dot.setAttribute("r", isLast ? 5 : 3);
+        dot.setAttribute("fill", accent);
+        if (isLast) {
+          dot.setAttribute("stroke", computedVar("--surface"));
+          dot.setAttribute("stroke-width", "2");
+        }
+        svg.appendChild(dot);
+
+        var hit = document.createElementNS(svgNS, "circle");
+        hit.setAttribute("cx", xs[i]); hit.setAttribute("cy", ys[i]);
+        hit.setAttribute("r", 14);
+        hit.setAttribute("fill", "transparent");
+        hit.style.cursor = "pointer";
+        hit.addEventListener("mouseenter", function () {
+          var rect = svg.getBoundingClientRect();
+          var scaleX = rect.width / W;
+          var scaleY = rect.height / H;
+          tooltip.style.left = (xs[i] * scaleX) + "px";
+          tooltip.style.top = (ys[i] * scaleY) + "px";
+          tooltip.textContent = d.m + " 2026 — " + d.v.toFixed(2) + "x";
+          tooltip.style.opacity = "1";
+        });
+        hit.addEventListener("mouseleave", function () { tooltip.style.opacity = "0"; });
+        svg.appendChild(hit);
+      });
+    }
+    drawChart();
+    window.addEventListener("resize", drawChart);
+
+    // redraw chart colors when theme changes (data-theme attr toggled by host)
+    new MutationObserver(drawChart).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  })();
+</script>
