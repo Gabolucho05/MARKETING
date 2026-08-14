@@ -1,8 +1,8 @@
-# Reporte de Métricas — De Datos a Decisión
+# Lectura de Campaña — De Datos a Decisión (operativo)
 
-Referencia del Paso 6 de la skill `analitica-metricas`. Traduce los números de una campaña de Meta Ads en las decisiones concretas que motivaron medir en primer lugar.
+Referencia complementaria del Paso 6 de la skill `analitica-metricas`. Mientras `reporte-de-metricas.md` cubre la capa estratégica (ROI/ROAS/CAC/LTV/dashboard multi-canal), este archivo cubre la lectura **operativa** de una sola campaña de Meta Ads ya corriendo: traduce sus números en las decisiones tácticas de día a día (pausar, escalar, testear).
 
-**Cuándo se usa:** cuando hay una campaña de Meta ya corriendo y el usuario necesita saber qué hacer con ella (pausar, escalar, testear). No es para montar tracking (eso es `utm-y-whatsapp.md` o `ga4-gtm-implementacion.md`); es para leer resultados y decidir.
+**Cuándo se usa:** cuando hay una campaña de Meta ya corriendo y el usuario necesita saber qué hacer con ella ahora mismo. No es para montar tracking (eso es `utm-y-whatsapp.md` o `ga4-gtm-implementacion.md`) ni para el dashboard de ROI/ROAS mensual (eso es `reporte-de-metricas.md`); es para leer resultados recientes y decidir.
 
 **Flujo de datos:** exportar CSV del Ads Manager, o capturas del panel de resultados. Nunca estimar datos que no estén en la fuente.
 
@@ -15,7 +15,7 @@ Referencia del Paso 6 de la skill `analitica-metricas`. Traduce los números de 
 | **CPM** | Costo por mil impresiones | Sube → audiencia saturada o creativo con problema/rechazo. |
 | **CTR** | % de clics sobre impresiones | Bajo → el hook/creativo no engancha. |
 | **CPC** | Costo por clic | Eficiencia de generar interés. |
-| **CPA / CPL** | Costo por adquisición / lead | Para ManoTv: costo por conversación de WhatsApp iniciada. El número que manda. |
+| **CPA / CPL** | Costo por adquisición / lead | Costo por conversación de WhatsApp iniciada. El número que manda. |
 | **ROAS** | Retorno por $ invertido | Solo con ventas reales confirmadas. Sin píxel de compra NO se usa el estimado de Meta. |
 | **Frecuencia** | Veces que cada persona vio el anuncio | > 3 → fatiga de creativo, rotar. |
 
