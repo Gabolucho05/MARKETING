@@ -1,29 +1,25 @@
-# Marketing Audit: 2CREA2 (Gente Creativa 2Crea2, C.A.)
-**URL:** https://2crea2.net/
+# Marketing Audit: OneTalentPro (1TalentPro)
+**URL:** https://1talentpro.com/
 **Fecha:** 25 de agosto de 2026
-**Tipo de negocio:** Agencia de servicios B2B — trade marketing y merchandising en punto de venta (Caracas, Venezuela, cobertura 23 estados)
-**Marketing Score General: 38/100 (Grade: F — Crítico)**
+**Tipo de negocio:** Agencia de servicios B2B — outsourcing de RRHH, reclutamiento ejecutivo/headhunting, evaluaciones psicométricas y capacitación (Caracas, Venezuela)
+**Marketing Score General: 44/100 (Grade: D — Por debajo del promedio, requiere overhaul mayor)**
 
 ---
 
 ## Resumen Ejecutivo
 
-2CREA2 opera un negocio con sustancia real: 16-17 años de trayectoria, 6,000+ puntos de venta atendidos, 45 clientes y 59 proyectos ejecutados sugieren una operación consolidada en el mercado venezolano de trade marketing. El problema no es la operación — es que **el sitio web activamente destruye la credibilidad que esa operación merece**, con dos fallas de integridad de marca que cualquier prospecto detecta en minutos, y una tercera que solo aparece con una investigación técnica pero que es la más grave de las tres.
+OneTalentPro tiene algo que ningún otro negocio de este mercado auditado en esta sesión mostró: **un equipo humano real y verificable**. Ocho personas con nombres, apellidos y cargos que se leen como genuinamente venezolanos (Katiuska Sojo, Nazaret Delgado, Yusleidy Rodríguez, entre otros) están listadas en "Sobre Nosotros" — un contraste directo con otros sitios de este sector donde el equipo directivo resultó ser contenido de plantilla nunca reemplazado. Sumado a un catálogo de servicios amplio y bien descrito (reclutamiento ejecutivo, masivo, headhunting, outsourcing, evaluación psicométrica, clima organizacional, capacitación), hay una base de negocio real detrás del sitio.
 
-**Hallazgo #1 — Equipo directivo con contenido de plantilla nunca reemplazado.** La página "Sobre Nosotros" presenta como directivos a "Tony Fred" (Fundador y CEO, bio de "software, marketing, experiencia de usuario"), "Mich Stark" (Director de Operaciones, "director comercial en tecnología"), "Aline Turner" (CTO, "mentora de más de 100 desarrolladores") e "Iris Joe" (CFO, "experiencia internacional en finanzas"). Estos nombres y roles describen a una startup de software, no a una agencia venezolana de mercaderistas de campo — es, sin ambigüedad razonable, contenido de demostración de una plantilla web (Odoo) que nunca fue sustituido por el equipo real.
+El problema es que esa base real está envuelta en dos capas de riesgo serio. La primera es de ejecución: **cero prueba social** (ni un testimonio, logo de cliente o cifra) en un servicio donde la confianza es el factor de decisión número uno; un CTA ("Agenda tu demo GRATIS") que no agenda nada y redirige al mismo formulario genérico que cualquier otro botón; y un menú de navegación que expone módulos de e-commerce de Odoo (carrito de compras, login) sin ningún sentido de negocio para una consultora de RRHH.
 
-**Hallazgo #2 — Sección de testimonios con texto instructivo publicado en producción.** La homepage muestra un testimonio atribuido a "María Pérez" junto con el texto literal **"Escriba aquí una cita de uno de sus clientes..."** — es decir, la instrucción de la plantilla para rellenar el campo, publicada tal cual en el sitio en vivo.
-
-**Hallazgo #3 — el más grave, confirmado técnicamente: 2crea2.net y epran.net comparten literalmente la misma infraestructura.** El blog de 2crea2.net tiene una categoría llamada **"EPRAN"** (nombre de otra agencia de mercaderismo venezolana, auditada por separado en esta misma sesión) con artículos de título idéntico, y una tercera categoría llamada **"SPMI"** (otro competidor del sector). La verificación técnica lo confirma sin lugar a dudas: ambos dominios resuelven a la misma IP, el mismo backend (`corpoepran.binhex.cloud`), y un artículo comparado carácter por carácter resultó ser **el mismo registro de base de datos** (`blog.post(11,)`), solo con el `website_id` cambiado. Además, la metadata de un subdominio de EPRAN lista literalmente como keywords "2crea2, epran, Gente Creativa" — y "Gente Creativa 2Crea2, C.A." es la razón social legal confirmada del sitio auditado. Todo apunta a que 2CREA2, EPRAN y SPMI operan sobre la misma instancia técnica y probablemente el mismo grupo empresarial, sin que el sitio público lo aclare ni lo oculte de forma consistente.
-
-El efecto combinado de estos tres hallazgos es más grave que la suma de sus partes: un prospecto B2B que haga una diligencia mínima (mirar el equipo, leer un testimonio, o simplemente notar el blog) encuentra evidencia de que el sitio nunca se terminó de construir y que la marca "2CREA2" podría no ser una entidad completamente independiente. En una categoría de servicio que se vende por confianza y relación de largo plazo, esto pesa más que cualquier cifra de cobertura o experiencia.
+La segunda capa, más grave, es de identidad corporativa. La investigación de esta auditoría encontró que **1talentpro.com comparte literalmente la misma infraestructura técnica que dmarketingconsultores.com** —una agencia de marketing digital sin relación aparente, auditada por separado en esta misma sesión—: misma IP, mismo backend Odoo, y la URL exacta de un artículo de blog responde con el mismo H1 carácter por carácter en ambos dominios, solo cambiando el nombre de marca en el `<title>`. A esto se suma un hallazgo aún más inquietante encontrado en directorios de terceros: la cuenta pública de "OneTalentPro" aparece registrada bajo la razón social **"Epran Soluciones CA"** —el mismo nombre de otra empresa de mercaderismo (EPRAN) auditada en esta sesión— y también asociada a un tercer dominio, "descobarsoluciones.com", con un correo de contacto en Gmail en vez de dominio corporativo. En conjunto, esto dibuja un patrón consistente a lo largo de esta sesión de auditorías: múltiples negocios venezolanos de rubros distintos (marketing, mercaderismo, RRHH) parecen operar sobre la misma infraestructura web compartida, con plantillas y contenido genérico jamás personalizado y, en al menos un caso, entidades legales cruzadas entre marcas que se presentan como independientes.
 
 **Las 3 acciones que más moverían la aguja:**
-1. **Reemplazar de inmediato el equipo directivo placeholder y la sección de testimonios** — son las correcciones de menor esfuerzo y mayor riesgo evitado de todo el informe.
-2. **Resolver la superposición de infraestructura y contenido con EPRAN y SPMI**: aclarar la relación corporativa (si existe) y, en cualquier caso, sacar las categorías "EPRAN" y "SPMI" del blog público, reescribiendo ese contenido con voz propia.
-3. **Unificar las cifras inconsistentes** (16 vs. 17 años; 6,000+ vs. 2,000+ puntos de venta según la sección) que aparecen contradictorias dentro del propio sitio.
+1. **Aclarar y resolver la identidad corporativa de la marca**: unificar el dominio, el correo (@1talentpro.com, no Gmail) y la razón social en todos los directorios y perfiles públicos, y evaluar si compartir infraestructura con dmarketingconsultores.com (y potencialmente con la red EPRAN) es una relación real de grupo o un descuido de plataforma que debe separarse.
+2. **Capitalizar el equipo humano real como prueba social**, agregando fotos, testimonios y casos de éxito — es la fortaleza más diferenciada del sitio y hoy está completamente subutilizada.
+3. **Corregir el CTA "Agenda tu demo GRATIS"** para que cumpla lo que promete (agendamiento real) o cambiar el copy, y limpiar la navegación de módulos de Odoo sin uso de negocio.
 
-**Impacto estimado:** dado que los hallazgos son de credibilidad y no de tráfico, el mayor impacto no vendrá de más visitantes sino de convertir mejor a los que ya llegan — corregir estas tres fallas antes de invertir en adquisición es el orden correcto de prioridades.
+**Impacto estimado:** dado que el negocio ya cuenta con un activo de confianza genuino (el equipo real) que hoy no se explota, el camino más corto a mejorar la conversión es de bajo costo y alto impacto — ver detalle en Impacto en Ingresos.
 
 ---
 
@@ -31,104 +27,106 @@ El efecto combinado de estos tres hallazgos es más grave que la suma de sus par
 
 | Categoría | Score | Peso | Score Ponderado | Hallazgo Clave |
 |-----------|-------|------|------------------|----------------|
-| Content & Messaging | 42/100 | 25% | 10.5 | Copy razonable dañado por equipo directivo con bios de plantilla de startup de software |
-| Conversion Optimization | 43/100 | 20% | 8.6 | Testimonio con texto instructivo de plantilla ("Escriba aquí una cita...") publicado en vivo |
-| SEO & Discoverability | 48/100 | 20% | 9.6 | Confirmado técnicamente: mismo blog.post compartido con epran.net en la misma instancia Odoo |
-| Competitive Positioning | 24/100 | 15% | 3.6 | Blog con categorías literalmente nombradas "EPRAN" y "SPMI" (competidores directos) |
-| Brand & Trust | 28/100 | 10% | 2.8 | Cifras inconsistentes (años y PDV) más los dos hallazgos de contenido placeholder |
-| Growth & Strategy | 27/100 | 10% | 2.7 | "Datos en tiempo real" es una afirmación sin ninguna evidencia visible que la respalde |
-| **TOTAL** | | **100%** | **37.8/100** | |
+| Content & Messaging | 54/100 | 25% | 13.5 | Equipo real y catálogo sólido, pero cero prueba social y blog compartido con un sitio de otro rubro |
+| Conversion Optimization | 31/100 | 20% | 6.2 | El CTA "Agenda tu demo GRATIS" no agenda nada; menú expone carrito/login de Odoo sin sentido de negocio |
+| SEO & Discoverability | 41/100 | 20% | 8.2 | Confirmado técnicamente: mismo backend y mismo artículo de blog que dmarketingconsultores.com |
+| Competitive Positioning | 34/100 | 15% | 5.1 | Encontrado en directorios: la marca aparece bajo la razón social "Epran Soluciones CA" y un tercer dominio |
+| Brand & Trust | 58/100 | 10% | 5.8 | Equipo humano real (fortaleza poco común en este mercado), pero cero validación externa |
+| Growth & Strategy | 47/100 | 10% | 4.7 | "Talent Architect" (IA) y la "expansión binacional 2026" son afirmaciones sin evidencia visible |
+| **TOTAL** | | **100%** | **43.5/100** | |
 
 ---
 
 ## Quick Wins (Esta Semana)
 
-1. **Reemplazar de inmediato el equipo directivo en "Sobre Nosotros"** con nombres, fotos y cargos reales de 2CREA2, o eliminar la sección hasta tenerla lista. Mantenerla como está ("Aline Turner, CTO, mentora de 100+ desarrolladores") es peor que no tener página de equipo.
-2. **Reemplazar o eliminar la sección de testimonios** que hoy muestra el texto placeholder "Escriba aquí una cita de uno de sus clientes..." junto a un testimonio ficticio de "María Pérez".
-3. **Sacar del blog público las categorías "EPRAN" y "SPMI"** — como mínimo, ocultarlas mientras se decide una solución de fondo; no deben ser visibles para un visitante nuevo.
-4. **Unificar la cifra de años de experiencia** ("+17 años" en home vs. "+16 años" en sobre-nosotros) y la de puntos de venta (6,000+ vs. 2,000+ según la sección) en todo el sitio.
-5. **Agregar un botón de WhatsApp directo** — canal de conversión preferido en Venezuela, hoy ausente; único canal de contacto es un formulario de 7 campos.
-6. **Reducir el formulario de contacto** de 7 a 4 campos obligatorios (nombre, empresa, teléfono/WhatsApp, mensaje).
-7. **Consolidar los 6 CTAs distintos** del sitio ("Contáctenos", "Solicita tu asesoría gratuita", "Potencia tu visibilidad en el anaquel ahora", "Quiero impulsar mi marca") bajo un mensaje primario único y consistente.
-8. **Acortar la meta description de la home** (actualmente ~208 caracteres, se trunca en Google) y agregar alt text descriptivo a las imágenes de contenido (hoy prácticamente vacío).
-9. **Añadir `lastmod` a las URLs del sitemap** y filtrar del sitemap las categorías de otros sitios del mismo tenant Odoo (`/blog/spmi-1`, `/blog/4`) que hoy desperdician crawl budget.
+1. **Unificar el correo de contacto corporativo** a un dominio propio (@1talentpro.com) en vez del Gmail encontrado en directorios públicos, y corregir la razón social inconsistente ("Epran Soluciones CA") donde aparezca.
+2. **Corregir el CTA "Agenda tu demo GRATIS"** — hoy no agenda nada, redirige al mismo formulario genérico. O se integra un mecanismo real de agendamiento (Calendly/Cal.com), o se cambia el copy a algo honesto como "Solicita tu demo".
+3. **Ocultar del menú principal los módulos de Odoo sin uso de negocio** (`/shop/cart`, `/web/login`) — no tienen ninguna función aparente en una consultora de RRHH y dañan la percepción de profesionalismo.
+4. **Agregar 3-5 testimonios y/o logos de clientes** (incluso anonimizados por sector si hay confidencialidad) — es el gap de mayor impacto en conversión dado que el servicio es de alto involucramiento.
+5. **Reescribir las meta descriptions**, hoy el placeholder literal de Odoo ("Esta es la página de inicio del sitio web") duplicado en 5 de 6 páginas del sitio.
+6. **Consolidar los 6 CTAs distintos** de la homepage en un CTA primario único y consistente.
+7. **Agregar horario de atención y mapa** en /contactus (hoy solo hay una dirección de barrio sin detalle).
+8. **Separar la navegación de "candidatos" (Postúlate/vacantes) de la de "empresas clientes"** en el menú principal — hoy conviven sin distinción, diluyendo a quién le habla la marca en cada clic.
+9. **Implementar schema `JobPosting`** en las páginas de vacantes (`/jobs/*`) — habilitaría Google for Jobs, un canal gratuito de alto valor para una agencia de reclutamiento, hoy sin explotar.
 
 ## Recomendaciones Estratégicas (Este Mes)
 
-1. **Aclarar la relación corporativa con EPRAN y SPMI** (mismo grupo empresarial, migración de plataforma compartida, o proveedor de contenido común) y decidir una estrategia deliberada: independencia total de marca con contenido propio, o —si hay sinergia real de grupo— comunicarla como activo ("respaldados por X años de trayectoria combinada"). El estado actual, donde ninguna de las dos cosas ocurre, es la peor opción posible.
-2. **Reescribir con voz propia los artículos actualmente bajo las categorías "EPRAN"/"SPMI"**, o retirarlos, en vez de dejarlos huérfanos o duplicados.
-3. **Publicar 2-3 casos de éxito nombrados con cifras específicas** (ej. "+X% de disponibilidad en anaquel para [marca] en X meses"), igualando el nivel de prueba social que ya muestra el competidor SPMI con clientes nombrados (Iberia, Grupo Leti).
-4. **Mostrar evidencia real de la capacidad de "datos en tiempo real"** que hoy es solo una frase de marketing: una captura de reporte, un mockup de dashboard, o una descripción concreta del proceso de captura de datos en campo.
-5. **Implementar datos estructurados (JSON-LD)**: Organization + LocalBusiness (con el NAP ya público) + Article en los posts de blog realmente propios.
-6. **Añadir logos de clientes reales** (con autorización) cerca de las cifras de "45 clientes" y "59 proyectos" — hoy son números sin ancla verificable.
-7. **Diseñar una oferta de entrada de bajo riesgo** tipo "diagnóstico/auditoría gratuita de un punto de venta", inspirada en el modelo del competidor Empreservicios (prueba gratis + ahorro cuantificado).
+1. **Investigar y resolver la relación de infraestructura y entidad legal con dmarketingconsultores.com, EPRAN y "descobarsoluciones.com"** antes de invertir en cualquier campaña de marketing — mientras esto no se aclare, cualquier prospecto que investigue mínimamente (algo esperable al contratar a quien recluta para tu empresa) encontrará señales contradictorias sobre quién es realmente OneTalentPro.
+2. **Sustanciar "Talent Architect" con evidencia real**: metodología explicada, una cifra de precisión/retención, o un caso de uso concreto — hoy es una frase de marketing sin ningún respaldo visual o de datos.
+3. **Publicar 1-2 casos de éxito documentados** (aunque sean anonimizados por sector) con métricas de resultado (tiempo de contratación, retención a 12 meses).
+4. **Explotar el equipo real como activo de marca**: agregar fotos, perfiles de LinkedIn y una bio corta por cada uno de los 8 miembros listados en /nosotros.
+5. **Reescribir o reemplazar el contenido del blog** compartido con dmarketingconsultores.com por artículos originales firmados por el propio equipo de RRHH — capitalizando la autoridad genuina que ya tienen en personas reales.
+6. **Implementar datos estructurados (JSON-LD)**: Organization + LocalBusiness (con el NAP ya público) además del JobPosting mencionado arriba.
+7. **Explotar el ángulo de expansión LatAm/Europa 2026** en la propuesta de valor principal (no solo en la sección de historia) si hay evidencia real que lo respalde — es el único ángulo de diferenciación que ningún competidor identificado ocupa hoy.
 
 ## Iniciativas de Largo Plazo (Este Trimestre)
 
-1. **Construir un portal/dashboard real de cliente** que respalde con evidencia la promesa de "datos en tiempo real" — ningún competidor directo (EPRAN, SPMI, Empreservicios) lo comunica bien hoy; hacerlo primero y bien captura ese espacio de posicionamiento en el nicho.
-2. **Desarrollar un canal de contenido y autoridad propio** (LinkedIn corporativo, casos de estudio en video, presencia en eventos de retail venezolano) para dejar de depender de un blog cuya autoridad está comprometida por el contenido compartido.
-3. **Separar técnicamente la infraestructura de 2crea2.net de la de epran.net** (bases de datos/instancias Odoo independientes) si ambas marcas deben competir de forma creíble como entidades distintas en el mismo mercado.
-4. **Programa de referidos/partnerships** con proveedores complementarios (agencias creativas, distribuidoras), aprovechando la cobertura ya construida en 23 estados.
-5. **Certificación o alianza formal con una asociación de trade marketing regional**, y mayor presencia en eventos del sector, para construir autoridad externa verificable que hoy no existe en ningún actor de este micro-nicho.
+1. **Migrar a una instancia técnica propia y dedicada**, separada de cualquier infraestructura compartida con otros negocios — condición previa para que cualquier inversión en SEO de contenido rinda sin canibalización entre dominios.
+2. **Construir la evidencia de la expansión binacional 2026** (página de presencia regional, al menos un caso o alianza fuera de Venezuela) o retirar/matizar la afirmación mientras no haya sustento visible.
+3. **Programa de referidos B2B** entre empresas clientes, aprovechando que las decisiones de contratación de RRHH en Venezuela suelen viajar por recomendación gremial.
+4. **Certificación o alianza formal** con una cámara de RRHH o partnership con una plataforma de evaluación reconocida, para sustituir autoridad de marca con validación de terceros.
+5. **Diseñar rutas de cross-sell explícitas** entre las 8 líneas de servicio (ej. cliente de reclutamiento masivo → oferta de evaluación integral y capacitación como paquete de continuidad).
 
 ---
 
 ## Análisis Detallado por Categoría
 
-### Content & Messaging (42/100)
-El headline ("Mejoramos tu ejecución en el PDV") y la propuesta diferencial ("No solo ejecutamos estrategias de exhibición, las convertimos en resultados visibles en tienda") son razonablemente específicos para el sector, y los CTAs usan lenguaje orientado a valor. Pero el copy sólido queda anulado por dos hallazgos de máxima severidad: el equipo directivo en "Sobre Nosotros" es contenido de plantilla de una startup de software (nombres y roles sin ninguna relación con mercaderismo o trade marketing), y el blog tiene un tercio de su contenido catalogado bajo el nombre de un competidor directo ("EPRAN"). Además, persiste la inconsistencia de "+16 años" vs. "+17 años" de experiencia entre páginas del mismo sitio. Los bullets de beneficio ("Datos precisos - Información en tiempo real") son genéricos y sin especificidad verificable.
+### Content & Messaging (54/100)
+**Fortalezas:** equipo de 8 personas con nombres y cargos que se leen como genuinos — una fortaleza real y poco común en este mercado; catálogo de servicios amplio y bien articulado (no genérico); headline con técnica de reframe de objeción ("no es un gasto, es tu mejor inversión"); CTAs orientados a valor en lugar de genéricos.
 
-### Conversion Optimization (43/100)
-Base de prueba social cuantitativa sólida (17 años, 6,000+ PDV, 45 clientes, 500+ profesionales, 59 proyectos) y datos de contacto operativos claros (teléfono clicable, horario definido). Pero la sección de testimonios de la homepage tiene contenido placeholder confirmado ("María Pérez" con el texto instructivo "Escriba aquí una cita de uno de sus clientes..." sin reemplazar) — un punto de fuga crítico justo donde el visitante busca validación social. El único canal de conversión es un formulario de 7 campos sin WhatsApp, en un mercado donde ese es el canal B2B dominante. Seis CTAs con textos distintos generan dispersión de mensaje en vez de un camino de conversión claro.
+**Debilidades:** cero prueba social en absoluto (ni un testimonio, caso o cifra); "Talent Architect"/IA mencionado como diferenciador central sin ninguna explicación de metodología ni evidencia; misión/visión genéricas de plantilla corporativa; los 3 artículos del blog (mismo día, misma autora "Daniela Betancourt") son idénticos a los encontrados en dmarketingconsultores.com, un sitio de sector completamente distinto — aunque aquí el tema sí calza con el negocio, la autoría no es verificable ni exclusiva de la marca.
 
-### SEO & Discoverability (48/100)
-Verificación técnica directa confirma el hallazgo más grave de esta auditoría: 2crea2.net y epran.net resuelven a la misma IP, comparten el mismo backend (`corpoepran.binhex.cloud`), y un artículo de blog comparado carácter por carácter entre ambos dominios resultó ser el mismo registro de base de datos Odoo (`blog.post(11,)`), diferenciado solo por el `website_id`. Esto genera contenido duplicado cross-dominio indexable por Google —riesgo real de filtrado y canibalización— además del daño de marca ya señalado. El sitemap.xml también está contaminado con categorías de otros sitios del mismo tenant Odoo (`/blog/spmi-1`, `/blog/4`) que desperdician crawl budget. El `noindex` que afecta a epran.net (hallazgo de la auditoría anterior) se confirmó que sigue activo, pero no se hereda en 2crea2.net. En positivo: buen rendimiento de infraestructura (gzip, cache de assets, WebP, lazy loading) y GA4 correctamente instalado con Consent Mode. Cero datos estructurados (JSON-LD) pese a tener NAP público.
+### Conversion Optimization (31/100)
+Seis CTAs distintos sin jerarquía clara. El más problemático: "Agenda tu demo GRATIS" y "Obtén tu demo GRATIS" no tienen ningún mecanismo real de agendamiento — redirigen al mismo formulario genérico que cualquier otro botón, rompiendo la expectativa creada justo en el momento de mayor intención de compra. El menú principal expone `/shop/cart` (carrito de compras) y `/web/login` sin ningún propósito de negocio visible, lo cual genera dudas sobre la seriedad del sitio antes de que el visitante llegue al formulario. La navegación mezcla sin segmentar dos públicos distintos: empresas que buscan contratar el servicio y candidatos que buscan empleo (`/jobs`, "Postúlate"). Formulario de 6-7 campos sin WhatsApp, sin mapa ni horario visible.
 
-### Competitive Positioning (24/100)
-2CREA2 compite en el nicho más saturado y homogéneo del mercado venezolano de mercaderismo, con cifras casi calcadas de EPRAN (45+ clientes, 6,000+ PDV, 16-17 años) y sin ninguna prueba social nombrada, a diferencia de SPMI, que ya nombra clientes reales (Iberia, Grupo Leti) con KPIs cuantificados. El hallazgo que hunde este puntaje es el mismo de las secciones anteriores llevado a su consecuencia competitiva: un prospecto que compare a 2CREA2 contra sus alternativas y note el blog compartido con "EPRAN" razonablemente concluirá que ambas empresas son la misma operación bajo dos marcas, o que 2CREA2 no tiene contenido ni voz propia — la peor señal posible en una decisión de compra donde se evalúa a quién confiarle la ejecución de la propia marca en tienda.
+### SEO & Discoverability (41/100)
+**Hallazgo crítico confirmado técnicamente:** 1talentpro.com y dmarketingconsultores.com resuelven a la misma IP (`51.81.149.152`), mismo servidor (`nginx/1.22.1`), mismo formato de cookies de Odoo, y la URL exacta `/blog/blog-1/como-optimizar-tu-linkedin-para-headhunters-en-2026-1` responde 200 OK en ambos dominios con el mismo `data-blog-id="1"` y el mismo H1 carácter por carácter — solo cambia el nombre de marca en el `<title>`. Esto es contenido duplicado cross-dominio real, no solo temático. Además: meta description es el placeholder literal de Odoo ("Esta es la página de inicio del sitio web") duplicado en 5 de 6 páginas del sitio; cero datos estructurados (JSON-LD) pese a tener NAP público ideal para LocalBusiness, y particularmente valioso el schema JobPosting ausente en las páginas de vacantes; el sitemap expone rutas administrativas de Odoo sin curar (`/shop`, `/profile/*`, `/slides`) y cada vacante aparece triplicada con URLs distintas (`/jobs/X`, `/jobs/apply/X`, `/jobs/detail/X`). En positivo: no se encontró `noindex` en ninguna página de negocio (a diferencia de epran.net en una auditoría previa), canonical tags correctos, GA4 instalado, y buen rendimiento de infraestructura (gzip, WebP, lazy loading).
 
-### Brand & Trust (28/100)
-La arquitectura de confianza está comprometida en su raíz: además de la inconsistencia de años de experiencia, se confirmó una segunda inconsistencia (6,000+ vs. 2,000+ puntos de venta según la sección del sitio consultada), y los dos hallazgos de contenido placeholder (equipo directivo y testimonios) son evidencia directa de que el sitio no fue revisado antes de publicarse. Para una agencia que vende "ejecución impecable" como su producto principal, tener contenido sin terminar en su propia web es una contradicción de marca que un comprador nota inmediatamente.
+### Competitive Positioning (34/100)
+"Talent Architect" no es un diferenciador defendible: el mercado venezolano ya tiene jugadores tecnológicos más creíbles (Tech Talent Venezuela publica 500+ colocaciones, 98% de retención y -45% en time-to-hire con casos concretos; T-MAPP explica su "Smart Search" para talento pasivo regional). OneTalentPro se posiciona discursivamente como jugador de tecnología pero su catálogo real lo ubica más cerca del arquetipo de volumen/integralidad, compitiendo con Tech Talent Venezuela, Humanet y Empreservicios sin la evidencia que esos competidores ya publican. El hallazgo más grave de esta dimensión: en directorios de terceros (ramp.directory, RocketReach, Kuentro), la marca "OneTalentPro" aparece asociada a al menos tres identidades distintas — el dominio 1talentpro.com, el dominio "descobarsoluciones.com", y la razón social **"Epran Soluciones CA"** (el mismo nombre de la empresa de mercaderismo EPRAN auditada en esta sesión) — con un correo de contacto en Gmail en vez de dominio corporativo. Para un comprador B2B que típicamente verifica referencias y registro mercantil antes de contratar un servicio de headhunting, esta inconsistencia de identidad es un riesgo de confianza mayor que cualquier debilidad de copy.
 
-### Growth & Strategy (27/100)
-La ausencia de precios públicos es apropiada para el segmento, pero no hay ninguna estructura de paquetización visible ni escalones intermedios de entrada más allá de "solicita tu asesoría gratuita". El canal de adquisición principal —el blog— está comprometido por el contenido compartido con competidores directos, lo que genera una duda estratégica real: ¿ese contenido genera SEO real o diluye la autoridad de todas las marcas involucradas? La frase "datos precisos, información en tiempo real" no tiene ninguna evidencia visible de respaldo tecnológico (sin capturas, sin mención de plataforma), lo cual es doblemente riesgoso porque el hallazgo del equipo placeholder ya sembró la duda de que el sitio afirma cosas sin sustento verificable.
+### Brand & Trust (58/100)
+El punto más fuerte de todo el informe: el equipo de 8 personas con nombres y cargos venezolanos verificables es contenido genuino, no relleno de plantilla — debe conservarse y explotarse activamente. Pero la arquitectura de confianza se queda corta donde más importa: cero testimonios, logos o casos de éxito en un servicio que se decide por reputación. El blog, con solo 3 artículos publicados el mismo día, se lee como "casilla marcada" más que autoridad de contenido real, sin menciones de prensa, premios o certificaciones que refuercen la marca.
+
+### Growth & Strategy (47/100)
+El catálogo de 8 líneas de servicio es terreno fértil de cross-sell no explotado (sin bundles ni rutas de "siguiente paso" entre servicios). La sección de vacantes/candidatos es un activo de generación de leads de doble cara sin capitalizar para marketing. Tanto "Talent Architect" como la "expansión binacional 2026 a Latinoamérica y Europa" declarada en la historia de la empresa son afirmaciones sin ninguna evidencia de respaldo visible en el resto del sitio — mismo patrón de "promesa sin sustento" visto en otros negocios de este mercado (ej. un portal tecnológico mencionado pero nunca mostrado).
 
 ---
 
 ## Comparación Competitiva
 
-*Nivel de confianza: alto para los datos de EPRAN (verificados por fetch directo en esta sesión); medio para SPMI y Empreservicios (provienen de una auditoría previa dentro de esta misma sesión, no reverificados hoy).*
+*Nivel de confianza: alto para los datos de 1talentpro.com y Tech Talent Venezuela (verificados por fetch directo); medio para T-MAPP y los headhunters tradicionales (basado en fuentes de terceros, no fetch directo de sus sitios).*
 
-| Factor | 2CREA2 | EPRAN | SPMI | Empreservicios |
-|--------|--------|-------|------|-----------------|
-| Claridad de posicionamiento | 3/10 | 5/10 | 6/10 | 6/10 |
-| Prueba social nombrada (clientes/casos) | 1/10 | 1/10 | 8/10 | 4/10 |
-| Tecnología/datos comunicados | 4/10 | 3/10 | 7/10 | 7/10 |
-| Originalidad de marca/contenido | 1/10 | 4/10 | No verificado | No verificado |
-| Cobertura/escala declarada | 7/10 | 7/10 | 7/10 | 8/10 |
+| Factor | OneTalentPro | Tech Talent Venezuela | T-MAPP | Headhunters tradicionales |
+|--------|--------------|------------------------|--------|----------------------------|
+| Tecnología/IA comunicada | 3/10 (declarada, sin evidencia) | 6/10 (métricas duras: -45% time-to-hire) | 7/10 (metodología explicada) | 1/10 (no compiten por tech) |
+| Prueba social nombrada | 0/10 | 8/10 (500+ colocaciones, 98% retención, 3 casos) | 5/10 (no verificado a fondo) | 6/10 (reputación informal pero real) |
+| Claridad de propuesta | 5/10 | 7/10 | 7/10 | 7/10 |
+| Consistencia de identidad de marca | 2/10 (3+ dominios/entidades asociadas) | 7/10 | 6/10 | 7/10 |
+| Amplitud de catálogo | 7/10 | 5/10 | 4/10 | 4/10 |
 
 ---
 
 ## Impacto en Ingresos
 
-*Metodología: dado que los hallazgos principales son de credibilidad (no de volumen de tráfico), el impacto se estima principalmente sobre la tasa de conversión de los visitantes que ya llegan al sitio, no sobre nueva adquisición. Estimaciones ilustrativas para un ticket B2B recurrente de servicio de mercaderismo.*
+*Metodología: dado que el negocio ya tiene un activo de confianza genuino (equipo real) sin explotar, el mayor impacto vendrá de capitalizarlo, no de más tráfico. Estimaciones ilustrativas para un ticket B2B de reclutamiento/outsourcing de RRHH.*
 
 | Recomendación | Impacto Mensual Estimado | Confianza | Timeline |
 |---------------|---------------------------|------------|----------|
-| Reemplazar equipo directivo placeholder y testimonios | Alto (evita una fuga de confianza que afecta a la mayoría de visitantes que llegan a esas secciones) | Alta | Días |
-| Resolver superposición de contenido/infraestructura con EPRAN/SPMI | Alto (protege la percepción de originalidad de marca en toda decisión de compra) | Media | 2-4 semanas |
-| WhatsApp + reducir formulario | Medio-Alto (+15-30% en volumen de leads iniciados) | Media | 1 semana |
-| Publicar 2-3 casos de éxito nombrados con cifras | Alto (acorta ciclo de cierre frente a competencia que ya lo hace, ej. SPMI) | Media | 1-2 meses |
-| Corregir inconsistencias de cifras (años, PDV) | Medio (mejora tasa de conversión de formulario, no cuantificable sin datos históricos) | Media | Días |
-| Implementar JSON-LD + limpiar sitemap | Medio (mejora CTR orgánico y crawl budget) | Media | 1-2 semanas |
-| **Potencial total (rango conservador-moderado, priorizando reparación de confianza primero)** | **~$3,000-$9,000/mes en pipeline adicional** | | |
+| Resolver identidad corporativa (dominio/correo/razón social) | Alto (elimina un riesgo de confianza que puede descalificar leads en due diligence) | Media | 2-4 semanas |
+| Agregar testimonios/logos/casos con el equipo ya real | Alto (+15-30% en solicitudes de contacto, dado que hoy la brecha es total) | Media | 1-2 semanas |
+| Corregir el CTA "Agenda tu demo" y consolidar CTAs | Medio (+10-15% en CTR hacia contacto) | Media | Días |
+| Ocultar módulos de Odoo sin uso (carrito/login) del menú | Medio (reduce rebote por desconfianza) | Media | Días |
+| Implementar JobPosting schema para Google for Jobs | Medio-Alto (canal orgánico gratuito nuevo) | Media | 2-3 semanas |
+| Resolver infraestructura compartida con dmarketingconsultores.com | Medio (mejora ranking orgánico al eliminar canibalización) | Media | 1-2 meses |
+| **Potencial total (rango conservador-moderado)** | **~$3,000-$9,000/mes en pipeline adicional** | | |
 
 ---
 
 ## Próximos Pasos
 
-1. **Reemplazar de inmediato el equipo directivo placeholder y la sección de testimonios** — el fix de menor esfuerzo y mayor riesgo evitado de todo el informe.
-2. **Investigar y resolver la relación de infraestructura y contenido con EPRAN y SPMI** antes de invertir en cualquier canal de adquisición adicional — ampliar tráfico hacia un sitio con estas señales solo acelera cuántos prospectos las descubren.
-3. **Unificar las cifras inconsistentes** (años de experiencia, puntos de venta) y publicar prueba social nombrada y verificable.
+1. **Aclarar y resolver la identidad corporativa de la marca** en todos los directorios y perfiles públicos antes de cualquier inversión adicional en marketing.
+2. **Capitalizar el equipo humano real como prueba social**, agregando fotos, testimonios y casos de éxito documentados.
+3. **Corregir el CTA de demo y limpiar la navegación** de módulos de Odoo sin uso de negocio.
 
-*Generado por AI Marketing Suite — `/market audit`. Próximos pasos sugeridos: `/market competitors` para profundizar en la relación EPRAN/SPMI/2CREA2, `/market copy` para reescribir la página de equipo y testimonios, `/market seo` para una auditoría técnica más profunda de la infraestructura compartida.*
+*Generado por AI Marketing Suite — `/market audit`. Próximos pasos sugeridos: `/market competitors` para investigar a fondo la relación con Epran Soluciones CA y descobarsoluciones.com, `/market copy` para reescribir la sección de equipo como prueba social, `/market seo` para una auditoría técnica más profunda de la infraestructura compartida.*
