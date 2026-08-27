@@ -1,25 +1,27 @@
-# Marketing Audit: D'Scobar Soluciones (España)
-**URL:** https://dscobarsoluciones.es/
+# Marketing Audit: D'Scobar Academy
+**URL:** https://dscobaracademy.com/
 **Fecha:** 25 de agosto de 2026
-**Tipo de negocio:** Consultoría B2B — diagnóstico empresarial, marketing B2B, headhunting España/LatAm e implementación de ERP Odoo (Málaga, España)
-**Marketing Score General: 40/100 (Grade: D — Por debajo del promedio, pero la ejecución más sólida de todo el grupo auditado)**
+**Tipo de negocio:** Academia de formación online — liderazgo, emprendimiento, gerencia, tecnología y habilidades blandas (Caracas, Venezuela)
+**Marketing Score General: 49/100 (Grade: D — Por debajo del promedio, empatando como el mejor ejecutado de todo el grupo auditado)**
 
 ---
 
 ## Resumen Ejecutivo
 
-Dentro de la serie de auditorías realizadas en esta sesión sobre una red de empresas venezolanas de servicios B2B (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, y dscobarsoluciones.com), **dscobarsoluciones.es es, con diferencia, la ejecución más profesional**: un headline con voz propia ("El aliado integral para crecer. Sin humo, sin atajos."), una metodología de servicio articulada en tres fases con métricas de resultado concretas, y una oferta de entrada bien diseñada (diagnóstico gratuito de 45 minutos con compromiso de respuesta en 24 horas laborables). Es un sitio construido con más cuidado que el resto del grupo, no un sitio improvisado.
+D'Scobar Academy es, en varios sentidos, la marca mejor construida de toda la red de empresas interconectadas investigada en esta sesión (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com, dscobarsoluciones.es). Es la primera de las siete auditorías donde el equipo tiene nombres genuinamente reales con especialidades coherentes (9 facilitadores, uno con credenciales académicas verificables con nombre de universidad), donde la misión y visión están completas sin placeholders de plantilla, y donde el footer reconoce **con un enlace real** —no un residuo accidental— su relación con "D Marketing Consultores", la agencia de marketing digital del mismo grupo auditada por separado en esta sesión.
 
-Pero comparte los mismos vicios estructurales que el resto de la red, ahora con evidencia legal que cierra definitivamente la incógnita sobre quién está detrás: la investigación de esta auditoría verificó en el **Registro Mercantil de Málaga (BORME)** que "DScobar Soluciones S.L." fue constituida el 15 de noviembre de 2023, con capital social mínimo (3.000€), y que su administrador único y socio único es **"Jara Daniel-David Escobar"** — el mismo nombre, en distinto orden, que **Daniel Escobar Jara**, identificado en LinkedIn como CEO de "Corporación EPRAN". Esto confirma, con evidencia de registro público (no inferencia), que D'Scobar Soluciones España es una extensión legal de la misma persona y red investigada a lo largo de esta sesión. La empresa española tiene menos de dos años de existencia legal, mientras el sitio afirma "más de 19 años de experiencia" — una cifra heredada de la operación venezolana del grupo sin distinguir qué parte de esa trayectoria corresponde realmente a España.
+Pero el sitio arrastra errores concretos, no de estrategia sino de ejecución, que le cuestan puntos en cada dimensión. El banner principal de la homepage —"MENOS TEORÍA, ahora y descarga nuestro"— es una frase gramaticalmente incompleta, no una elección de estilo. Ocho de las nueve bios de facilitadores están literalmente cortadas con "[…]" sin terminar, visibles en producción. El email de contacto tiene un error tipográfico en su propio dominio (**info@dscobaracadmy.com** en vez de **dscobaracademy.com**), confirmado en el HTML crudo de al menos dos páginas. Un banner de urgencia anuncia el inicio de una cohorte el "Viernes 19 de Junio" que ya pasó hace meses. Y la meta description de su único curso publicado tiene un error tipográfico en el propio nombre del curso ("Productividad en **Gemeini**" en vez de "Gemini"). El catálogo real de cursos consiste en **un solo curso publicado**, pese a promocionar activamente a nueve facilitadores con botones "Ver Curso" que no llevan a nada.
 
-A nivel técnico, el hallazgo más grave: el `<title>` **"My Website"** —el nombre por defecto que Odoo asigna al sitio y que nunca se personalizó— aparece en las **18 URLs del sitemap sin excepción**, incluida la homepage. Es una sola casilla sin marcar en la configuración de Odoo, pero con el peor alcance posible: cada resultado de búsqueda de Google para este sitio, y cada pestaña del navegador de cualquier visitante, muestra el nombre de una plantilla, no el de la marca. A esto se suma un error de contenido serio: la página del servicio de Marketing B2B —la de mayor intención comercial del sitio— tiene una tabla de precios de un módulo genérico de CRM de Odoo (planes de €35/€65/€125 "por usuarios") pegada sin adaptar, contradiciendo directamente el posicionamiento de consultoría a medida que el resto de la página construye cuidadosamente. La certificación de "partner oficial de Odoo" que el sitio reclama tampoco aparece en el directorio oficial de partners de Odoo para España, y la afirmación "la impulsadora de negocios nº1 en toda España" no tiene ninguna evidencia que la sostenga.
+A nivel técnico, la investigación confirma que esta marca corre sobre una **tercera infraestructura técnica distinta** dentro del grupo: no la instancia Odoo compartida por EPRAN/2CREA2/DMarketing/OneTalentPro, ni la instancia Odoo separada de dscobarsoluciones.es, sino WordPress alojado en un hosting venezolano (Tepuyserver). El grupo, en conjunto, opera al menos tres plataformas técnicas distintas — una señal de fragmentación que complica el mantenimiento y la consistencia de marca a escala de todo el ecosistema.
+
+En el mercado de formación ejecutiva en español, esta ausencia de prueba social tiene un costo competitivo directo: un competidor venezolano mucho más pequeño (LEDforCoaching) ya supera a D'Scobar Academy en credibilidad con solo 2-3 casos de cliente nombrados y cuantificados, mientras Academy no tiene ninguno.
 
 **Las 3 acciones que más moverían la aguja:**
-1. **Corregir el nombre del sitio en Odoo** (Ajustes → Sitio Web → Nombre) para eliminar "My Website" de las 18 páginas de una sola vez — el fix de mayor alcance por menor esfuerzo de todo este conjunto de auditorías.
-2. **Eliminar la tabla de precios de CRM** en /marketing-b2b y sustituirla por una estructura de precios de consultoría real, o por "precio a medida tras diagnóstico".
-3. **Verificar y mostrar (o retirar) la certificación de partner Odoo**, y aclarar de forma explícita en /sobre-nosotros la relación con las otras marcas del grupo mencionadas (D'Marketing Consultores, One Talent ESPRO, D'Scobar Academy) y con la trayectoria venezolana declarada.
+1. **Corregir los errores de ejecución de bajo esfuerzo**: el email typo, el banner roto, las bios truncadas, el banner de urgencia vencido, y el typo "Gemeini" — ninguno de estos requiere más de minutos por corrección, y todos dañan la credibilidad de forma desproporcionada a su costo de arreglo.
+2. **Publicar precios** de al menos el curso y el "Laboratorio" de pago — en un negocio de e-learning, a diferencia de una consultoría B2B a medida, el precio es información que el comprador espera antes de contactar.
+3. **Definir y comunicar la diferencia** entre "Soluciones Corporativas B2B" de Academy y la "Capacitación de Equipos" ya ofrecida por EPRAN/D'Scobar Soluciones — hoy son ofertas indistinguibles del mismo grupo compitiendo por el mismo lead sin coordinación aparente.
 
-**Impacto estimado:** dado que este sitio ya tiene la base de copy y oferta más sólida del grupo, es también el que tiene el retorno más rápido y de menor esfuerzo por corrección — ver detalle en Impacto en Ingresos.
+**Impacto estimado:** dado que este sitio ya tiene la base de contenido y equipo más sólida del grupo, las correcciones de bajo esfuerzo tienen aquí el mayor retorno relativo de toda la serie de auditorías — ver detalle en Impacto en Ingresos.
 
 ---
 
@@ -27,104 +29,102 @@ A nivel técnico, el hallazgo más grave: el `<title>` **"My Website"** —el no
 
 | Categoría | Score | Peso | Score Ponderado | Hallazgo Clave |
 |-----------|-------|------|------------------|----------------|
-| Content & Messaging | 52/100 | 25% | 13.0 | El mejor headline y metodología de servicio del grupo, dañado por el title "My Website" y precios de CRM genérico |
-| Conversion Optimization | 52/100 | 20% | 10.4 | La mejor oferta de entrada del grupo (diagnóstico + SLA 24h), pero la confusión de precios rompe la conversión en el momento clave |
-| SEO & Discoverability | 24/100 | 20% | 4.8 | "My Website" en las 18 páginas del sitemap; cero datos estructurados; sitemap expone módulos Odoo sin usar |
-| Competitive Positioning | 27/100 | 15% | 4.05 | Registro Mercantil confirma administrador "Jara Daniel-David Escobar" = Daniel Escobar Jara, CEO de Corporación EPRAN |
-| Brand & Trust | 42/100 | 10% | 4.2 | Empresa registrada hace menos de 2 años reclamando "19 años de experiencia"; certificación Odoo no verificable |
-| Growth & Strategy | 31/100 | 10% | 3.1 | El cross-sell entre los 4 servicios (diagnóstico → marketing → headhunting → ERP) es una idea sólida, pero no se comunica como journey |
-| **TOTAL** | | **100%** | **39.55/100 (redondeado a 40)** | |
+| Content & Messaging | 56/100 | 25% | 14.0 | El equipo mejor documentado del grupo, dañado por un banner gramaticalmente roto y 8 bios truncadas con "[…]" |
+| Conversion Optimization | 44/100 | 20% | 8.8 | Cero precios visibles en un negocio de cursos, donde el precio sí se espera antes de contactar; banner de urgencia vencido |
+| SEO & Discoverability | 56/100 | 20% | 11.2 | Buena implementación de schema (EducationalOrganization, FAQPage) pero catálogo de solo 1 curso pese a promocionar 9 facilitadores |
+| Competitive Positioning | 34/100 | 15% | 5.1 | Un competidor venezolano más pequeño (LEDforCoaching) ya supera a Academy en credibilidad con solo 2-3 casos nombrados |
+| Brand & Trust | 54/100 | 10% | 5.4 | Único sitio del grupo con enlace real (no residuo) reconociendo a DMarketing Consultores como desarrollador |
+| Growth & Strategy | 41/100 | 10% | 4.1 | Confirma una tercera infraestructura técnica distinta (WordPress/Tepuyserver) dentro del mismo grupo empresarial |
+| **TOTAL** | | **100%** | **48.6/100 (redondeado a 49)** | |
 
 ---
 
 ## Quick Wins (Esta Semana)
 
-1. **Corregir el nombre del sitio en Odoo** (Ajustes → Sitio Web → Nombre del sitio) — elimina el sufijo "| My Website" de las 18 URLs del sitemap en un solo cambio.
-2. **Eliminar la tabla de precios de CRM genérico** en /marketing-b2b y sustituirla por precios de consultoría reales o "precio a medida tras diagnóstico".
-3. **Escribir meta descriptions reales** para las 6 páginas principales (hoy solo 2 tienen, y son el placeholder de Odoo sin editar, uno incluso en inglés en un sitio en español).
-4. **Verificar el estatus real de partner Odoo**: si es cierto, publicar el badge oficial con enlace al directorio odoo.com/partners; si no es verificable, retirar la afirmación.
-5. **Añadir email, dirección y horario visibles en /contactus** (hoy solo hay teléfono y formulario, pese a que el email sí aparece en el home).
-6. **Agregar un botón de WhatsApp Business** — ausente pese al perfil B2B España/LatAm del negocio.
-7. **Quitar del sitemap y robots.txt las 7 URLs de módulos Odoo sin usar** (`/jobs`, `/slides`, `/slides/all`, `/profile/users`, `/profile/ranks_badges`, `/website/info`) o desactivar esas apps si no se usan.
-8. **Reducir cada página de servicio a un solo H1** — hoy tienen entre 8 y 9 etiquetas H1 por página (bloques de plantilla de Odoo apilados sin reclasificar a H2/H3).
-9. **Instalar Google Analytics 4 / Google Tag Manager** — hoy solo hay Meta Pixel instalado, sin visibilidad de tráfico orgánico ni de búsqueda.
-10. **Unificar la cifra de años de experiencia** (17 en home vs. 19 en /sobre-nosotros) y aclarar cuánto corresponde a la operación española real (menos de 2 años según registro mercantil) frente a la trayectoria del grupo en Venezuela.
+1. **Corregir el email de contacto** en footer y /contacto/: "info@dscobaracadmy.com" → "info@dscobaracademy.com" — confirmado en el HTML crudo, repetido en al menos dos páginas.
+2. **Reescribir el banner "MENOS TEORÍA, ahora y descarga nuestro"** para que sea una frase completa y accionable (ej. "MENOS TEORÍA, MÁS ACCIÓN. Descarga gratis nuestro taller de Herramientas Analíticas").
+3. **Completar las 8 bios de facilitadores truncadas con "[…]"**, siguiendo el estándar que ya logró la bio de Nelly Meléndez (única con credencial académica verificable con nombre de universidad).
+4. **Actualizar o retirar el banner de urgencia** con la fecha vencida ("Viernes 19 de Junio") — hoy genera el efecto contrario de credibilidad.
+5. **Corregir el typo "Gemeini" → "Gemini"** en la meta description del curso de productividad publicado.
+6. **Publicar al menos rangos de precio** para el curso y el Laboratorio de pago (ej. "Cursos desde $X", "Laboratorio: $Y por 3 semanas").
+7. **Quitar o atenuar los botones "Ver Curso"** en las fichas de los 8 facilitadores sin curso publicado — hoy no llevan a ningún contenido real.
+8. **Eliminar la meta description duplicada** en el `<head>` del home y completar la descripción cortada.
+9. **Excluir del sitemap las rutas técnicas sin valor de indexación** (plantillas de Elementor, formularios de SureForms).
 
 ## Recomendaciones Estratégicas (Este Mes)
 
-1. **Declarar explícitamente la estructura de grupo** en /sobre-nosotros: qué relación tienen D'Marketing Consultores, One Talent ESPRO y D'Scobar Academy con D'Scobar Soluciones (¿divisiones? ¿marcas hermanas?), en vez de mencionarlas sueltas sin contexto.
-2. **Retirar o sustanciar "la impulsadora de negocios nº1 en toda España"** — afirmación de liderazgo sin ningún cliente, caso o cifra española que la respalde.
-3. **Construir prueba social real**: 3-5 testimonios o casos de cliente (aunque sean de la operación LatAm mientras crece la cartera española), y nombres/fotos de al menos los responsables de la operación en Málaga.
-4. **Convertir el catálogo de 4 servicios en un "journey" de crecimiento explícito** (diagnóstico → marketing → headhunting → implementación ERP) en vez de presentarlos como una lista plana — es el mecanismo de cross-sell más lógico de todo el grupo auditado y hoy no se comunica como tal.
-5. **Formalizar el posicionamiento puente LatAm-España** en el servicio de Headhunting como diferenciador explícito ("el único partner que opera en ambos ecosistemas"), en vez de dejarlo insinuado solo en el nombre del servicio.
-6. **Implementar datos estructurados (JSON-LD)**: Organization + LocalBusiness (con el NAP de Málaga) + Service en cada página, y FAQPage en la sección de preguntas frecuentes de /implementacion-erp.
-7. **Forzar el redirect 301 entre `dscobarsoluciones.es` y `www.dscobarsoluciones.es`** a nivel de servidor — hoy ambas versiones responden 200 OK sin redirección, mitigado solo parcialmente por el canonical tag.
+1. **Definir y comunicar explícitamente la diferencia** entre "Soluciones Corporativas B2B" de Academy y la "Capacitación de Equipos" ya ofrecida por EPRAN y D'Scobar Soluciones — o consolidar la oferta en una sola marca para evitar que el mismo prospecto B2B llegue a dos formularios distintos del mismo grupo sin saberlo.
+2. **Añadir 2-3 casos de éxito nombrados y cuantificados** de egresados o empresas atendidas vía "Soluciones Corporativas" — es el gap más explotable frente a un competidor local más pequeño (LEDforCoaching) que ya lo hace.
+3. **Implementar schema Course + Offer** en las páginas de curso — hoy existe infraestructura de LMS y pago (SureCart) pero cero datos estructurados que habiliten rich results de precio/curso en Google.
+4. **Publicar más cursos reales** o, mientras tanto, dejar de promocionar activamente a facilitadores sin oferta de curso asociada.
+5. **Instalar un banner de consentimiento de cookies** — hoy el sitio carga un Google tag sin ningún mecanismo de consentimiento.
+6. **Lanzar un plan editorial de blog** (hoy solo 3 artículos) usando el expertise real de los 9 facilitadores como motor de autoridad y adquisición orgánica.
 
 ## Iniciativas de Largo Plazo (Este Trimestre)
 
-1. **Decidir y ejecutar una postura única de transparencia de grupo para toda la red auditada** (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com y .es) — este sitio (.es) es el mejor candidato para pilotarlo, dado que ya mencionó las marcas del grupo de forma intencional, a diferencia del resto.
-2. **Lanzar un blog/hub de contenido SEO** orientado a búsquedas transaccionales de PYME española ("implementación Odoo España", "consultoría marketing B2B Málaga") — hoy no existe ningún canal de adquisición orgánica.
-3. **Conseguir y mostrar prueba social de terceros verificable**: listado real en el directorio oficial de partners de Odoo, membresía en cámara de comercio de Málaga, o cualquier reconocimiento externo auditable.
-4. **Auditar coordinadamente toda la red de sitios del grupo** (ya iniciado en auditorías previas) para resolver de forma consistente los residuos de plantilla, inconsistencias de cifras y ambigüedad de identidad corporativa en todos los dominios simultáneamente.
+1. **Formalizar el rol de Academy dentro del ecosistema del grupo**: posicionarla explícitamente como el "top of funnel" de contenido masivo que alimenta leads calificados hacia la consultoría a medida de EPRAN/D'Scobar Soluciones, con tracking de atribución entre marcas — hoy es el potencial más claro y menos explotado de toda la red auditada.
+2. **Conseguir acreditación o alianza institucional verificable** (universidad local, gremio de e-learning) que respalde la promesa de "formación estratégica e integral en Iberoamérica".
+3. **Consolidar la infraestructura técnica del grupo** o, si se mantienen plataformas separadas, estandarizar un checklist de QA de contenido (meta descriptions, bios completas, banners de urgencia vigentes) aplicado uniformemente a los ahora tres stacks técnicos identificados.
+4. **Construir un catálogo de cursos real** con estructura de precios Good-Better-Best y checkout en línea, reduciendo la dependencia actual de conversación manual por WhatsApp para algo tan básico como conocer el precio.
 
 ---
 
 ## Análisis Detallado por Categoría
 
-### Content & Messaging (52/100)
-El headline "El aliado integral para crecer. Sin humo, sin atajos." y el subheadline "Si tu empresa ha tocado techo, no es casualidad" tienen personalidad y especificidad muy por encima del resto del grupo auditado. La página de Marketing B2B articula una metodología en 3 fases (Foco & setup → Activación & aprendizaje → Escala & optimización) con métricas de resultado prometidas ("CPL -25% y SQL +35% en 60-90 días") — el nivel de sofisticación de copy más alto visto en toda la red. Pero el `<title>` "My Website" sin personalizar en todas las páginas, la tabla de precios de CRM genérico pegada en Marketing B2B, la visión "nº1 en toda España" sin sustento, y la ausencia total de prueba social (pese a reclamar una certificación Odoo de alto valor nunca mostrada) diluyen severamente esa fortaleza inicial.
+### Content & Messaging (56/100)
+El score más alto del grupo en esta dimensión. Misión y visión completas y bien redactadas ("Formar líderes conscientes y competentes...", "Ser una academia referente en formación estratégica e integral en Iberoamérica"), sin placeholders de plantilla detectados en /nosotros/. Los 9 facilitadores tienen nombres venezolanos plausibles y especialidades coherentes entre sí; Nelly Meléndez es la única con credencial verificable completa (Universidad del Zulia, doctorado, magíster). Pero el banner "MENOS TEORÍA, ahora y descarga nuestro" es gramaticalmente incompleto, y 8 de 9 bios están truncadas con "[…]" sin terminar — contenido a medio publicar, no una decisión de diseño. Sin prueba social (cifras de egresados, testimonios) que respalde la promesa de "referente en Iberoamérica".
 
-### Conversion Optimization (52/100)
-La oferta de entrada —diagnóstico gratuito de 45 minutos con consultor sénior, plan accionable de 2-3 iniciativas, y compromiso de respuesta en 24 horas laborables— es el mecanismo de conversión mejor diseñado de todo el grupo: específico, de bajo riesgo, con SLA medible. El formulario de contacto es ligero (5 campos) y bien calificado. Pero la tabla de precios de CRM en /marketing-b2b genera confusión de oferta justo en la etapa de mayor intención de compra del funnel, y /contactus carece de email, dirección, mapa y horario visibles pese a que el email sí existe en otras páginas del sitio. Sin WhatsApp en ningún punto de contacto.
+### Conversion Optimization (44/100)
+CTAs específicos por tipo de oferta (Masterclass, Laboratorio, descarga) — mejor segmentación que el resto del grupo — y WhatsApp activo como canal, ausente en la mayoría de otros sitios auditados. Pero cero precios visibles en ningún curso o masterclass es una fricción de categoría distinta y más grave que en un negocio de servicios B2B a medida: el comprador de un curso online espera comparar precio antes de contactar, no después. El banner de urgencia con fecha vencida (junio, hoy agosto) genera el efecto contrario al buscado. Tres formularios segmentados (Facilitadores, B2B, General) son buena práctica de calificación pero carecen de una ruta clara para "quiero inscribirme a un curso".
 
-### SEO & Discoverability (24/100)
-El hallazgo más grave de esta auditoría a nivel técnico: el `<title>` "My Website" (placeholder por defecto de Odoo, nunca personalizado en Ajustes → Sitio Web → Nombre) aparece en las 18 URLs del sitemap, sin una sola excepción, incluida la home. Meta descriptions ausentes en la mayoría de páginas, y donde existen son el placeholder literal de Odoo (una incluso en inglés: "This is the homepage of the website"). Cada página de servicio tiene entre 8 y 9 etiquetas H1 (bloques de plantilla apilados sin reclasificar). Cero datos estructurados en todo el sitio. El sitemap expone 7 URLs de módulos Odoo activados pero nunca desplegados/curados (reclutamiento, e-learning, perfiles de foro), diluyendo la relevancia temática del dominio. En positivo: no se detectó `noindex` en ninguna página, las URLs son limpias y descriptivas, y —dato técnico relevante para el contexto de toda la investigación— este sitio resuelve a una **IP distinta** (178.32.44.15) a la compartida por EPRAN/2CREA2/DMarketing/OneTalentPro (51.81.149.152), confirmando que corre en su propia instancia Odoo, coherente con operar como partner Odoo independiente.
+### SEO & Discoverability (56/100)
+Confirmado: WordPress real (Astra + Elementor + Depicter), corriendo en IP 66.45.226.178 sobre hosting venezolano Tepuyserver — una tercera infraestructura técnica distinta a las dos Odoo ya identificadas en el grupo. Implementación de datos estructurados sorprendentemente buena para el patrón visto en el resto de la red: EducationalOrganization, WebSite+SearchAction y FAQPage están presentes y correctos. Pero hay dos meta descriptions duplicadas en el `<head>` del home, un H1 fantasma generado por un widget decorativo mal etiquetado, cero schema Course/Offer pese a tener LMS y pasarela de pago (SureCart), y un catálogo de solo 1 curso indexado con una meta description que contiene un typo en el propio nombre del producto ("Gemeini" en vez de "Gemini"). El sitemap expone rutas técnicas sin curar (plantillas de Elementor, formularios). Sin tracking más allá de un Google tag básico vía Site Kit — sin Meta Pixel, sin LinkedIn Insight, sin GTM completo.
 
-### Competitive Positioning (27/100)
-La verificación en el Registro Mercantil de Málaga confirma que "DScobar Soluciones S.L." fue constituida el 15 de noviembre de 2023 (capital social mínimo, 3.000€), con **"Jara Daniel-David Escobar"** como administrador único y socio único — el mismo nombre que "Daniel Escobar Jara", identificado en LinkedIn como CEO de "Corporación EPRAN". Esta es la pieza de evidencia más concluyente de toda la investigación de esta sesión: cierra, con registro público verificable, la conexión entre D'Scobar Soluciones y la red venezolana investigada. La afirmación de "partner oficial de Odoo" no aparece en el directorio oficial de partners de Odoo para España (a diferencia de un competidor real, Voodoo.es, que sí exhibe su certificación "Silver Partner" verificable). Frente a competidores españoles reales de consultoría B2B (Esconzeta, con logos de clientes reconocibles como EDP y Ferrovial) y de implementación Odoo (Voodoo.es), D'Scobar España no tiene ninguna prueba social nombrada ni certificación verificable que lo sostenga frente al mercado.
+### Competitive Positioning (34/100)
+"Menos teoría, más ejecución" es una promesa de categoría, no un diferenciador — prácticamente todo competidor de e-learning corporativo en español dice una variante de lo mismo. El problema no es el mensaje sino la falta de evidencia: LEDforCoaching, un competidor venezolano mucho más pequeño, ya supera a D'Scobar Academy en credibilidad con solo 2-3 casos de cliente nombrados y cuantificados (Fashionspark, BancoEstado), mientras Academy tiene bios truncadas y cero casos. Frente a jugadores regionales como Crehana (+1,200 empresas cliente con logos verificables) o Domestika (precios públicos y catálogo masivo), D'Scobar Academy no compite ni en escala, ni en precio, ni en prueba social. La superposición con "Capacitación de Equipos" de EPRAN/D'Scobar Soluciones no está explicada en ningún lugar del sitio.
 
-### Brand & Trust (42/100)
-El puntaje más alto de Brand & Trust de todo el grupo auditado, reflejando una ejecución más cuidada, pero con la misma raíz de problema: una empresa registrada hace menos de dos años que reclama "19 años de experiencia" sin distinguir qué parte corresponde a la operación real en España. La mención de otras marcas del grupo (D'Marketing Consultores, One Talent ESPRO, D'Scobar Academy) en /sobre-nosotros es un paso parcial hacia la transparencia —más intencional que el residuo accidental visto en dscobarsoluciones.com— pero sigue sin explicar la relación societaria real, dejando al visitante sin poder verificar con quién está contratando. La certificación de partner Odoo, el único activo de credibilidad potencialmente verificable por un tercero independiente en todo el sitio, no se muestra con ningún badge, logo o enlace.
+### Brand & Trust (54/100)
+El score más alto del grupo en esta dimensión, aunque con matices: la mención de "D Marketing Consultores" en el footer, esta vez con un enlace real (`rel="noopener sponsored"`) a dmarketingconsultores.com, es probablemente un crédito estándar de agencia web más que una declaración deliberada de transparencia corporativa de grupo — pero es, aun así, el reconocimiento más explícito y menos accidental visto en toda esta investigación. La dirección física ("Los Ruices, Calle los Laboratorios, Edif. Sansón") coincide con la de EPRAN, reforzando el patrón de operación conjunta sin explicarlo. El error tipográfico repetido en el email de contacto propio es un fallo de cuidado básico en el canal principal de confianza de un negocio educativo.
 
-### Growth & Strategy (31/100)
-El modelo de negocio de puente LatAm-España vía el servicio de "Headhunting España y LATAM" es una propuesta de valor coherente en teoría, pero no está siendo explotada como mensaje diferenciador explícito. El cross-sell entre los 4 servicios (diagnóstico → marketing → headhunting → implementación ERP) tiene lógica de negocio real —especialmente si el mismo grupo también opera agencias de marketing y RRHH bajo otras marcas— pero se presenta como una lista plana sin conectar los puntos. La tabla de precios de CRM genérico en Marketing B2B es, con alta probabilidad, un residuo de configuración de la propia plataforma Odoo sobre la que corre el sitio — una ironía relevante para una empresa que vende implementación de Odoo como servicio.
+### Growth & Strategy (41/100)
+El modelo mixto de contenido gratuito (masterclasses, talleres) + oferta de pago (Laboratorio) es un funnel coherente, el único parecido a uno real visto en todo el grupo — pero sin precios visibles en ningún punto, lo que eleva artificialmente el costo de decisión del comprador. La superposición de "Soluciones Corporativas B2B" con las líneas de capacitación de EPRAN y D'Scobar Soluciones podría tener lógica real (Academy como contenido escalable uno-a-muchos vs. consultoría a medida uno-a-uno) pero no está comunicada como tal, generando riesgo de canibalización de leads dentro del propio grupo. Academy es la única marca de la red con una razón de ser natural para producir contenido educativo de autoridad — un potencial de content marketing para todo el ecosistema que hoy está prácticamente desaprovechado.
 
 ---
 
 ## Comparación Competitiva
 
-*Nivel de confianza: alto — verificado por fetch directo, búsqueda web y consulta del Registro Mercantil de Málaga en esta misma sesión.*
+*Nivel de confianza: medio-alto — verificado por fetch directo de D'Scobar Academy y de tres competidores reales (Crehana, LEDforCoaching); datos de Domestika y Aprender21 provienen de búsqueda web, no de fetch directo completo.*
 
-| Factor | D'Scobar España | Voodoo.es (Odoo) | Esconzeta (marketing B2B) |
-|--------|-------------------|-------------------|------------------------------|
-| Certificación verificable | 2/10 (no aparece en directorio oficial) | 9/10 (Silver Partner verificado con insignias por versión) | N/A |
-| Prueba social nombrada | 0/10 | 8/10 (logos reales: Zacatrus, ASNEF, Mobilize Power) | 8/10 (logos: EDP, Ferrovial, Fotocasa, Santillana) |
-| Claridad de propuesta | 6/10 | 6/10 | 7/10 |
-| Transparencia de identidad corporativa | 3/10 | 7/10 | 7/10 |
-| Oferta de entrada (lead magnet) | 8/10 (diagnóstico + SLA 24h) | 5/10 (sin oferta gratuita) | 7/10 (diagnóstico 30 min) |
+| Factor | D'Scobar Academy | Crehana | LEDforCoaching (Venezuela) | Domestika |
+|--------|---------------------|---------|------------------------------|-----------|
+| Claridad de posicionamiento | 4/10 | 7/10 | 6/10 | 7/10 |
+| Prueba social nombrada | 1/10 (bios truncadas) | 9/10 (+1,200 empresas, logos) | 7/10 (2-3 casos cuantificados) | 8/10 (reseñas, comunidad) |
+| Transparencia de precios | 2/10 | 3/10 (requiere demo) | 3/10 | 9/10 (precios públicos) |
+| Autoridad de contenido | 4/10 | 7/10 | 5/10 | 8/10 |
+| Amplitud de catálogo real | 2/10 (1 curso) | 9/10 | 5/10 | 9/10 |
 
 ---
 
 ## Impacto en Ingresos
 
-*Metodología: dado que este sitio tiene la base de oferta más sólida del grupo, el impacto de las correcciones es más directo y de menor esfuerzo que en el resto de la red auditada.*
+*Metodología: dado que esta marca ya tiene la base de equipo y contenido más sólida del grupo, el retorno de las correcciones de bajo esfuerzo es más directo que en el resto de la red auditada.*
 
 | Recomendación | Impacto Estimado | Confianza | Timeline |
 |---------------|---------------------|------------|----------|
-| Corregir "My Website" en configuración de Odoo | Alto (mejora CTR orgánico y percepción de marca en las 18 páginas del sitio a la vez) | Alta | Minutos |
-| Eliminar tabla de precios de CRM en /marketing-b2b | Alto (+15-30% en conversión de esa página específica, según patrón de fuga identificado) | Media | Horas |
-| Verificar/mostrar certificación Odoo o retirarla | Medio (único activo de prueba verificable por terceros en todo el sitio) | Media | 1 semana |
-| Añadir email/dirección/horario y WhatsApp en contacto | Medio (+10-20% en leads totales) | Media | Días |
-| Publicar testimonios/casos de cliente | Alto (cierra la brecha más explotable frente a competidores con prueba social real) | Media | 2-4 semanas |
-| Declarar estructura de grupo explícitamente | Medio (reduce riesgo de descalificación en due diligence B2B) | Media | 1-2 semanas |
-| **Potencial total (rango conservador-moderado)** | **~$3,000-$8,000/mes equivalente en pipeline adicional (mercado España)** | | |
+| Corregir email, banner roto, bios truncadas y banner vencido | Alto (elimina fugas de confianza y de leads de bajo costo de arreglo) | Alta | Horas-días |
+| Publicar precios del curso y Laboratorio | Alto (+15-25% en tasa de contacto calificado, según patrón de fricción identificado) | Media | Días |
+| Añadir 2-3 casos de éxito nombrados | Alto (cierra la brecha más explotable frente a competidores más pequeños) | Media | 2-4 semanas |
+| Implementar schema Course/Offer | Medio (habilita rich results en búsquedas transaccionales) | Media | 1-2 semanas |
+| Definir diferenciación con EPRAN/D'Scobar Soluciones en capacitación B2B | Medio (reduce canibalización de leads dentro del propio grupo) | Media | 2-4 semanas |
+| Publicar más cursos reales | Medio-Alto en 2-3 meses (cierra brecha de catálogo vs. competidores) | Baja (requiere producción de contenido) | 1-3 meses |
+| **Potencial total (rango conservador-moderado)** | **~$2,500-$7,000/mes en pipeline/ventas de cursos adicionales** | | |
 
 ---
 
 ## Próximos Pasos
 
-1. **Corregir el nombre del sitio en Odoo** para eliminar "My Website" de las 18 páginas — el fix de mayor alcance por menor esfuerzo de todo este conjunto de auditorías.
-2. **Eliminar la tabla de precios de CRM genérico** en /marketing-b2b y sustituirla por una oferta de precios real.
-3. **Verificar y mostrar la certificación de partner Odoo, o retirar la afirmación**, y declarar explícitamente la relación con las otras marcas del grupo mencionadas en /sobre-nosotros.
+1. **Corregir los errores de ejecución de bajo esfuerzo** (email, banner, bios, urgencia vencida, typo "Gemeini") — el conjunto de correcciones de mayor retorno por menor esfuerzo de toda esta serie de auditorías.
+2. **Publicar precios** de al menos el curso y el Laboratorio de pago.
+3. **Definir la diferenciación** entre "Soluciones Corporativas B2B" de Academy y la capacitación ya ofrecida por EPRAN/D'Scobar Soluciones.
 
-*Generado por AI Marketing Suite — `/market audit`. Con esta auditoría se completa la investigación de seis sitios interconectados en esta sesión (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com y dscobarsoluciones.es). Se sugiere fuertemente un `/market competitors` consolidado que trate a todo el grupo como un solo caso de estudio de arquitectura de marca, en vez de continuar auditando cada dominio como un negocio independiente.*
+*Generado por AI Marketing Suite — `/market audit`. Con esta auditoría se completan siete sitios interconectados investigados en esta sesión (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com, dscobarsoluciones.es y dscobaracademy.com), abarcando ya tres infraestructuras técnicas distintas dentro del mismo grupo. Se sugiere fuertemente un `/market competitors` consolidado que trate a todo el grupo como un solo caso de estudio de arquitectura de marca y ecosistema de contenido.*
