@@ -1,27 +1,25 @@
-# Marketing Audit: D'Scobar Academy
-**URL:** https://dscobaracademy.com/
+# Marketing Audit: PAF (Programa Avanzado de Formación)
+**URL:** https://formacionpaf.com/
 **Fecha:** 25 de agosto de 2026
-**Tipo de negocio:** Academia de formación online — liderazgo, emprendimiento, gerencia, tecnología y habilidades blandas (Caracas, Venezuela)
-**Marketing Score General: 49/100 (Grade: D — Por debajo del promedio, empatando como el mejor ejecutado de todo el grupo auditado)**
+**Tipo de negocio:** Fundación de formación gerencial corporativa — liderazgo, trabajo en equipo, desarrollo personal (Miranda, Venezuela)
+**Marketing Score General: 32/100 (Grade: F — Crítico)**
 
 ---
 
 ## Resumen Ejecutivo
 
-D'Scobar Academy es, en varios sentidos, la marca mejor construida de toda la red de empresas interconectadas investigada en esta sesión (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com, dscobarsoluciones.es). Es la primera de las siete auditorías donde el equipo tiene nombres genuinamente reales con especialidades coherentes (9 facilitadores, uno con credenciales académicas verificables con nombre de universidad), donde la misión y visión están completas sin placeholders de plantilla, y donde el footer reconoce **con un enlace real** —no un residuo accidental— su relación con "D Marketing Consultores", la agencia de marketing digital del mismo grupo auditada por separado en esta sesión.
+PAF es la octava marca investigada en esta sesión dentro de una red venezolana de empresas interconectadas (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com/.es y dscobaracademy.com), y aporta la pieza que finalmente conecta el origen de toda la red: su página "Nosotros" declara, con fuente primaria verificada por fetch directo, que **"En el año 2006, nació en Venezuela un faro de educación empresarial: la Escuela Práctica de Negocios (EPRAN)"**, enfocada originalmente en formar vendedores, mercaderistas, supervisores y gerentes. En 2021, "la Corporación EPRAN estableció" la fundación PAF, y el footer confirma a D'Scobar Soluciones como titular de derechos. Es la primera y única marca de las ocho auditadas en esta sesión que cuenta su genealogía corporativa completa sin ambigüedad ni residuo accidental — el resto del grupo (EPRAN, 2CREA2, DMarketing, OneTalentPro, D'Scobar Soluciones .com/.es, D'Scobar Academy) revela su interconexión solo mediante teléfonos idénticos, direcciones compartidas, infraestructura técnica común o registros mercantiles, nunca por declaración directa.
 
-Pero el sitio arrastra errores concretos, no de estrategia sino de ejecución, que le cuestan puntos en cada dimensión. El banner principal de la homepage —"MENOS TEORÍA, ahora y descarga nuestro"— es una frase gramaticalmente incompleta, no una elección de estilo. Ocho de las nueve bios de facilitadores están literalmente cortadas con "[…]" sin terminar, visibles en producción. El email de contacto tiene un error tipográfico en su propio dominio (**info@dscobaracadmy.com** en vez de **dscobaracademy.com**), confirmado en el HTML crudo de al menos dos páginas. Un banner de urgencia anuncia el inicio de una cohorte el "Viernes 19 de Junio" que ya pasó hace meses. Y la meta description de su único curso publicado tiene un error tipográfico en el propio nombre del curso ("Productividad en **Gemeini**" en vez de "Gemini"). El catálogo real de cursos consiste en **un solo curso publicado**, pese a promocionar activamente a nueve facilitadores con botones "Ver Curso" que no llevan a nada.
+Pero esa transparencia estructural no se traduce en confianza transaccional. PAF tiene **cero nombres de facilitadores, fundadores o equipo** —ni siquiera genérico— siendo la única marca del grupo peor en este aspecto que dscobaracademy.com (que al menos nombraba 9 personas, aunque con bios incompletas). Tiene **cero prueba social** pese a operar, según su propia historia, desde 2021 o incluso desde 2006 si se cuenta el origen de EPRAN. Sus 5 cursos (Cambio Personal, El Propósito, Objetivos y Metas, Trabajo en Equipo, Liderazgo) no muestran precio, duración ni modalidad. Y el hallazgo más grave de conversión: el botón "Fórmate ahora" —el único CTA del sitio, repetido en todas las páginas— en la propia página de contacto **enlaza de vuelta a sí misma**, cerrando un bucle sin ningún mecanismo real de conversión (sin formulario, sin WhatsApp, sin calendario).
 
-A nivel técnico, la investigación confirma que esta marca corre sobre una **tercera infraestructura técnica distinta** dentro del grupo: no la instancia Odoo compartida por EPRAN/2CREA2/DMarketing/OneTalentPro, ni la instancia Odoo separada de dscobarsoluciones.es, sino WordPress alojado en un hosting venezolano (Tepuyserver). El grupo, en conjunto, opera al menos tres plataformas técnicas distintas — una señal de fragmentación que complica el mantenimiento y la consistencia de marca a escala de todo el ecosistema.
-
-En el mercado de formación ejecutiva en español, esta ausencia de prueba social tiene un costo competitivo directo: un competidor venezolano mucho más pequeño (LEDforCoaching) ya supera a D'Scobar Academy en credibilidad con solo 2-3 casos de cliente nombrados y cuantificados, mientras Academy no tiene ninguno.
+A nivel de marca, el hallazgo más costoso es una oportunidad perdida, no un error: veinte años de trayectoria educativa genuina (EPRAN nació como escuela de negocios en 2006, dos décadas antes de que la mayoría de sus "competidores" venezolanos existieran) están enterrados en un párrafo de una subpágina secundaria, sin repetirse en ningún otro sitio del ecosistema ni usarse como argumento de autoridad frente a competidores como IESA (60 años, 228.000 egresados) o D'Scobar Academy, la marca hermana del mismo grupo que compite directamente por el mismo segmento de cliente corporativo sin ninguna diferenciación comunicada entre ambas.
 
 **Las 3 acciones que más moverían la aguja:**
-1. **Corregir los errores de ejecución de bajo esfuerzo**: el email typo, el banner roto, las bios truncadas, el banner de urgencia vencido, y el typo "Gemeini" — ninguno de estos requiere más de minutos por corrección, y todos dañan la credibilidad de forma desproporcionada a su costo de arreglo.
-2. **Publicar precios** de al menos el curso y el "Laboratorio" de pago — en un negocio de e-learning, a diferencia de una consultoría B2B a medida, el precio es información que el comprador espera antes de contactar.
-3. **Definir y comunicar la diferencia** entre "Soluciones Corporativas B2B" de Academy y la "Capacitación de Equipos" ya ofrecida por EPRAN/D'Scobar Soluciones — hoy son ofertas indistinguibles del mismo grupo compitiendo por el mismo lead sin coordinación aparente.
+1. **Corregir el bucle muerto de "Fórmate ahora" → contacto → "Fórmate ahora"** e instalar un formulario real, WhatsApp o calendario de agendamiento — es la fuga de conversión más grave detectada en toda esta serie de auditorías.
+2. **Nombrar al equipo docente** con foto, credenciales y experiencia, y publicar precio/duración/modalidad de los 5 cursos — sin esto, ningún comprador B2B puede avanzar en su decisión.
+3. **Rescatar la historia de "Escuela Práctica de Negocios 2006"** como eje de posicionamiento de todo el grupo, no solo un párrafo de "Nosotros" en la marca menos visible de la red — y resolver la duplicación indiferenciada con D'Scobar Academy.
 
-**Impacto estimado:** dado que este sitio ya tiene la base de contenido y equipo más sólida del grupo, las correcciones de bajo esfuerzo tienen aquí el mayor retorno relativo de toda la serie de auditorías — ver detalle en Impacto en Ingresos.
+**Impacto estimado:** dado que la fuga de conversión (el bucle de contacto muerto) es tan crítica, corregirla por sí sola es la acción de mayor retorno relativo de todo el conjunto de auditorías realizadas en esta sesión — ver detalle en Impacto en Ingresos.
 
 ---
 
@@ -29,102 +27,102 @@ En el mercado de formación ejecutiva en español, esta ausencia de prueba socia
 
 | Categoría | Score | Peso | Score Ponderado | Hallazgo Clave |
 |-----------|-------|------|------------------|----------------|
-| Content & Messaging | 56/100 | 25% | 14.0 | El equipo mejor documentado del grupo, dañado por un banner gramaticalmente roto y 8 bios truncadas con "[…]" |
-| Conversion Optimization | 44/100 | 20% | 8.8 | Cero precios visibles en un negocio de cursos, donde el precio sí se espera antes de contactar; banner de urgencia vencido |
-| SEO & Discoverability | 56/100 | 20% | 11.2 | Buena implementación de schema (EducationalOrganization, FAQPage) pero catálogo de solo 1 curso pese a promocionar 9 facilitadores |
-| Competitive Positioning | 34/100 | 15% | 5.1 | Un competidor venezolano más pequeño (LEDforCoaching) ya supera a Academy en credibilidad con solo 2-3 casos nombrados |
-| Brand & Trust | 54/100 | 10% | 5.4 | Único sitio del grupo con enlace real (no residuo) reconociendo a DMarketing Consultores como desarrollador |
-| Growth & Strategy | 41/100 | 10% | 4.1 | Confirma una tercera infraestructura técnica distinta (WordPress/Tepuyserver) dentro del mismo grupo empresarial |
-| **TOTAL** | | **100%** | **48.6/100 (redondeado a 49)** | |
+| Content & Messaging | 32/100 | 25% | 8.0 | Única marca del grupo que declara su genealogía corporativa completa, pero cero nombres de equipo y cero prueba social |
+| Conversion Optimization | 24/100 | 20% | 4.8 | El CTA único del sitio ("Fórmate ahora") enlaza de vuelta a sí mismo en la página de contacto — bucle sin salida |
+| SEO & Discoverability | 47/100 | 20% | 9.4 | El nombre de la marca está mal escrito ("Avanzando" en vez de "Avanzado") y propagado a todas las title tags y schema |
+| Competitive Positioning | 20/100 | 15% | 3.0 | Confirmado por fuente primaria: EPRAN nació como escuela de negocios en 2006, un activo desperdiciado frente a IESA (60 años, 228.000 egresados) |
+| Brand & Trust | 34/100 | 10% | 3.4 | Transparencia de titularidad real, pero cero cara humana y visión grandilocuente ("país de Gerentes") sin sustento |
+| Growth & Strategy | 29/100 | 10% | 2.9 | Duplicación directa e indiferenciada con D'Scobar Academy, la marca hermana de formación del mismo grupo |
+| **TOTAL** | | **100%** | **31.5/100** | |
 
 ---
 
 ## Quick Wins (Esta Semana)
 
-1. **Corregir el email de contacto** en footer y /contacto/: "info@dscobaracadmy.com" → "info@dscobaracademy.com" — confirmado en el HTML crudo, repetido en al menos dos páginas.
-2. **Reescribir el banner "MENOS TEORÍA, ahora y descarga nuestro"** para que sea una frase completa y accionable (ej. "MENOS TEORÍA, MÁS ACCIÓN. Descarga gratis nuestro taller de Herramientas Analíticas").
-3. **Completar las 8 bios de facilitadores truncadas con "[…]"**, siguiendo el estándar que ya logró la bio de Nelly Meléndez (única con credencial académica verificable con nombre de universidad).
-4. **Actualizar o retirar el banner de urgencia** con la fecha vencida ("Viernes 19 de Junio") — hoy genera el efecto contrario de credibilidad.
-5. **Corregir el typo "Gemeini" → "Gemini"** en la meta description del curso de productividad publicado.
-6. **Publicar al menos rangos de precio** para el curso y el Laboratorio de pago (ej. "Cursos desde $X", "Laboratorio: $Y por 3 semanas").
-7. **Quitar o atenuar los botones "Ver Curso"** en las fichas de los 8 facilitadores sin curso publicado — hoy no llevan a ningún contenido real.
-8. **Eliminar la meta description duplicada** en el `<head>` del home y completar la descripción cortada.
-9. **Excluir del sitemap las rutas técnicas sin valor de indexación** (plantillas de Elementor, formularios de SureForms).
+1. **Corregir el bucle "Fórmate ahora" → /contacto/ → "Fórmate ahora"** e instalar un formulario de contacto real de 5 campos (nombre, empresa, email, teléfono, curso de interés).
+2. **Corregir el nombre de la marca** en Ajustes → Generales de WordPress: "Programa Avanzando de formación" → "Programa Avanzado de Formación" — se propaga automáticamente a todas las title tags, Open Graph y JSON-LD del sitio con un solo cambio.
+3. **Agregar un botón de WhatsApp Business** con mensaje prellenado por curso — hoy no hay ningún canal de baja fricción en todo el sitio.
+4. **Especificar duración, modalidad y precio (o rango) en cada uno de los 5 cursos** — hoy son solo listas de temas sin ninguna información que permita decidir.
+5. **Nombrar al menos 2-3 facilitadores** con foto, credencial y experiencia — hoy no hay ni un solo nombre humano en todo el sitio.
+6. **Escribir meta descriptions** para las 11+ páginas indexadas — hoy ninguna tiene, pese a tener Yoast SEO instalado.
+7. **Corregir el enlace duplicado en /cursos/**: "Objetivos y Metas" apunta por error a la misma URL que "El Propósito" en vez de a su propia página.
+8. **Enlazar o dar de baja las 9+ páginas huérfanas** encontradas en el sitemap (`/paf-empresarial/`, `/mujeres-que-emprenden/`, `/paf-en-las-escuelas/`, etc.) — existen y están indexadas pero son indescubribles desde la navegación.
+9. **Actualizar PHP 7.4** (sin soporte de seguridad desde noviembre 2022) a una versión con soporte activo.
 
 ## Recomendaciones Estratégicas (Este Mes)
 
-1. **Definir y comunicar explícitamente la diferencia** entre "Soluciones Corporativas B2B" de Academy y la "Capacitación de Equipos" ya ofrecida por EPRAN y D'Scobar Soluciones — o consolidar la oferta en una sola marca para evitar que el mismo prospecto B2B llegue a dos formularios distintos del mismo grupo sin saberlo.
-2. **Añadir 2-3 casos de éxito nombrados y cuantificados** de egresados o empresas atendidas vía "Soluciones Corporativas" — es el gap más explotable frente a un competidor local más pequeño (LEDforCoaching) que ya lo hace.
-3. **Implementar schema Course + Offer** en las páginas de curso — hoy existe infraestructura de LMS y pago (SureCart) pero cero datos estructurados que habiliten rich results de precio/curso en Google.
-4. **Publicar más cursos reales** o, mientras tanto, dejar de promocionar activamente a facilitadores sin oferta de curso asociada.
-5. **Instalar un banner de consentimiento de cookies** — hoy el sitio carga un Google tag sin ningún mecanismo de consentimiento.
-6. **Lanzar un plan editorial de blog** (hoy solo 3 artículos) usando el expertise real de los 9 facilitadores como motor de autoridad y adquisición orgánica.
+1. **Rescatar la historia "Escuela Práctica de Negocios 2006"** del párrafo secundario en /nosotros/ y convertirla en el eje de posicionamiento del homepage — es el activo de marca más fuerte y menos explotado de las ocho marcas de este grupo auditadas en esta sesión.
+2. **Definir y comunicar explícitamente la diferenciación con D'Scobar Academy** (ej. PAF = formación in-company a medida para empresas; Academy = catálogo individual/comunidad online) — hoy ambas compiten sin distinción por el mismo comprador corporativo, fragmentando SEO y confundiendo al mercado.
+3. **Publicar 2-3 casos de éxito o testimonios** de empresas/participantes formados, aunque sea con cifras aproximadas ("+X gerentes formados desde 2021").
+4. **Implementar schema Course, LocalBusiness y FAQPage** — hoy solo existe Organization/WebSite genérico pese a tener toda la información necesaria (dirección, teléfono, preguntas frecuentes, catálogo de cursos).
+5. **Sustituir la visión "Transformar a Venezuela en un país de Gerentes"** por una declaración anclada en una métrica verificable, o al menos acompañarla de una cifra de alcance real.
+6. **Auditar la posible duplicación de contenido** entre `/`, `/inicio/`, `/nosotros/` y `/historia/`, todas presentes en el sitemap.
 
 ## Iniciativas de Largo Plazo (Este Trimestre)
 
-1. **Formalizar el rol de Academy dentro del ecosistema del grupo**: posicionarla explícitamente como el "top of funnel" de contenido masivo que alimenta leads calificados hacia la consultoría a medida de EPRAN/D'Scobar Soluciones, con tracking de atribución entre marcas — hoy es el potencial más claro y menos explotado de toda la red auditada.
-2. **Conseguir acreditación o alianza institucional verificable** (universidad local, gremio de e-learning) que respalde la promesa de "formación estratégica e integral en Iberoamérica".
-3. **Consolidar la infraestructura técnica del grupo** o, si se mantienen plataformas separadas, estandarizar un checklist de QA de contenido (meta descriptions, bios completas, banners de urgencia vigentes) aplicado uniformemente a los ahora tres stacks técnicos identificados.
-4. **Construir un catálogo de cursos real** con estructura de precios Good-Better-Best y checkout en línea, reduciendo la dependencia actual de conversación manual por WhatsApp para algo tan básico como conocer el precio.
+1. **Decisión ejecutiva sobre PAF vs. D'Scobar Academy**: diferenciar explícitamente con enlace cruzado entre ambos sitios, o consolidar la línea de formación del grupo bajo una sola marca — la coexistencia indiferenciada actual replica el mismo patrón de duplicación de oferta sin diferenciación ya detectado entre EPRAN/2CREA2/D'Scobar Soluciones en trade marketing.
+2. **Construir una narrativa unificada de "20 años de trayectoria educativa"** replicada de forma consistente en todos los sitios del grupo (epran.net, 2crea2, dscobarsoluciones, dscobaracademy) como sello de autoridad práctica frente a academias puramente académicas como IESA.
+3. **Crear una página de comparación** ("Por qué PAF" o "PAF vs. formación online genérica") que use el origen EPRAN 2006 como argumento diferenciador verificable.
+4. **Modernizar la infraestructura técnica** (PHP actualizado, consolidar el doble tracking GTM + Google tag directo detectado, que puede estar duplicando el conteo de visitas en GA4).
 
 ---
 
 ## Análisis Detallado por Categoría
 
-### Content & Messaging (56/100)
-El score más alto del grupo en esta dimensión. Misión y visión completas y bien redactadas ("Formar líderes conscientes y competentes...", "Ser una academia referente en formación estratégica e integral en Iberoamérica"), sin placeholders de plantilla detectados en /nosotros/. Los 9 facilitadores tienen nombres venezolanos plausibles y especialidades coherentes entre sí; Nelly Meléndez es la única con credencial verificable completa (Universidad del Zulia, doctorado, magíster). Pero el banner "MENOS TEORÍA, ahora y descarga nuestro" es gramaticalmente incompleto, y 8 de 9 bios están truncadas con "[…]" sin terminar — contenido a medio publicar, no una decisión de diseño. Sin prueba social (cifras de egresados, testimonios) que respalde la promesa de "referente en Iberoamérica".
+### Content & Messaging (32/100)
+El hallazgo más significativo, confirmado por fetch directo: PAF es la única marca de todo el grupo que narra su genealogía corporativa completa sin ambigüedad — "2006: se funda la Escuela Práctica de Negocios (EPRAN)... 2021: la Corporación EPRAN establece la Fundación del Programa Avanzado de Formación en Competencias Gerenciales (PAF)". Es un activo de messaging genuino que ningún otro sitio del grupo aprovecha. Pero el resto del contenido es débil: el headline ("Potencia tu equipo con nuestra formación") es genérico, la visión ("Transformar a Venezuela en un país de Gerentes") es una ambición sin ninguna métrica de escala, y hay **cero nombres de personas** en todo el sitio — ni fundadores, ni facilitadores, ni siquiera un "equipo" genérico, un retroceso incluso frente a dscobaracademy.com. Los 5 cursos son listas de temas sin estructura de programa comprable (sin precio, duración, modalidad, certificación).
 
-### Conversion Optimization (44/100)
-CTAs específicos por tipo de oferta (Masterclass, Laboratorio, descarga) — mejor segmentación que el resto del grupo — y WhatsApp activo como canal, ausente en la mayoría de otros sitios auditados. Pero cero precios visibles en ningún curso o masterclass es una fricción de categoría distinta y más grave que en un negocio de servicios B2B a medida: el comprador de un curso online espera comparar precio antes de contactar, no después. El banner de urgencia con fecha vencida (junio, hoy agosto) genera el efecto contrario al buscado. Tres formularios segmentados (Facilitadores, B2B, General) son buena práctica de calificación pero carecen de una ruta clara para "quiero inscribirme a un curso".
+### Conversion Optimization (24/100)
+El hallazgo de mayor severidad de toda esta serie de auditorías: el CTA único y repetido en todo el sitio, "Fórmate ahora", en su propia página de destino (/contacto/) **enlaza de vuelta a sí mismo**, generando un bucle cerrado exactamente en el punto de mayor intención de compra. No hay formulario de contacto, ni WhatsApp, ni calendario de agendamiento — solo un teléfono y un email que obligan a redactar contacto manual desde cero. Los 5 cursos carecen de precio, duración y modalidad, impidiendo cualquier autocalificación del comprador antes de contactar. Cero prueba social en todo el recorrido home → cursos → contacto.
 
-### SEO & Discoverability (56/100)
-Confirmado: WordPress real (Astra + Elementor + Depicter), corriendo en IP 66.45.226.178 sobre hosting venezolano Tepuyserver — una tercera infraestructura técnica distinta a las dos Odoo ya identificadas en el grupo. Implementación de datos estructurados sorprendentemente buena para el patrón visto en el resto de la red: EducationalOrganization, WebSite+SearchAction y FAQPage están presentes y correctos. Pero hay dos meta descriptions duplicadas en el `<head>` del home, un H1 fantasma generado por un widget decorativo mal etiquetado, cero schema Course/Offer pese a tener LMS y pasarela de pago (SureCart), y un catálogo de solo 1 curso indexado con una meta description que contiene un typo en el propio nombre del producto ("Gemeini" en vez de "Gemini"). El sitemap expone rutas técnicas sin curar (plantillas de Elementor, formularios). Sin tracking más allá de un Google tag básico vía Site Kit — sin Meta Pixel, sin LinkedIn Insight, sin GTM completo.
+### SEO & Discoverability (47/100)
+Confirmado técnicamente: WordPress 6.8.8 + Elementor + Yoast SEO, corriendo en Tepuyserver/Interserver (IP 66.45.253.54, hostname `cinaruco.tepuyserver.net`) — la misma red de hosting que dscobaracademy.com (`arauca.tepuyserver.net`), aunque en un nodo distinto, indicando cuentas de hosting separadas dentro del mismo proveedor, no el mismo servidor físico. A diferencia de otros sitios del grupo, **no se encontraron residuos de contenido cruzado** de otras marcas — un punto a favor relativo. Pero el nombre del sitio en la configuración de WordPress está mal escrito ("Programa Avanzando de formación" en vez de "Avanzado"), propagándose automáticamente a las 11 title tags revisadas, Open Graph y JSON-LD. Cero meta descriptions en todo el sitio pese a tener Yoast instalado. Un enlace duplicado en /cursos/ hace que dos cursos distintos apunten a la misma URL, dejando huérfana la página real de "Objetivos y Metas". El sitemap revela al menos 9 páginas de campaña (empresarial, escuelas, emprendedoras) completamente invisibles desde la navegación. PHP 7.4 sin soporte de seguridad desde 2022. Schema limitado a Organization/WebSite genérico, sin Course, LocalBusiness ni FAQPage pese a tener toda la información disponible para implementarlos.
 
-### Competitive Positioning (34/100)
-"Menos teoría, más ejecución" es una promesa de categoría, no un diferenciador — prácticamente todo competidor de e-learning corporativo en español dice una variante de lo mismo. El problema no es el mensaje sino la falta de evidencia: LEDforCoaching, un competidor venezolano mucho más pequeño, ya supera a D'Scobar Academy en credibilidad con solo 2-3 casos de cliente nombrados y cuantificados (Fashionspark, BancoEstado), mientras Academy tiene bios truncadas y cero casos. Frente a jugadores regionales como Crehana (+1,200 empresas cliente con logos verificables) o Domestika (precios públicos y catálogo masivo), D'Scobar Academy no compite ni en escala, ni en precio, ni en prueba social. La superposición con "Capacitación de Equipos" de EPRAN/D'Scobar Soluciones no está explicada en ningún lugar del sitio.
+### Competitive Positioning (20/100)
+El score más bajo de toda esta serie de auditorías en esta dimensión. Confirmado por fuente primaria: EPRAN nació en 2006 como "Escuela Práctica de Negocios", un origen educativo genuino de dos décadas que ningún sitio del grupo comunica como diferenciador — ni siquiera este mismo, donde el dato aparece enterrado en una subpágina secundaria sin enlazar desde el home. Frente a competidores externos como IESA (60 años de trayectoria, 228.000 profesionales formados, acreditación académica reconocida) o LEDforCoaching (propuesta de ROI explícita), PAF no tiene ni prueba social, ni precios, ni autoridad de contenido. Y frente a su propia marca hermana D'Scobar Academy —que sí nombra 9 facilitadores y tiene un modelo freemium más maduro—, PAF ocupa el peor lugar del panorama competitivo interno del propio grupo, sin ninguna diferenciación comunicada entre ambas.
 
-### Brand & Trust (54/100)
-El score más alto del grupo en esta dimensión, aunque con matices: la mención de "D Marketing Consultores" en el footer, esta vez con un enlace real (`rel="noopener sponsored"`) a dmarketingconsultores.com, es probablemente un crédito estándar de agencia web más que una declaración deliberada de transparencia corporativa de grupo — pero es, aun así, el reconocimiento más explícito y menos accidental visto en toda esta investigación. La dirección física ("Los Ruices, Calle los Laboratorios, Edif. Sansón") coincide con la de EPRAN, reforzando el patrón de operación conjunta sin explicarlo. El error tipográfico repetido en el email de contacto propio es un fallo de cuidado básico en el canal principal de confianza de un negocio educativo.
+### Brand & Trust (34/100)
+La transparencia de titularidad (EPRAN → PAF → D'Scobar Soluciones, declarada abiertamente) es un activo real que reduce la sospecha de ocultamiento vista en el resto del grupo, pero no compensa la ausencia total de "cara humana" — el producto de formación gerencial se vende fundamentalmente por la autoridad de quien enseña, y aquí no hay ni un solo nombre. La visión de escala nacional sin ninguna cifra de respaldo agrava, en vez de mitigar, la percepción de desproporción entre ambición discursiva y evidencia disponible. El teléfono de contacto coincide con uno ya registrado en dscobarsoluciones.com, y la dirección está en la misma zona que OneTalentPro — reforzando el patrón de infraestructura compartida sin explicarlo del todo.
 
-### Growth & Strategy (41/100)
-El modelo mixto de contenido gratuito (masterclasses, talleres) + oferta de pago (Laboratorio) es un funnel coherente, el único parecido a uno real visto en todo el grupo — pero sin precios visibles en ningún punto, lo que eleva artificialmente el costo de decisión del comprador. La superposición de "Soluciones Corporativas B2B" con las líneas de capacitación de EPRAN y D'Scobar Soluciones podría tener lógica real (Academy como contenido escalable uno-a-muchos vs. consultoría a medida uno-a-uno) pero no está comunicada como tal, generando riesgo de canibalización de leads dentro del propio grupo. Academy es la única marca de la red con una razón de ser natural para producir contenido educativo de autoridad — un potencial de content marketing para todo el ecosistema que hoy está prácticamente desaprovechado.
+### Growth & Strategy (29/100)
+La superposición directa con D'Scobar Academy —ambas marcas de formación del mismo grupo dirigidas al mismo comprador corporativo, sin ninguna segmentación comunicada— es duplicación de esfuerzo, no estrategia de portafolio: fragmenta el SEO de ambos dominios compitiendo por las mismas palabras clave ("liderazgo", "formación gerencial", "trabajo en equipo"), duplica costos de mantenimiento, y no ofrece al comprador ninguna señal de a cuál marca acudir. La ausencia total de precios es parcialmente aceptable en un modelo de "programas personalizados" a empresas, pero solo si se compensa con rangos orientativos, proceso de cotización claro o equipo de ventas identificado — nada de esto existe aquí.
 
 ---
 
 ## Comparación Competitiva
 
-*Nivel de confianza: medio-alto — verificado por fetch directo de D'Scobar Academy y de tres competidores reales (Crehana, LEDforCoaching); datos de Domestika y Aprender21 provienen de búsqueda web, no de fetch directo completo.*
+*Nivel de confianza: alto para dscobaracademy.com (verificado en auditoría previa de esta sesión); medio para IESA y LEDforCoaching (vía búsqueda web, no fetch completo).*
 
-| Factor | D'Scobar Academy | Crehana | LEDforCoaching (Venezuela) | Domestika |
-|--------|---------------------|---------|------------------------------|-----------|
-| Claridad de posicionamiento | 4/10 | 7/10 | 6/10 | 7/10 |
-| Prueba social nombrada | 1/10 (bios truncadas) | 9/10 (+1,200 empresas, logos) | 7/10 (2-3 casos cuantificados) | 8/10 (reseñas, comunidad) |
-| Transparencia de precios | 2/10 | 3/10 (requiere demo) | 3/10 | 9/10 (precios públicos) |
-| Autoridad de contenido | 4/10 | 7/10 | 5/10 | 8/10 |
-| Amplitud de catálogo real | 2/10 (1 curso) | 9/10 | 5/10 | 9/10 |
+| Factor | PAF | D'Scobar Academy (hermana) | IESA | LEDforCoaching |
+|--------|-----|------------------------------|------|-----------------|
+| Claridad de posicionamiento | 3/10 | 4/10 | 8/10 | 6/10 |
+| Prueba social nombrada | 0/10 | 1/10 (bios truncadas) | 9/10 (228.000 egresados) | 5/10 |
+| Nombres de equipo/facilitadores | 0/10 | 5/10 (9 nombres, bios incompletas) | 9/10 | No verificado |
+| Transparencia de precios | 1/10 | 2/10 | No público (implícito alto) | No público |
+| Trayectoria comunicada | 1/10 (existe pero oculta) | 3/10 | 9/10 (60 años) | No verificado |
 
 ---
 
 ## Impacto en Ingresos
 
-*Metodología: dado que esta marca ya tiene la base de equipo y contenido más sólida del grupo, el retorno de las correcciones de bajo esfuerzo es más directo que en el resto de la red auditada.*
+*Metodología: dado que el hallazgo principal es un embudo de conversión completamente roto (bucle de contacto muerto), el impacto de las correcciones aquí es especialmente directo.*
 
 | Recomendación | Impacto Estimado | Confianza | Timeline |
 |---------------|---------------------|------------|----------|
-| Corregir email, banner roto, bios truncadas y banner vencido | Alto (elimina fugas de confianza y de leads de bajo costo de arreglo) | Alta | Horas-días |
-| Publicar precios del curso y Laboratorio | Alto (+15-25% en tasa de contacto calificado, según patrón de fricción identificado) | Media | Días |
-| Añadir 2-3 casos de éxito nombrados | Alto (cierra la brecha más explotable frente a competidores más pequeños) | Media | 2-4 semanas |
-| Implementar schema Course/Offer | Medio (habilita rich results en búsquedas transaccionales) | Media | 1-2 semanas |
-| Definir diferenciación con EPRAN/D'Scobar Soluciones en capacitación B2B | Medio (reduce canibalización de leads dentro del propio grupo) | Media | 2-4 semanas |
-| Publicar más cursos reales | Medio-Alto en 2-3 meses (cierra brecha de catálogo vs. competidores) | Baja (requiere producción de contenido) | 1-3 meses |
-| **Potencial total (rango conservador-moderado)** | **~$2,500-$7,000/mes en pipeline/ventas de cursos adicionales** | | |
+| Corregir el bucle de contacto y añadir formulario/WhatsApp | Alto (+30-60% en captura de leads de quienes ya llegan con intención) | Alta | Días |
+| Publicar precio/duración/modalidad de los 5 cursos | Alto (+20-30% en calidad de leads calificados) | Media | 1 semana |
+| Nombrar facilitadores con credenciales | Alto (cierra la brecha de confianza más barata del sitio) | Media | 1-2 semanas |
+| Corregir el typo de marca propagado en SEO | Medio (mejora percepción y CTR orgánico) | Alta | Minutos |
+| Rescatar y difundir la historia EPRAN 2006 | Medio-Alto en 3-6 meses (diferenciación real vs. competidores) | Media | 1-2 meses |
+| Diferenciar o consolidar con D'Scobar Academy | Medio (reduce canibalización de SEO y de leads dentro del propio grupo) | Media | 1-3 meses |
+| **Potencial total (rango conservador-moderado)** | **~$2,000-$6,000/mes en pipeline adicional** | | |
 
 ---
 
 ## Próximos Pasos
 
-1. **Corregir los errores de ejecución de bajo esfuerzo** (email, banner, bios, urgencia vencida, typo "Gemeini") — el conjunto de correcciones de mayor retorno por menor esfuerzo de toda esta serie de auditorías.
-2. **Publicar precios** de al menos el curso y el Laboratorio de pago.
-3. **Definir la diferenciación** entre "Soluciones Corporativas B2B" de Academy y la capacitación ya ofrecida por EPRAN/D'Scobar Soluciones.
+1. **Corregir el bucle de contacto muerto** e instalar un mecanismo real de conversión — la fuga más grave de toda esta serie de auditorías.
+2. **Nombrar al equipo docente y publicar precios/duración/modalidad** de los 5 cursos.
+3. **Rescatar la historia "Escuela Práctica de Negocios 2006"** como activo de posicionamiento de todo el grupo, y resolver la duplicación indiferenciada con D'Scobar Academy.
 
-*Generado por AI Marketing Suite — `/market audit`. Con esta auditoría se completan siete sitios interconectados investigados en esta sesión (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com, dscobarsoluciones.es y dscobaracademy.com), abarcando ya tres infraestructuras técnicas distintas dentro del mismo grupo. Se sugiere fuertemente un `/market competitors` consolidado que trate a todo el grupo como un solo caso de estudio de arquitectura de marca y ecosistema de contenido.*
+*Generado por AI Marketing Suite — `/market audit`. Con esta auditoría se completan ocho sitios interconectados investigados en esta sesión (EPRAN, 2CREA2, DMarketing Consultores, OneTalentPro, dscobarsoluciones.com, dscobarsoluciones.es, dscobaracademy.com y formacionpaf.com), revelando el origen educativo común de toda la red (Escuela Práctica de Negocios, 2006) y ahora cuatro infraestructuras técnicas distintas dentro del mismo grupo empresarial.*
