@@ -1,0 +1,62 @@
+<!doctype html>
+<html
+  lang="es"
+  data-composition-variables='[
+    {"id":"fondo","type":"color","label":"Fondo para chroma key","default":"#FFFFFF"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--fondo, #ffffff);
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Solo la lista, sobre un fondo plano para quitarlo con chroma key en CapCut.
+         Mismos tiempos que index.html: se superpone desde el segundo 0 del video de Gabo. -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="26.3"
+      data-width="1080"
+      data-height="1920"
+      style="background: var(--fondo, #ffffff)"
+    >
+      <div
+        id="reglas"
+        class="clip"
+        data-composition-id="reglas"
+        data-composition-src="compositions/reglas.html"
+        data-start="0"
+        data-duration="26.3"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="position: absolute; inset: 0; z-index: 2; --fondo-pastilla: #111111; --fondo-pendiente: #111111"
+      ></div>
+    </div>
+
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
