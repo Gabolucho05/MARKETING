@@ -1,0 +1,83 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Montserrat", sans-serif;
+      --negro: #111111;
+      --verde: #22c55e;
+      --blanco: #f7f7f7;
+    }
+    #cierre-caja {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 830px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+    #cierre-marca {
+      display: inline-block;
+      opacity: 0;
+      padding: 16px 40px 20px;
+      border-radius: 24px;
+      background: var(--verde);
+      color: var(--negro);
+      font-size: 132px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+    }
+    #cierre-cta {
+      display: inline-block;
+      opacity: 0;
+      padding: 12px 30px 14px;
+      border-radius: 18px;
+      background: var(--negro);
+      color: var(--blanco);
+      font-size: 76px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="cierre"
+    data-width="1080"
+    data-height="1920"
+    data-composition-variables='[
+      {"id":"marca","type":"string","label":"Marca","default":"Gabofit"},
+      {"id":"cta","type":"string","label":"Llamado","default":"¡Llévatelo!"}
+    ]'
+  >
+    <div id="cierre-caja">
+      <span id="cierre-marca" data-var-text="marca">Gabofit</span>
+      <span id="cierre-cta" data-var-text="cta">¡Llévatelo!</span>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Escena empieza en 37.4 s del video
+    const L = (t) => t - 37.4;
+
+    // "es GABOFIT" → la marca entra de lado con el swish
+    tl.fromTo("#cierre-marca",
+      { opacity: 0, x: 900, rotation: -6 },
+      { opacity: 1, x: 0, rotation: -3, duration: 0.4, ease: "expo.out" }, L(37.6));
+
+    // "LLÉVATELO" → golpe
+    tl.fromTo("#cierre-cta",
+      { opacity: 0, scale: 1.7 },
+      { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L(38.22));
+
+    window.__timelines["cierre"] = tl;
+  </script>
+</template>

@@ -1,0 +1,84 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Montserrat", sans-serif;
+      --negro: #111111;
+      --verde: #22c55e;
+      --blanco: #f7f7f7;
+    }
+    #hook-caja {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      text-align: center;
+    }
+    #hook-l1 {
+      display: inline-block;
+      padding: 14px 30px 16px;
+      border-radius: 18px;
+      background: var(--negro);
+      color: var(--blanco);
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+    #hook-l2 {
+      display: inline-block;
+      opacity: 0;
+      color: var(--verde);
+      font-size: 118px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      -webkit-text-stroke: 14px var(--negro);
+      paint-order: stroke fill;
+      text-shadow: 0 10px 0 rgba(0, 0, 0, 0.35);
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="hook"
+    data-width="1080"
+    data-height="1920"
+    data-composition-variables='[
+      {"id":"hook1","type":"string","label":"Hook línea 1","default":"Si entrenas solo,"},
+      {"id":"hook2","type":"string","label":"Hook línea 2","default":"lo vas a dejar"}
+    ]'
+  >
+    <div id="hook-caja">
+      <span id="hook-l1" data-var-text="hook1">Si entrenas solo,</span>
+      <span id="hook-l2" data-var-text="hook2">lo vas a dejar</span>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Línea 1 ya está en el frame 0 (miniatura): solo un asentado corto
+    tl.fromTo("#hook-l1", { scale: 1.08 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
+
+    // "lo vas a dejar" golpea con la voz
+    tl.fromTo(
+      "#hook-l2",
+      { opacity: 0, scale: 1.6 },
+      { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" },
+      1.02
+    );
+
+    // Sale con el swish del corte
+    tl.to("#hook-caja", { x: -1100, duration: 0.2, ease: "power3.in" }, 2.05);
+
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #111111;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      #zoom {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 32%;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="39.6"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Cámara: el wrapper #zoom hace los zoom in / zoom out; el video no se toca -->
+      <div id="zoom">
+        <video
+          id="a-roll"
+          class="clip"
+          src="assets/gabo-planes.mp4"
+          playsinline
+          data-start="0"
+          data-duration="39.6"
+          data-track-index="0"
+          data-has-audio="true"
+          style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"
+        ></video>
+      </div>
+
+      <!-- Hook del inicio: "Si entrenas solo, lo vas a dejar" -->
+      <div
+        id="hook"
+        class="clip"
+        data-composition-id="hook"
+        data-composition-src="compositions/hook.html"
+        data-start="0"
+        data-duration="2.3"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="position: absolute; inset: 0; z-index: 3"
+      ></div>
+
+      <!-- Motion graphics: cómo funciona el plan familiar -->
+      <div
+        id="plan-familiar"
+        class="clip"
+        data-composition-id="plan-familiar"
+        data-composition-src="compositions/plan-familiar.html"
+        data-start="22.13"
+        data-duration="14.5"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="position: absolute; inset: 0; z-index: 3"
+      ></div>
+
+      <!-- Cierre: "es Gabofit, llévatelo" -->
+      <div
+        id="cierre"
+        class="clip"
+        data-composition-id="cierre"
+        data-composition-src="compositions/cierre.html"
+        data-start="37.4"
+        data-duration="2.2"
+        data-track-index="3"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="position: absolute; inset: 0; z-index: 3"
+      ></div>
+
+      <!-- Subtítulos: Montserrat Bold, verde, mayúsculas -->
+      <div
+        id="subtitulos"
+        class="clip"
+        data-composition-id="subtitulos"
+        data-composition-src="compositions/subtitulos.html"
+        data-start="0"
+        data-duration="39.6"
+        data-track-index="4"
+        data-track-kind="captions"
+        data-width="1080"
+        data-height="1920"
+        style="position: absolute; inset: 0; z-index: 4"
+      ></div>
+
+      <!-- Swish en cada cambio de toma (el pico del sonido cae 1 frame después del corte) -->
+      <audio id="swish-toma2" class="clip" src="assets/sfx/swish-1.wav" data-start="1.97" data-duration="0.55" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="swish-toma3" class="clip" src="assets/sfx/swish-2.wav" data-start="7.91" data-duration="0.5" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="swish-toma4" class="clip" src="assets/sfx/swish-3.wav" data-start="21.85" data-duration="0.6" data-track-index="5" data-volume="0.5"></audio>
+      <!-- Swish de la marca al cierre y golpe cuando aterriza el precio de $120 -->
+      <audio id="swish-marca" class="clip" src="assets/sfx/swish-4.wav" data-start="37.45" data-duration="0.45" data-track-index="6" data-volume="0.4"></audio>
+      <audio id="golpe-120" class="clip" src="assets/sfx/golpe.wav" data-start="33.29" data-duration="0.35" data-track-index="6" data-volume="0.55"></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const Z = "#zoom";
+
+      // Cortes de toma (s)
+      const CORTES = [2.233, 8.133, 22.133];
+
+      // Toma 1 (sentado): empuje lento y golpe de zoom en "dejar"
+      tl.fromTo(Z, { scale: 1 }, { scale: 1.06, duration: 1.4, ease: "sine.inOut" }, 0);
+      tl.to(Z, { scale: 1.17, duration: 0.3, ease: "power3.out" }, 1.5);
+
+      // Cada toma nueva entra con un zoom out rápido (va con el swish)
+      CORTES.forEach((t) => {
+        tl.set(Z, { scale: 1.16 }, t);
+        tl.to(Z, { scale: 1, duration: 0.45, ease: "expo.out" }, t);
+      });
+
+      // Toma 2: "te MOTIVA más" → zoom in suave, sale, y empuja en "nunca se rendirán"
+      tl.to(Z, { scale: 1.12, duration: 0.45, ease: "power2.inOut" }, 3.2);
+      tl.to(Z, { scale: 1.0, duration: 0.6, ease: "power2.inOut" }, 4.05);
+      tl.to(Z, { scale: 1.08, duration: 1.4, ease: "sine.inOut" }, 5.4);
+      tl.to(Z, { scale: 1.2, duration: 0.35, ease: "power3.out" }, 6.95);
+
+      // Toma 3 (plan panitas): punch en cada precio
+      tl.to(Z, { scale: 1.14, duration: 0.35, ease: "power3.out" }, 12.2);
+      tl.to(Z, { scale: 1.0, duration: 0.6, ease: "power2.inOut" }, 13.85);
+      tl.to(Z, { scale: 1.1, duration: 0.35, ease: "power3.out" }, 17.0);
+      tl.to(Z, { scale: 1.0, duration: 0.6, ease: "power2.inOut" }, 18.5);
+      tl.to(Z, { scale: 1.16, duration: 0.35, ease: "power3.out" }, 19.35);
+      tl.to(Z, { scale: 1.03, duration: 0.7, ease: "power2.inOut" }, 20.9);
+
+      // Toma 4 (plan familiar): cámara quieta y suave para que el gráfico respire
+      tl.to(Z, { scale: 1.05, duration: 6, ease: "sine.inOut" }, 23.0);
+      tl.to(Z, { scale: 1.1, duration: 0.35, ease: "power3.out" }, 33.18);
+      tl.to(Z, { scale: 1.03, duration: 0.7, ease: "power2.inOut" }, 34.6);
+
+      // Cierre: "Ya sabes ya" → zoom in, "llévatelo" → zoom out
+      tl.to(Z, { scale: 1.18, duration: 0.5, ease: "power3.out" }, 37.5);
+      tl.to(Z, { scale: 1.0, duration: 0.8, ease: "power2.inOut" }, 38.25);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
