@@ -34,7 +34,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="39.6"
+      data-duration="41.6"
       data-width="1080"
       data-height="1920"
     >
@@ -68,6 +68,21 @@
         style="position: absolute; inset: 0; z-index: 3"
       ></div>
 
+      <!-- Motion graphics: cómo funciona el plan panitas -->
+      <div
+        id="plan-panitas"
+        class="clip"
+        data-composition-id="plan-panitas"
+        data-composition-src="compositions/plan-panitas.html"
+        data-start="8.13"
+        data-duration="13.9"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="position: absolute; inset: 0; z-index: 3"
+      ></div>
+
       <!-- Motion graphics: cómo funciona el plan familiar -->
       <div
         id="plan-familiar"
@@ -83,14 +98,14 @@
         style="position: absolute; inset: 0; z-index: 3"
       ></div>
 
-      <!-- Cierre: "es Gabofit, llévatelo" -->
+      <!-- Cierre: "es Gabofit, llévatelo" + golpe a la pantalla y placa final -->
       <div
         id="cierre"
         class="clip"
         data-composition-id="cierre"
         data-composition-src="compositions/cierre.html"
         data-start="37.4"
-        data-duration="2.2"
+        data-duration="4.2"
         data-track-index="3"
         data-track-kind="graphics"
         data-width="1080"
@@ -119,7 +134,42 @@
       <audio id="swish-toma4" class="clip" src="assets/sfx/swish-3.wav" data-start="21.85" data-duration="0.6" data-track-index="5" data-volume="0.5"></audio>
       <!-- Swish de la marca al cierre y golpe cuando aterriza el precio de $120 -->
       <audio id="swish-marca" class="clip" src="assets/sfx/swish-4.wav" data-start="37.45" data-duration="0.45" data-track-index="6" data-volume="0.4"></audio>
-      <audio id="golpe-120" class="clip" src="assets/sfx/golpe.wav" data-start="33.29" data-duration="0.35" data-track-index="6" data-volume="0.55"></audio>
+      <audio id="golpe-120" class="clip" src="assets/sfx/golpe.wav" data-start="33.29" data-duration="0.35" data-track-index="9" data-volume="0.55"></audio>
+      <!-- Plan panitas: barrido al entrar la tarjeta, pop en cada pieza, golpe en cada precio -->
+      <audio id="pn-entra" class="clip" src="assets/sfx/barrido-1.wav" data-start="8.47" data-duration="0.32" data-track-index="7" data-volume="0.3"></audio>
+      <audio id="sfx-pn-tu" class="clip" src="assets/sfx/pop-1.wav" data-start="8.65" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="sfx-pn-pana1" class="clip" src="assets/sfx/pop-2.wav" data-start="9.13" data-duration="0.09" data-track-index="9" data-volume="0.35"></audio>
+      <audio id="sfx-pn-pana2" class="clip" src="assets/sfx/pop-3.wav" data-start="9.33" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="sfx-pn-chip-plan" class="clip" src="assets/sfx/pop-1.wav" data-start="10.91" data-duration="0.09" data-track-index="9" data-volume="0.35"></audio>
+      <audio id="sfx-pn-chip-3" class="clip" src="assets/sfx/pop-2.wav" data-start="11.25" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="pn-golpe-100" class="clip" src="assets/sfx/golpe.wav" data-start="12.29" data-duration="0.35" data-track-index="9" data-volume="0.55"></audio>
+      <audio id="sfx-pn-bcv" class="clip" src="assets/sfx/pop-3.wav" data-start="13.23" data-duration="0.09" data-track-index="8" data-volume="0.25"></audio>
+      <audio id="sfx-pn-120" class="clip" src="assets/sfx/pop-1.wav" data-start="14.61" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="pn-tachado" class="clip" src="assets/sfx/barrido-2.wav" data-start="16.71" data-duration="0.3" data-track-index="7" data-volume="0.3"></audio>
+      <audio id="sfx-pn-menos20" class="clip" src="assets/sfx/pop-2.wav" data-start="17.11" data-duration="0.09" data-track-index="8" data-volume="0.4"></audio>
+      <audio id="pn-golpe-100b" class="clip" src="assets/sfx/golpe.wav" data-start="19.43" data-duration="0.35" data-track-index="9" data-volume="0.5"></audio>
+      <audio id="sfx-pn-tres1" class="clip" src="assets/sfx/pop-1.wav" data-start="21.17" data-duration="0.09" data-track-index="8" data-volume="0.3"></audio>
+      <audio id="sfx-pn-tres2" class="clip" src="assets/sfx/pop-2.wav" data-start="21.25" data-duration="0.09" data-track-index="9" data-volume="0.3"></audio>
+      <audio id="sfx-pn-tres3" class="clip" src="assets/sfx/pop-3.wav" data-start="21.33" data-duration="0.09" data-track-index="8" data-volume="0.3"></audio>
+      <!-- Plan familiar -->
+      <audio id="pf-entra" class="clip" src="assets/sfx/barrido-2.wav" data-start="22.6" data-duration="0.3" data-track-index="7" data-volume="0.3"></audio>
+      <audio id="sfx-pf-chip-plan" class="clip" src="assets/sfx/pop-1.wav" data-start="22.71" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="sfx-pf-chip-4" class="clip" src="assets/sfx/pop-2.wav" data-start="23.55" data-duration="0.09" data-track-index="9" data-volume="0.35"></audio>
+      <audio id="sfx-pf-siluetas" class="clip" src="assets/sfx/pop-3.wav" data-start="23.63" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="sfx-pf-tu" class="clip" src="assets/sfx/pop-1.wav" data-start="25.33" data-duration="0.09" data-track-index="9" data-volume="0.35"></audio>
+      <audio id="sfx-pf-fam1" class="clip" src="assets/sfx/pop-2.wav" data-start="26.37" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="sfx-pf-fam2" class="clip" src="assets/sfx/pop-3.wav" data-start="26.53" data-duration="0.09" data-track-index="9" data-volume="0.35"></audio>
+      <audio id="sfx-pf-fam3" class="clip" src="assets/sfx/pop-1.wav" data-start="26.69" data-duration="0.09" data-track-index="8" data-volume="0.35"></audio>
+      <audio id="sfx-pf-160" class="clip" src="assets/sfx/pop-2.wav" data-start="29.75" data-duration="0.09" data-track-index="9" data-volume="0.35"></audio>
+      <audio id="sfx-pf-bcv" class="clip" src="assets/sfx/pop-3.wav" data-start="30.93" data-duration="0.09" data-track-index="8" data-volume="0.25"></audio>
+      <audio id="pf-tachado" class="clip" src="assets/sfx/barrido-1.wav" data-start="31.46" data-duration="0.32" data-track-index="7" data-volume="0.3"></audio>
+      <audio id="sfx-pf-30-1" class="clip" src="assets/sfx/pop-1.wav" data-start="35.33" data-duration="0.09" data-track-index="8" data-volume="0.3"></audio>
+      <audio id="sfx-pf-30-2" class="clip" src="assets/sfx/pop-2.wav" data-start="35.41" data-duration="0.09" data-track-index="9" data-volume="0.3"></audio>
+      <audio id="sfx-pf-30-3" class="clip" src="assets/sfx/pop-3.wav" data-start="35.49" data-duration="0.09" data-track-index="8" data-volume="0.3"></audio>
+      <audio id="sfx-pf-30-4" class="clip" src="assets/sfx/pop-1.wav" data-start="35.57" data-duration="0.09" data-track-index="9" data-volume="0.3"></audio>
+      <!-- Cierre: acercamiento hacia la mano e impacto con vidrio roto -->
+      <audio id="acercamiento" class="clip" src="assets/sfx/acercamiento.wav" data-start="38.77" data-duration="0.45" data-track-index="7" data-volume="0.45"></audio>
+      <audio id="impacto" class="clip" src="assets/sfx/impacto.wav" data-start="39.2" data-duration="1.1" data-track-index="9" data-volume="0.7"></audio>
     </div>
 
     <script>
@@ -160,7 +210,15 @@
 
       // Cierre: "Ya sabes ya" → zoom in, "llévatelo" → zoom out
       tl.to(Z, { scale: 1.18, duration: 0.5, ease: "power3.out" }, 37.5);
-      tl.to(Z, { scale: 1.0, duration: 0.8, ease: "power2.inOut" }, 38.25);
+      tl.to(Z, { scale: 1.0, duration: 0.5, ease: "power2.inOut" }, 38.25);
+
+      // Golpe a la pantalla: la cámara acelera hacia la mano y tiembla con el impacto
+      const IMPACTO = 39.17;
+      tl.to(Z, { scale: 1.35, duration: IMPACTO - 38.8, ease: "power3.in" }, 38.8);
+      const SACUDIDA = [[-34, 22], [28, -26], [-22, 16], [16, -12], [-10, 8], [6, -4], [0, 0]];
+      SACUDIDA.forEach(([x, y], i) => {
+        tl.to(Z, { x, y, duration: 0.035, ease: "power1.inOut" }, IMPACTO + i * 0.035);
+      });
 
       window.__timelines["main"] = tl;
     </script>
