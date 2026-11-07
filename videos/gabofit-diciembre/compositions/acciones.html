@@ -6,82 +6,447 @@
       font-family: "Montserrat", sans-serif;
       --negro: #111111;
       --verde: #0aa061; /* verde del logo GABOFIT */
-      --verde-profundo: #087a4b;
+      --verde-luz: #19d37f;
       --blanco: #ffffff;
+      --gris: rgba(255, 255, 255, 0.62);
       --rojo: #ef4444;
     }
-    /* Íconos tipo sticker al lado de la cabeza (derecha o izquierda) */
-    .icono {
-      position: absolute;
-      width: 190px;
-      height: 190px;
-      opacity: 0;
-    }
-    .der {
-      left: 790px;
-      top: 470px;
-    }
-    .izq {
-      left: 100px;
-      top: 470px;
-    }
-    .icono svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-    }
-    .trazo {
-      stroke: var(--negro);
-      stroke-width: 7;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-    }
 
-    /* Calendario: NOV → DIC */
-    #cal {
+    /* ---------- Sistema de tarjetas: todas en la zona del pecho, sobre los subtítulos ---------- */
+    .panel {
       position: absolute;
-      left: 800px;
-      top: 450px;
-      width: 180px;
-      height: 196px;
-      border-radius: 26px;
-      background: var(--blanco);
-      border: 7px solid var(--negro);
+      left: 110px;
+      top: 872px;
+      width: 860px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      padding: 26px 40px 26px 48px;
+      border-radius: 32px;
+      background: rgba(14, 14, 14, 0.86);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
       overflow: hidden;
       opacity: 0;
     }
-    #cal-top {
-      height: 50px;
-      background: var(--verde);
-      border-bottom: 7px solid var(--negro);
-    }
-    .cal-mes {
+    .acento {
       position: absolute;
       left: 0;
-      right: 0;
-      top: 74px;
+      top: 30px;
+      bottom: 30px;
+      width: 8px;
+      border-radius: 0 6px 6px 0;
+      background: var(--verde-luz);
+      transform-origin: 50% 0%;
+    }
+    .arte {
+      position: relative;
+      flex: none;
+      width: 260px;
+      height: 240px;
+    }
+    .texto {
+      flex: 1;
+      min-width: 0;
+    }
+    .etq {
+      display: block;
+      color: var(--gris);
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .titulo {
+      display: block;
+      margin-top: 12px;
+      color: var(--blanco);
+      font-size: 78px;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+    .titulo.v {
+      color: var(--verde-luz);
+    }
+    .chip {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 18px 12px;
+      border-radius: 12px;
+      background: var(--verde);
+      color: var(--blanco);
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .brillo {
+      position: absolute;
+      top: -20%;
+      bottom: -20%;
+      left: -40%;
+      width: 30%;
+      background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+    svg {
+      display: block;
+      overflow: visible;
+    }
+    /* Trazos que se dibujan solos (pathLength="1" en cada elemento) */
+    .d {
+      fill: none;
+      stroke: var(--blanco);
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+    .d.v {
+      stroke: var(--verde-luz);
+    }
+    .d.r {
+      stroke: var(--rojo);
+      stroke-width: 10;
+    }
+    .d.f {
+      stroke: rgba(255, 255, 255, 0.16);
+      stroke-width: 3;
+    }
+    .barra {
+      position: relative;
+      height: 16px;
+      margin-top: 22px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      overflow: hidden;
+    }
+    .barra-fill {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--verde), var(--verde-luz));
+      transform-origin: 0% 50%;
+    }
+    .mascara {
+      display: block;
+      overflow: hidden;
+    }
+    .mascara > span {
+      display: inline-block;
+    }
+    .chispa {
+      position: absolute;
+      opacity: 0;
+    }
+
+    /* ---------- D · Playa ---------- */
+    #pl-escena {
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ff9f43 0%, #ff6b6b 62%, #ff8e72 100%);
+    }
+    #pl-sol {
+      position: absolute;
+      left: 80px;
+      top: 50px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #ffe066;
+      box-shadow: 0 0 46px rgba(255, 224, 102, 0.85);
+    }
+    #pl-olas {
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 560px;
+      height: 100px;
+    }
+
+    /* ---------- E/O · Candela ---------- */
+    .llama {
+      position: absolute;
+      left: 40px;
+      top: 0;
+      width: 180px;
+      height: 230px;
+    }
+    .cd-chispa {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffd23f;
+      opacity: 0;
+    }
+
+    /* ---------- F · Reps ---------- */
+    #rp-anillo {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 240px;
+      height: 240px;
+    }
+    #rp-num {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanco);
+      font-size: 120px;
+      font-weight: 900;
+    }
+
+    /* ---------- G · El mejor ---------- */
+    #mj-escudo {
+      position: absolute;
+      left: 30px;
+      top: 4px;
+      width: 200px;
+      height: 224px;
+    }
+    #mj-uno {
+      position: absolute;
+      left: 30px;
+      top: 62px;
+      width: 200px;
       text-align: center;
-      color: var(--negro);
-      font-size: 72px;
+      color: var(--blanco);
+      font-size: 88px;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0;
+    }
+    #mj-g {
+      position: absolute;
+      left: 62px;
+      top: 70px;
+      width: 136px;
+      height: auto;
+      opacity: 0;
+      filter: brightness(0) invert(1);
+    }
+    #mj-titulos {
+      position: relative;
+      height: 86px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+    #mj-t1,
+    #mj-t2 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-top: 4px;
+    }
+
+    /* ---------- H · Temporada alta ---------- */
+    #tp-arte {
+      width: 320px;
+    }
+    #tp-punto {
+      position: absolute;
+      left: 296px;
+      top: 16px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--verde-luz);
+      box-shadow: 0 0 0 10px rgba(25, 211, 127, 0.25);
+      opacity: 0;
+    }
+
+    /* ---------- I · Noviembre → Diciembre ---------- */
+    #p-meta {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0;
+    }
+    #mt-pista {
+      position: relative;
+      height: 170px;
+      margin-top: 26px;
+    }
+    #mt-linea,
+    #mt-progreso {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 34px;
+      height: 12px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+    #mt-progreso {
+      background: linear-gradient(90deg, var(--verde), var(--verde-luz));
+      transform-origin: 0% 50%;
+    }
+    .mt-nodo {
+      position: absolute;
+      top: 14px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #2a2a2a;
+      border: 6px solid rgba(255, 255, 255, 0.35);
+    }
+    #mt-nov {
+      left: 4px;
+    }
+    #mt-dic {
+      right: 4px;
+    }
+    #mt-dic-on {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: var(--verde-luz);
+      opacity: 0;
+    }
+    #mt-onda {
+      position: absolute;
+      right: 4px;
+      top: 14px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 5px solid var(--verde-luz);
+      opacity: 0;
+    }
+    .mt-mes {
+      position: absolute;
+      top: 92px;
+      color: var(--blanco);
+      font-size: 64px;
       font-weight: 900;
       line-height: 1;
     }
-    #cal-dic {
-      color: var(--verde-profundo);
+    #mt-mes-nov {
+      left: 0;
+    }
+    #mt-mes-dic {
+      right: 0;
+      color: var(--gris);
+    }
+    #mt-cursor {
+      position: absolute;
+      left: 16px;
+      top: 26px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--blanco);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+      opacity: 0;
     }
 
-    /* Tarjeta de precio + lo que incluye */
+    /* ---------- J · Ni bolita ni flaco ---------- */
+    #p-no {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0;
+    }
+    #no-arte {
+      display: flex;
+      gap: 26px;
+      margin-top: 18px;
+    }
+    .no-celda {
+      position: relative;
+      flex: 1;
+      height: 196px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .no-celda svg {
+      position: absolute;
+      left: 26px;
+      top: 28px;
+      width: 140px;
+      height: 140px;
+    }
+    .no-txt {
+      position: absolute;
+      left: 172px;
+      top: 76px;
+      color: var(--blanco);
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0;
+    }
+
+    /* ---------- K · Marca ---------- */
+    #mk {
+      position: absolute;
+      left: 210px;
+      top: 880px;
+      width: 660px;
+      height: 280px;
+      opacity: 0;
+    }
+    .mk-barra {
+      position: absolute;
+      height: 70px;
+      border-radius: 8px;
+      transform-origin: 0% 50%;
+    }
+    #mk-b1 {
+      left: 120px;
+      top: 30px;
+      width: 460px;
+      background: var(--verde);
+    }
+    #mk-b2 {
+      left: 80px;
+      top: 180px;
+      width: 460px;
+      background: var(--blanco);
+    }
+    #mk-logo {
+      position: absolute;
+      left: 110px;
+      top: 0;
+      width: 440px;
+      padding: 26px 30px;
+      border-radius: 30px;
+      background: var(--blanco);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+    }
+    #mk-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ---------- L · Precio ---------- */
     #precio {
       position: absolute;
       left: 110px;
       top: 870px;
       width: 860px;
-      padding: 20px 34px 24px;
-      border-radius: 30px;
-      background: rgba(17, 17, 17, 0.9);
-      border: 4px solid var(--verde);
+      padding: 20px 34px 24px 48px;
+      border-radius: 32px;
+      background: rgba(14, 14, 14, 0.88);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
       opacity: 0;
     }
     #precio-fila {
@@ -91,7 +456,7 @@
       height: 104px;
     }
     #precio-num {
-      color: var(--verde);
+      color: var(--verde-luz);
       font-size: 112px;
       font-weight: 900;
       line-height: 1;
@@ -159,12 +524,46 @@
       top: 30px;
       padding: 12px 22px 14px;
       border-radius: 14px;
-      border: 5px solid var(--verde);
+      border: 5px solid var(--verde-luz);
       background: var(--negro);
-      color: var(--verde);
+      color: var(--verde-luz);
       font-size: 46px;
       font-weight: 900;
       line-height: 1;
+      opacity: 0;
+    }
+
+    /* ---------- N · Llégate ---------- */
+    #lg-mapa {
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #1d1f1e;
+    }
+    #lg-calles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .lg-onda {
+      position: absolute;
+      left: 130px;
+      top: 158px;
+      width: 50px;
+      height: 50px;
+      margin: -25px 0 0 -25px;
+      border-radius: 50%;
+      border: 5px solid var(--verde-luz);
+      opacity: 0;
+    }
+    #lg-pin {
+      position: absolute;
+      left: 92px;
+      top: 50px;
+      width: 76px;
+      height: 104px;
       opacity: 0;
     }
   </style>
@@ -182,149 +581,440 @@
       {"id":"incluye3","type":"string","label":"Incluye 3","default":"Entrenador personal"}
     ]'
   >
-    <!-- "ponerte FUERTE" / "tienes que ENTRENAR" → mancuerna -->
-    <div class="icono der" id="pesa1">
-      <svg viewBox="0 0 200 200"><g class="pesa-g"><rect class="trazo" x="40" y="92" width="120" height="16" rx="6" fill="#ffffff" /><rect class="trazo" x="22" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="148" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="6" y="74" width="18" height="52" rx="6" fill="#ffffff" /><rect class="trazo" x="176" y="74" width="18" height="52" rx="6" fill="#ffffff" /></g></svg>
-    </div>
-    <div class="icono der" id="pesa2">
-      <svg viewBox="0 0 200 200"><g class="pesa-g"><rect class="trazo" x="40" y="92" width="120" height="16" rx="6" fill="#ffffff" /><rect class="trazo" x="22" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="148" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="6" y="74" width="18" height="52" rx="6" fill="#ffffff" /><rect class="trazo" x="176" y="74" width="18" height="52" rx="6" fill="#ffffff" /></g></svg>
-    </div>
-
-    <!-- "CANDELA" → llama -->
-    <div class="icono der" id="llama1">
-      <svg viewBox="0 0 200 200"><path class="trazo" d="M100 14 C116 50 158 70 152 122 C148 164 124 186 100 186 C70 186 44 164 44 126 C44 92 70 78 76 46 C90 68 92 82 98 94 C106 74 110 44 100 14 Z" fill="#ff8a1f" /><path d="M100 104 C108 122 126 132 122 154 C120 170 110 178 100 178 C88 178 78 168 78 154 C78 138 92 130 100 104 Z" fill="#ffd23f" /></svg>
-    </div>
-    <div class="icono der" id="llama2">
-      <svg viewBox="0 0 200 200"><path class="trazo" d="M100 14 C116 50 158 70 152 122 C148 164 124 186 100 186 C70 186 44 164 44 126 C44 92 70 78 76 46 C90 68 92 82 98 94 C106 74 110 44 100 14 Z" fill="#ff8a1f" /><path d="M100 104 C108 122 126 132 122 154 C120 170 110 178 100 178 C88 178 78 168 78 154 C78 138 92 130 100 104 Z" fill="#ffd23f" /></svg>
-    </div>
-    <div class="icono der" id="llama3">
-      <svg viewBox="0 0 200 200"><path class="trazo" d="M100 14 C116 50 158 70 152 122 C148 164 124 186 100 186 C70 186 44 164 44 126 C44 92 70 78 76 46 C90 68 92 82 98 94 C106 74 110 44 100 14 Z" fill="#ff8a1f" /><path d="M100 104 C108 122 126 132 122 154 C120 170 110 178 100 178 C88 178 78 168 78 154 C78 138 92 130 100 104 Z" fill="#ffd23f" /></svg>
-    </div>
-
-    <!-- "la PLAYITA" → sol y olas -->
-    <div class="icono izq" id="playa">
-      <svg viewBox="0 0 200 200">
-        <g id="sol-rayos" class="trazo" fill="none"><line x1="100" y1="10" x2="100" y2="34" /><line x1="100" y1="126" x2="100" y2="150" /><line x1="30" y1="80" x2="54" y2="80" /><line x1="146" y1="80" x2="170" y2="80" /><line x1="50" y1="30" x2="67" y2="47" /><line x1="133" y1="113" x2="150" y2="130" /><line x1="150" y1="30" x2="133" y2="47" /><line x1="67" y1="113" x2="50" y2="130" /></g>
-        <circle class="trazo" cx="100" cy="80" r="34" fill="#ffd23f" />
-        <path class="trazo" d="M14 162 C34 146 54 146 74 162 C94 178 114 178 134 162 C154 146 174 146 190 160 L190 196 L14 196 Z" fill="#38bdf8" />
-      </svg>
+    <!-- A · "ponerte FUERTE para DICIEMBRE" -->
+    <div class="panel" id="p-fuerza">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg width="260" height="240" viewBox="0 0 260 240">
+          <path class="d" pathLength="1" d="M70 120 H190" />
+          <rect class="d v" pathLength="1" x="42" y="62" width="34" height="116" rx="8" />
+          <rect class="d v" pathLength="1" x="184" y="62" width="34" height="116" rx="8" />
+          <path class="d" pathLength="1" d="M18 90 V150 M242 90 V150" />
+        </svg>
+      </div>
+      <div class="texto">
+        <span class="etq">Nivel de fuerza</span>
+        <span class="titulo v" id="fz-num">0%</span>
+        <div class="barra"><div class="barra-fill" id="fz-fill"></div></div>
+        <span class="chip" id="fz-meta">Meta · Diciembre</span>
+      </div>
+      <div class="brillo" id="fz-brillo"></div>
     </div>
 
-    <!-- "NOVIEMBRE ... DICIEMBRE" → calendario que cambia de mes -->
-    <div id="cal">
-      <div id="cal-top"></div>
-      <span class="cal-mes" id="cal-nov">NOV</span>
-      <span class="cal-mes" id="cal-dic">DIC</span>
+    <!-- C · "lucir ese OUTFIT CANDELA" -->
+    <div class="panel" id="p-outfit">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg width="260" height="240" viewBox="0 0 270 220">
+          <path class="d" pathLength="1" d="M105 30 L80 40 L48 66 L66 92 L84 80 L84 196 L186 196 L186 80 L204 92 L222 66 L190 40 L165 30 C160 46 110 46 105 30 Z" />
+          <path class="d v" pathLength="1" d="M108 124 H162 M108 150 H148" />
+        </svg>
+        <svg class="chispa" id="of-c1" style="left: 6px; top: 26px" width="50" height="50" viewBox="-22 -22 44 44"><path d="M0 -20 C2 -4 4 -2 20 0 C4 2 2 4 0 20 C-2 4 -4 2 -20 0 C-4 -2 -2 -4 0 -20 Z" fill="#19d37f" /></svg>
+        <svg class="chispa" id="of-c2" style="left: 200px; top: 4px" width="62" height="62" viewBox="-22 -22 44 44"><path d="M0 -20 C2 -4 4 -2 20 0 C4 2 2 4 0 20 C-2 4 -4 2 -20 0 C-4 -2 -2 -4 0 -20 Z" fill="#ffffff" /></svg>
+        <svg class="chispa" id="of-c3" style="left: 214px; top: 150px" width="40" height="40" viewBox="-22 -22 44 44"><path d="M0 -20 C2 -4 4 -2 20 0 C4 2 2 4 0 20 C-2 4 -4 2 -20 0 C-4 -2 -2 -4 0 -20 Z" fill="#19d37f" /></svg>
+        <svg class="chispa" id="of-c4" style="left: 0px; top: 160px" width="34" height="34" viewBox="-22 -22 44 44"><path d="M0 -20 C2 -4 4 -2 20 0 C4 2 2 4 0 20 C-2 4 -4 2 -20 0 C-4 -2 -2 -4 0 -20 Z" fill="#ffffff" /></svg>
+      </div>
+      <div class="texto">
+        <span class="etq">Outfit de diciembre</span>
+        <span class="titulo mascara"><span id="of-t">Candela</span></span>
+      </div>
+      <div class="brillo" id="of-brillo"></div>
     </div>
 
-    <!-- "40 dólares a BCV ... gimnasio, mensualidad y entrenador personal INCLUIDO" -->
+    <!-- D · "ir para la PLAYITA" -->
+    <div class="panel" id="p-playa">
+      <div class="acento"></div>
+      <div class="arte">
+        <div id="pl-escena">
+          <div id="pl-sol"></div>
+          <svg id="pl-olas" viewBox="0 0 560 100" preserveAspectRatio="none">
+            <path d="M0 44 C35 24 70 24 105 44 C140 64 175 64 210 44 C245 24 280 24 315 44 C350 64 385 64 420 44 C455 24 490 24 525 44 C545 56 552 56 560 52 L560 100 L0 100 Z" fill="#1fa2c9" />
+            <path d="M0 64 C35 48 70 48 105 64 C140 80 175 80 210 64 C245 48 280 48 315 64 C350 80 385 80 420 64 C455 48 490 48 525 64 L560 70 L560 100 L0 100 Z" fill="#0f6f93" />
+          </svg>
+        </div>
+      </div>
+      <div class="texto">
+        <span class="etq">Modo</span>
+        <span class="titulo mascara"><span id="pl-t">Playa</span></span>
+        <span class="chip" id="pl-chip">Diciembre</span>
+      </div>
+    </div>
+
+    <!-- E · "el cuerpito CANDELA" -->
+    <div class="panel" id="p-candela">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg class="llama" viewBox="0 0 200 250">
+          <defs>
+            <linearGradient id="cd-grad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff4d2e" /><stop offset="0.6" stop-color="#ff9f1c" /><stop offset="1" stop-color="#ffd23f" /></linearGradient>
+            <clipPath id="cd-clip"><rect id="cd-nivel" x="0" y="250" width="200" height="250" /></clipPath>
+          </defs>
+          <path clip-path="url(#cd-clip)" d="M100 14 C116 56 166 82 160 146 C156 198 128 226 100 226 C64 226 34 198 34 150 C34 108 66 92 72 52 C88 80 92 96 98 110 C106 86 112 50 100 14 Z" fill="url(#cd-grad)" />
+          <path class="d" pathLength="1" d="M100 14 C116 56 166 82 160 146 C156 198 128 226 100 226 C64 226 34 198 34 150 C34 108 66 92 72 52 C88 80 92 96 98 110 C106 86 112 50 100 14 Z" />
+        </svg>
+        <div class="cd-chispa" id="cd-s1" style="left: 120px; top: 150px"></div>
+        <div class="cd-chispa" id="cd-s2" style="left: 170px; top: 130px"></div>
+        <div class="cd-chispa" id="cd-s3" style="left: 140px; top: 175px"></div>
+        <div class="cd-chispa" id="cd-s4" style="left: 90px; top: 120px"></div>
+      </div>
+      <div class="texto">
+        <span class="etq">Cuerpito</span>
+        <span class="titulo mascara"><span id="cd-t">Candela</span></span>
+        <div class="barra"><div class="barra-fill" id="cd-fill" style="background: linear-gradient(90deg, #ff4d2e, #ffd23f)"></div></div>
+      </div>
+    </div>
+
+    <!-- F · "tienes que ENTRENAR, y tienes que ENTRENAR" -->
+    <div class="panel" id="p-reps">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg id="rp-anillo" viewBox="0 0 240 240">
+          <circle cx="120" cy="120" r="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="18" />
+          <circle id="rp-arco" cx="120" cy="120" r="100" fill="none" stroke="#19d37f" stroke-width="18" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 120 120)" />
+        </svg>
+        <div id="rp-num">0</div>
+      </div>
+      <div class="texto">
+        <span class="etq">Tienes que</span>
+        <span class="titulo">Entrenar</span>
+        <span class="chip">Sin excusas</span>
+      </div>
+    </div>
+
+    <!-- G · "con el MEJOR, con GABOFIT" -->
+    <div class="panel" id="p-mejor">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg id="mj-escudo" viewBox="0 0 140 156">
+          <path class="d v" pathLength="1" d="M70 6 L130 26 V72 C130 110 102 136 70 150 C38 136 10 110 10 72 V26 Z" style="stroke-width: 6" />
+        </svg>
+        <span id="mj-uno">#1</span>
+        <img id="mj-g" src="assets/logos/gabofit-g.png" alt="" />
+      </div>
+      <div class="texto">
+        <span class="etq">Sabes con quién</span>
+        <div id="mj-titulos">
+          <span class="titulo" id="mj-t1">El mejor</span>
+          <span class="titulo v" id="mj-t2">Gabofit</span>
+        </div>
+      </div>
+      <div class="brillo" id="mj-brillo"></div>
+    </div>
+
+    <!-- H · "estamos en TEMPORADA ALTA" -->
+    <div class="panel" id="p-temporada">
+      <div class="acento"></div>
+      <div class="arte" id="tp-arte">
+        <svg width="320" height="240" viewBox="0 0 320 240">
+          <path class="d f" pathLength="1" d="M10 14 V226 H312" />
+          <path class="d f" pathLength="1" d="M10 156 H312 M10 86 H312" />
+          <path class="d v" pathLength="1" d="M16 212 L80 180 L130 192 L190 132 L246 104 L308 30" style="stroke-width: 9" />
+          <path class="d v" pathLength="1" d="M276 26 L308 26 L308 58" style="stroke-width: 9" />
+        </svg>
+        <div id="tp-punto"></div>
+      </div>
+      <div class="texto">
+        <span class="etq">Estamos en</span>
+        <span class="titulo" style="font-size: 66px">Temporada<br /><span style="color: #19d37f">alta</span></span>
+      </div>
+    </div>
+
+    <!-- I · "empezando NOVIEMBRE ... finito para DICIEMBRE" -->
+    <div class="panel" id="p-meta">
+      <div class="acento"></div>
+      <span class="etq">Tu meta · de noviembre a diciembre</span>
+      <div id="mt-pista">
+        <div id="mt-linea"></div>
+        <div id="mt-progreso"></div>
+        <div class="mt-nodo" id="mt-nov"></div>
+        <div class="mt-nodo" id="mt-dic"><div id="mt-dic-on"></div></div>
+        <div id="mt-onda"></div>
+        <div id="mt-cursor"></div>
+        <span class="mt-mes" id="mt-mes-nov">NOV</span>
+        <span class="mt-mes" id="mt-mes-dic">DIC</span>
+      </div>
+    </div>
+
+    <!-- J · "no quieren parecer una BOLITA ... ni un FLAQUITO" -->
+    <div class="panel" id="p-no">
+      <div class="acento"></div>
+      <span class="etq">Ni uno ni otro</span>
+      <div id="no-arte">
+        <div class="no-celda" id="no-c1">
+          <svg viewBox="0 0 120 120">
+            <circle class="d" pathLength="1" cx="60" cy="60" r="46" />
+            <path class="d r" pathLength="1" d="M18 18 L102 102 M102 18 L18 102" />
+          </svg>
+          <span class="no-txt" id="no-t1">BOLITA</span>
+        </div>
+        <div class="no-celda" id="no-c2">
+          <svg viewBox="0 0 120 120">
+            <rect class="d" pathLength="1" x="48" y="8" width="24" height="104" rx="12" />
+            <path class="d r" pathLength="1" d="M18 18 L102 102 M102 18 L18 102" />
+          </svg>
+          <span class="no-txt" id="no-t2" style="font-size: 38px">FLAQUITO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- K · "vengan a entrenar con GABOFIT" -->
+    <div id="mk">
+      <div class="mk-barra" id="mk-b1"></div>
+      <div class="mk-barra" id="mk-b2"></div>
+      <div id="mk-logo"><img src="assets/logos/gabofit-logo.png" alt="GABOFIT" /></div>
+    </div>
+
+    <!-- L · "40 dólares a BCV ... gimnasio, mensualidad y entrenador personal INCLUIDO" -->
     <div id="precio">
+      <div class="acento"></div>
       <div id="precio-fila">
         <span id="precio-num" data-var-text="precio">$40</span><span id="precio-mes">/MES</span>
         <span id="precio-bcv"><img id="bcv-sello" src="assets/logos/bcv.png" alt="BCV" /><span>A TASA BCV</span></span>
       </div>
-      <div class="item" id="inc1"><div class="check"><svg viewBox="0 0 30 30"><path d="M5 16 L12 23 L25 8" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span data-var-text="incluye1">Gimnasio</span></div>
-      <div class="item" id="inc2"><div class="check"><svg viewBox="0 0 30 30"><path d="M5 16 L12 23 L25 8" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span data-var-text="incluye2">Mensualidad</span></div>
-      <div class="item" id="inc3"><div class="check"><svg viewBox="0 0 30 30"><path d="M5 16 L12 23 L25 8" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span data-var-text="incluye3">Entrenador personal</span></div>
+      <div class="item" id="inc1"><div class="check"><svg viewBox="0 0 30 30"><path class="d" pathLength="1" d="M5 16 L12 23 L25 8" style="stroke-width: 5" /></svg></div><span data-var-text="incluye1">Gimnasio</span></div>
+      <div class="item" id="inc2"><div class="check"><svg viewBox="0 0 30 30"><path class="d" pathLength="1" d="M5 16 L12 23 L25 8" style="stroke-width: 5" /></svg></div><span data-var-text="incluye2">Mensualidad</span></div>
+      <div class="item" id="inc3"><div class="check"><svg viewBox="0 0 30 30"><path class="d" pathLength="1" d="M5 16 L12 23 L25 8" style="stroke-width: 5" /></svg></div><span data-var-text="incluye3">Entrenador personal</span></div>
       <span id="sello">INCLUIDO</span>
+      <div class="brillo" id="precio-brillo"></div>
     </div>
 
-    <!-- "deja de perder TIEMPO" → reloj con la aguja corriendo -->
-    <div class="icono der" id="reloj">
-      <svg viewBox="0 0 200 200">
-        <circle class="trazo" cx="100" cy="100" r="80" fill="#ffffff" />
-        <g class="trazo" fill="none"><line x1="100" y1="30" x2="100" y2="44" /><line x1="100" y1="156" x2="100" y2="170" /><line x1="30" y1="100" x2="44" y2="100" /><line x1="156" y1="100" x2="170" y2="100" /></g>
-        <line id="reloj-hora" class="trazo" x1="100" y1="100" x2="100" y2="62" />
-        <line id="reloj-min" x1="100" y1="100" x2="146" y2="100" stroke="#0aa061" stroke-width="9" stroke-linecap="round" />
-        <circle cx="100" cy="100" r="9" fill="#111111" />
-      </svg>
+    <!-- M · "deja de perder TIEMPO" -->
+    <div class="panel" id="p-tiempo">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg viewBox="0 0 200 186" style="position: absolute; left: 30px; top: 0; width: 200px; height: 236px">
+          <path class="d" pathLength="1" d="M86 8 H114 M100 8 V24 M150 40 L162 28" />
+          <circle cx="100" cy="104" r="68" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="12" />
+          <circle id="ti-arco" cx="100" cy="104" r="68" fill="none" stroke="#19d37f" stroke-width="12" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" transform="rotate(-90 100 104)" />
+          <line id="ti-aguja" x1="100" y1="104" x2="100" y2="58" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+          <circle cx="100" cy="104" r="8" fill="#ffffff" />
+        </svg>
+      </div>
+      <div class="texto">
+        <span class="etq">Deja de perder</span>
+        <span class="titulo mascara"><span id="ti-t">Tiempo</span></span>
+        <div class="barra"><div class="barra-fill" id="ti-fill" style="background: linear-gradient(90deg, #ef4444, #ff8a5c)"></div></div>
+      </div>
     </div>
 
-    <!-- "LLÉGATE para acá" → pin de ubicación -->
-    <div class="icono izq" id="pin">
-      <svg viewBox="0 0 200 200">
-        <ellipse id="pin-sombra" cx="100" cy="190" rx="34" ry="8" fill="rgba(0,0,0,0.35)" />
-        <path class="trazo" d="M100 10 C62 10 34 38 34 76 C34 122 100 182 100 182 C100 182 166 122 166 76 C166 38 138 10 100 10 Z" fill="#0aa061" />
-        <circle class="trazo" cx="100" cy="76" r="26" fill="#ffffff" />
-      </svg>
+    <!-- N · "LLÉGATE para acá" -->
+    <div class="panel" id="p-llegate">
+      <div class="acento"></div>
+      <div class="arte">
+        <div id="lg-mapa">
+          <svg id="lg-calles" viewBox="0 0 260 240" preserveAspectRatio="none">
+            <path class="d f" pathLength="1" d="M0 70 H260 M0 170 H260 M70 0 V240 M190 0 V240 M0 230 L260 20" style="stroke-width: 12; stroke: rgba(255,255,255,0.1)" />
+          </svg>
+          <div class="lg-onda" id="lg-o1"></div>
+          <div class="lg-onda" id="lg-o2"></div>
+          <div class="lg-onda" id="lg-o3"></div>
+          <svg id="lg-pin" viewBox="0 0 60 82"><path d="M30 2 C14 2 2 14 2 30 C2 52 30 80 30 80 C30 80 58 52 58 30 C58 14 46 2 30 2 Z" fill="#19d37f" /><circle cx="30" cy="29" r="11" fill="#111111" /></svg>
+        </div>
+      </div>
+      <div class="texto">
+        <span class="etq">Llégate para acá</span>
+        <span class="titulo mascara"><span id="lg-t">Gabofit</span></span>
+        <span class="chip" id="lg-chip">Te esperamos</span>
+      </div>
+    </div>
+
+    <!-- O · "ese cuerpito CANDELA para DICIEMBRE" -->
+    <div class="panel" id="p-candela2">
+      <div class="acento"></div>
+      <div class="arte">
+        <svg class="llama" viewBox="0 0 200 250">
+          <defs>
+            <clipPath id="cd2-clip"><rect id="cd2-nivel" x="0" y="250" width="200" height="250" /></clipPath>
+          </defs>
+          <path clip-path="url(#cd2-clip)" d="M100 14 C116 56 166 82 160 146 C156 198 128 226 100 226 C64 226 34 198 34 150 C34 108 66 92 72 52 C88 80 92 96 98 110 C106 86 112 50 100 14 Z" fill="url(#cd-grad)" />
+          <path class="d" pathLength="1" d="M100 14 C116 56 166 82 160 146 C156 198 128 226 100 226 C64 226 34 198 34 150 C34 108 66 92 72 52 C88 80 92 96 98 110 C106 86 112 50 100 14 Z" />
+        </svg>
+        <div class="cd-chispa" id="cd2-s1" style="left: 120px; top: 150px"></div>
+        <div class="cd-chispa" id="cd2-s2" style="left: 170px; top: 130px"></div>
+        <div class="cd-chispa" id="cd2-s3" style="left: 140px; top: 175px"></div>
+        <div class="cd-chispa" id="cd2-s4" style="left: 90px; top: 120px"></div>
+      </div>
+      <div class="texto">
+        <span class="etq">Listo para</span>
+        <span class="titulo mascara"><span id="cd2-t">Diciembre</span></span>
+      </div>
     </div>
   </div>
 
   <script>
     const tl = gsap.timeline({ paused: true });
 
-    // Utilidades: un sticker entra con giro, y sale encogiéndose
-    const entra = (sel, t, rot = -14) =>
-      tl.fromTo(sel, { opacity: 0, scale: 0.2, rotation: rot },
-        { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.2)" }, t);
-    const sale = (sel, t) =>
-      tl.to(sel, { opacity: 0, scale: 0.4, duration: 0.18, ease: "power3.in" }, t);
-    const golpe = (sel, t, s = 1.18) => {
-      tl.to(sel, { scale: s, duration: 0.1, ease: "power2.out" }, t);
-      tl.to(sel, { scale: 1, duration: 0.28, ease: "power3.out" }, t + 0.1);
+    // Estados iniciales que GSAP luego anima (no en CSS, para que no choquen)
+    tl.set([".barra-fill", "#mt-progreso"], { scaleX: 0 }, 0);
+    tl.set(".mk-barra", { skewX: -38, scaleX: 0 }, 0);
+    tl.set(".mascara > span", { yPercent: 110 }, 0);
+    tl.set("#mj-t2", { yPercent: 110, opacity: 0 }, 0);
+    tl.set("#mj-t1", { yPercent: 110 }, 0);
+
+    // ---------- Utilidades ----------
+    const entra = (sel, t) => {
+      tl.fromTo(sel, { opacity: 0, y: 70, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, t);
+      tl.fromTo(sel + " .acento", { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: "expo.out" }, t + 0.08);
+      tl.fromTo(sel + " .etq", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, t + 0.12);
     };
+    const sale = (sel, t) => tl.to(sel, { opacity: 0, y: 40, scale: 0.95, duration: 0.26, ease: "power3.in" }, t);
+    const dibuja = (sel, t, dur = 0.5, stagger = 0.06) =>
+      tl.fromTo(sel, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: dur, ease: "power2.inOut", stagger }, t);
+    const revela = (sel, t) => tl.to(sel, { yPercent: 0, duration: 0.42, ease: "expo.out" }, t);
+    const brillo = (sel, t) => tl.fromTo(sel, { xPercent: 0 }, { xPercent: 640, duration: 0.8, ease: "power2.inOut" }, t);
+    const cuenta = (el, t, a, b, dur, fmt) => {
+      const o = { v: a };
+      tl.to(o, { v: b, duration: dur, ease: "power2.out", onUpdate: () => { document.querySelector(el).textContent = fmt(o.v); } }, t);
+    };
+    const golpe = (sel, t, s = 1.1) => {
+      tl.to(sel, { scale: s, duration: 0.1, ease: "power2.out" }, t);
+      tl.to(sel, { scale: 1, duration: 0.3, ease: "power3.out" }, t + 0.1);
+    };
+    // aparece y luego se va (sin quedar visible antes de tiempo)
+    const destello = (sel, t, a, b, dur) => {
+      tl.fromTo(sel, { opacity: 0 }, { opacity: a.opacity ?? 1, duration: 0.04, ease: "none" }, t);
+      tl.fromTo(sel, { ...a }, { ...b, duration: dur, ease: "power2.out", immediateRender: false }, t + 0.04);
+    };
+    const chispasLlama = (ids, t) => ids.forEach((s, i) =>
+      destello(s, t + i * 0.09, { opacity: 1, y: 0, x: 0, scale: 1 }, { opacity: 0, y: -170 - i * 20, x: (i % 2 ? 30 : -30), scale: 0.3 }, 0.75));
 
-    // "si tú quieres PONERTE FUERTE" → la mancuerna sube y baja dos veces (una repetición)
-    entra("#pesa1", 4.18);
-    tl.to("#pesa1 .pesa-g", { y: -26, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 3, transformOrigin: "50% 50%" }, 4.56);
-    sale("#pesa1", 5.25);
+    // A · "ponerte FUERTE" → la fuerza sube a 100 %; "para DICIEMBRE" → meta
+    entra("#p-fuerza", 4.14);
+    dibuja("#p-fuerza .d", 4.2, 0.45);
+    tl.to("#fz-fill", { scaleX: 1, duration: 0.85, ease: "power2.inOut" }, 4.3);
+    cuenta("#fz-num", 4.3, 0, 100, 0.85, (v) => Math.round(v) + "%");
+    golpe("#fz-num", 4.6, 1.12);
+    brillo("#fz-brillo", 4.62);
+    tl.fromTo("#fz-meta", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 5.28);
+    sale("#p-fuerza", 5.9);
 
-    // "OUTFIT CANDELA" → llama
-    entra("#llama1", 6.62, 10);
-    tl.to("#llama1 svg", { scaleY: 1.1, duration: 0.12, ease: "sine.inOut", yoyo: true, repeat: 3, transformOrigin: "50% 100%" }, 6.8);
-    sale("#llama1", 7.3);
+    // C · "lucir ese OUTFIT CANDELA" → la camiseta se dibuja y brilla
+    entra("#p-outfit", 6.0);
+    dibuja("#p-outfit .d", 6.06, 0.55, 0.12);
+    revela("#of-t", 6.64);
+    ["#of-c1", "#of-c2", "#of-c3", "#of-c4"].forEach((c, i) =>
+      tl.fromTo(c, { opacity: 0, scale: 0, rotation: -90 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.5)" }, 6.66 + i * 0.07));
+    brillo("#of-brillo", 6.68);
+    sale("#p-outfit", 7.28);
 
-    // "ir para la PLAYITA" → sol (los rayos giran) y olas
-    entra("#playa", 7.62);
-    tl.to("#sol-rayos", { rotation: 45, svgOrigin: "100 80", duration: 1.0, ease: "power1.inOut" }, 7.7);
-    sale("#playa", 8.62);
+    // D · "ir para la PLAYITA" → amanece en la playa
+    entra("#p-playa", 7.36);
+    tl.fromTo("#pl-sol", { y: 140 }, { y: 0, duration: 0.8, ease: "power3.out" }, 7.6);
+    tl.fromTo("#pl-olas", { x: 0 }, { x: -210, duration: 1.3, ease: "none" }, 7.36);
+    revela("#pl-t", 7.66);
+    tl.fromTo("#pl-chip", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 7.9);
+    sale("#p-playa", 8.3);
 
-    // "el cuerpito CANDELA" → llama
-    entra("#llama2", 8.72, 10);
-    tl.to("#llama2 svg", { scaleY: 1.1, duration: 0.12, ease: "sine.inOut", yoyo: true, repeat: 5, transformOrigin: "50% 100%" }, 8.9);
-    sale("#llama2", 9.7);
+    // E · "el cuerpito CANDELA" → la llama se dibuja, se llena y suelta chispas
+    entra("#p-candela", 8.36);
+    dibuja("#p-candela .d", 8.42, 0.4);
+    revela("#cd-t", 8.72);
+    tl.fromTo("#cd-nivel", { attr: { y: 250 } }, { attr: { y: 0 }, duration: 0.6, ease: "power2.out" }, 8.72);
+    tl.to("#cd-fill", { scaleX: 1, duration: 0.7, ease: "power2.out" }, 8.74);
+    chispasLlama(["#cd-s1", "#cd-s2", "#cd-s3", "#cd-s4"], 8.9);
+    sale("#p-candela", 9.7);
 
-    // "tienes que ENTRENAR, y tienes que ENTRENAR" → mancuerna, una repetición en cada "entrenar"
-    entra("#pesa2", 10.76);
-    tl.to("#pesa2 .pesa-g", { y: -30, duration: 0.2, ease: "power2.out", yoyo: true, repeat: 1 }, 10.85);
-    tl.to("#pesa2 .pesa-g", { y: -30, duration: 0.2, ease: "power2.out", yoyo: true, repeat: 1 }, 12.24);
-    sale("#pesa2", 12.95);
+    // F · "tienes que ENTRENAR" ×2 → contador de repeticiones con anillo
+    entra("#p-reps", 10.6);
+    tl.to("#rp-arco", { strokeDashoffset: 0.5, duration: 0.4, ease: "power3.out" }, 10.8);
+    tl.set("#rp-num", { textContent: "1" }, 10.8);
+    golpe("#rp-num", 10.8, 1.25);
+    tl.to("#rp-arco", { strokeDashoffset: 0, duration: 0.4, ease: "power3.out" }, 12.22);
+    tl.set("#rp-num", { textContent: "2" }, 12.22);
+    golpe("#rp-num", 12.22, 1.25);
+    sale("#p-reps", 12.95);
 
-    // "empezando NOVIEMBRE ... para DICIEMBRE" → el calendario pasa de NOV a DIC
-    tl.fromTo("#cal", { opacity: 0, y: 40, rotation: 8 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(2)" }, 17.14);
-    tl.fromTo("#cal-dic", { yPercent: 160 }, { yPercent: 160, duration: 0.01 }, 17.14);
-    tl.to("#cal-nov", { yPercent: -160, duration: 0.3, ease: "power3.in" }, 19.3);
-    tl.to("#cal-dic", { yPercent: 0, duration: 0.35, ease: "back.out(2)" }, 19.36);
-    golpe("#cal", 19.36, 1.12);
-    tl.to("#cal", { opacity: 0, y: -30, duration: 0.2, ease: "power3.in" }, 20.4);
+    // G · "con el MEJOR" → escudo #1; "con GABOFIT" → el #1 se vuelve la G de la marca
+    entra("#p-mejor", 13.2);
+    dibuja("#mj-escudo .d", 13.28, 0.5);
+    tl.fromTo("#mj-uno", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 13.66);
+    tl.to("#mj-t1", { yPercent: 0, duration: 0.42, ease: "expo.out" }, 13.66);
+    tl.to("#mj-uno", { opacity: 0, scaleX: 0, duration: 0.14, ease: "power2.in" }, 14.34);
+    tl.fromTo("#mj-g", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "back.out(2)" }, 14.46);
+    tl.to("#mj-t1", { yPercent: -110, opacity: 0, duration: 0.25, ease: "power3.in" }, 14.3);
+    tl.to("#mj-t2", { yPercent: 0, opacity: 1, duration: 0.42, ease: "expo.out" }, 14.42);
+    brillo("#mj-brillo", 14.46);
+    sale("#p-mejor", 15.2);
 
-    // "40 DÓLARES a BCV" → precio; "con GIMNASIO, MENSUALIDAD y ENTRENADOR PERSONAL" → checks; "INCLUIDO" → sello
-    tl.fromTo("#precio", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "expo.out" }, 26.6);
-    tl.fromTo("#precio-num", { scale: 1.8 }, { scale: 1, duration: 0.32, ease: "expo.out", transformOrigin: "0% 70%" }, 26.62);
-    tl.fromTo("#precio-bcv", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 27.56);
+    // H · "estamos en TEMPORADA ALTA" → gráfica que sube
+    entra("#p-temporada", 15.62);
+    dibuja("#p-temporada .d.f", 15.7, 0.4, 0.05);
+    dibuja("#p-temporada .d.v", 15.98, 0.6, 0.45);
+    tl.fromTo("#tp-punto", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, 16.6);
+    sale("#p-temporada", 17.0);
+
+    // I · "empezando NOVIEMBRE ... para DICIEMBRE" → el cursor viaja de NOV a DIC
+    entra("#p-meta", 17.06);
+    tl.fromTo("#mt-cursor", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, 17.18);
+    tl.fromTo("#mt-cursor", { x: 0 }, { x: 672, duration: 2.1, ease: "power1.inOut" }, 17.24);
+    tl.to("#mt-progreso", { scaleX: 1, duration: 2.1, ease: "power1.inOut" }, 17.24);
+    tl.to("#mt-mes-nov", { color: "rgba(255,255,255,0.62)", duration: 0.3 }, 18.6);
+    tl.to("#mt-dic-on", { opacity: 1, duration: 0.15 }, 19.34);
+    tl.to("#mt-mes-dic", { color: "#19d37f", duration: 0.15 }, 19.34);
+    golpe("#mt-mes-dic", 19.34, 1.25);
+    destello("#mt-onda", 19.34, { opacity: 1, scale: 1 }, { opacity: 0, scale: 3 }, 0.6);
+    sale("#p-meta", 20.4);
+
+    // J · "una BOLITA ... ni un FLAQUITO" → cada figura se dibuja y se tacha
+    entra("#p-no", 21.26);
+    dibuja("#no-c1 .d:not(.r)", 21.36, 0.4);
+    tl.fromTo("#no-t1", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, 21.54);
+    dibuja("#no-c1 .d.r", 21.62, 0.3);
+    dibuja("#no-c2 .d:not(.r)", 22.56, 0.35);
+    tl.fromTo("#no-t2", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, 22.9);
+    dibuja("#no-c2 .d.r", 22.96, 0.3);
+    sale("#p-no", 23.5);
+
+    // K · "vengan a entrenar con GABOFIT" → barras diagonales de la G y el logo
+    tl.set("#mk", { opacity: 1 }, 25.45);
+    tl.to("#mk-b1", { scaleX: 1, duration: 0.35, ease: "expo.out" }, 25.5);
+    tl.to("#mk-b2", { scaleX: 1, duration: 0.35, ease: "expo.out" }, 25.58);
+    tl.fromTo("#mk-logo", { opacity: 0, scale: 0.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2)" }, 25.74);
+    tl.to(["#mk-b1", "#mk-b2"], { x: 520, opacity: 0, duration: 0.3, ease: "power3.in" }, 25.9);
+    tl.to("#mk", { opacity: 0, scale: 0.92, duration: 0.22, ease: "power3.in" }, 26.36);
+
+    // L · "40 DÓLARES a BCV" → el precio cuenta hasta $40; checks se dibujan; sello INCLUIDO
+    tl.fromTo("#precio", { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 26.56);
+    tl.fromTo("#precio .acento", { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: "expo.out" }, 26.62);
+    cuenta("#precio-num", 26.62, 0, 40, 0.5, (v) => "$" + Math.round(v));
+    tl.fromTo("#precio-bcv", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 27.56);
     tl.fromTo("#bcv-sello", { rotation: -180, scale: 0.3 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 27.56);
     [["#inc1", 28.54], ["#inc2", 29.42], ["#inc3", 30.46]].forEach(([sel, t]) => {
       tl.fromTo(sel, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power4.out" }, t);
-      tl.fromTo(sel + " .check", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, t + 0.05);
+      tl.fromTo(sel + " .check", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, t + 0.03);
+      dibuja(sel + " .d", t + 0.1, 0.25);
     });
     tl.to("#precio-bcv", { opacity: 0, y: -10, duration: 0.15, ease: "power2.in" }, 30.9);
     tl.fromTo("#sello", { opacity: 0, scale: 2.4, rotation: -4 }, { opacity: 1, scale: 1, rotation: -10, duration: 0.25, ease: "power4.in" }, 31.04);
-    tl.to("#precio", { opacity: 0, scale: 0.92, y: 40, duration: 0.22, ease: "power3.in" }, 31.95);
+    brillo("#precio-brillo", 31.1);
+    tl.to("#precio", { opacity: 0, scale: 0.94, y: 40, duration: 0.24, ease: "power3.in" }, 31.95);
 
-    // "deja de perder TIEMPO" → reloj con la aguja corriendo
-    entra("#reloj", 32.56);
-    tl.fromTo("#reloj-min", { rotation: 0 }, { rotation: 720, svgOrigin: "100 100", duration: 0.85, ease: "power1.in" }, 32.62);
-    tl.fromTo("#reloj-hora", { rotation: 0 }, { rotation: 60, svgOrigin: "100 100", duration: 0.85, ease: "power1.in" }, 32.62);
-    sale("#reloj", 33.42);
+    // M · "deja de perder TIEMPO" → cronómetro que se vacía y se pone rojo
+    entra("#p-tiempo", 32.26);
+    dibuja("#p-tiempo .d", 32.32, 0.35);
+    revela("#ti-t", 32.84);
+    tl.to("#ti-arco", { strokeDashoffset: 1, duration: 0.95, ease: "none" }, 32.42);
+    tl.to("#ti-arco", { stroke: "#ef4444", duration: 0.4, ease: "none" }, 32.8);
+    tl.fromTo("#ti-aguja", { rotation: 0 }, { rotation: 360, svgOrigin: "100 104", duration: 0.95, ease: "none" }, 32.42);
+    tl.to("#ti-fill", { scaleX: 1, duration: 0.95, ease: "none" }, 32.42);
+    sale("#p-tiempo", 33.36);
 
-    // "LLÉGATE para acá" → el pin cae y rebota
-    tl.fromTo("#pin", { opacity: 0, y: -260 }, { opacity: 1, y: 0, duration: 0.45, ease: "bounce.out" }, 33.46);
-    sale("#pin", 34.45);
+    // N · "LLÉGATE para acá" → el pin cae en el mapa y emite ondas
+    entra("#p-llegate", 33.4);
+    dibuja("#lg-calles .d", 33.44, 0.4);
+    tl.fromTo("#lg-pin", { opacity: 0, y: -160 }, { opacity: 1, y: 0, duration: 0.5, ease: "bounce.out" }, 33.5);
+    revela("#lg-t", 33.6);
+    ["#lg-o1", "#lg-o2", "#lg-o3"].forEach((o, i) => destello(o, 33.86 + i * 0.18, { opacity: 0.9, scale: 0.4 }, { opacity: 0, scale: 3.4 }, 0.8));
+    tl.fromTo("#lg-chip", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 33.95);
+    sale("#p-llegate", 34.6);
 
-    // "ese cuerpito CANDELA" → llama
-    entra("#llama3", 35.3, 10);
-    tl.to("#llama3 svg", { scaleY: 1.1, duration: 0.12, ease: "sine.inOut", yoyo: true, repeat: 5, transformOrigin: "50% 100%" }, 35.45);
-    sale("#llama3", 36.25);
+    // O · "ese cuerpito CANDELA para DICIEMBRE" → llama final
+    entra("#p-candela2", 34.9);
+    dibuja("#p-candela2 .d", 34.96, 0.4);
+    tl.fromTo("#cd2-nivel", { attr: { y: 250 } }, { attr: { y: 0 }, duration: 0.6, ease: "power2.out" }, 35.32);
+    revela("#cd2-t", 35.96);
+    chispasLlama(["#cd2-s1", "#cd2-s2", "#cd2-s3", "#cd2-s4"], 35.5);
+    sale("#p-candela2", 36.36);
 
     window.__timelines["acciones"] = tl;
   </script>

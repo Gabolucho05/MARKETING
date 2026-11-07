@@ -15,29 +15,29 @@
       overflow: visible;
       text-align: center;
       opacity: 0;
-      font-size: 112px;
+      font-size: 76px;
       font-weight: 800;
       line-height: 1;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
       text-transform: uppercase;
       color: var(--blanco);
     }
     .pal.clave {
-      font-size: 136px;
+      font-size: 92px;
       font-weight: 900;
     }
     /* La máscara: el texto sube desde abajo y se revela dentro de esta caja */
     .msk {
       display: inline-block;
       overflow: hidden;
-      padding: 12px 18px 16px;
+      padding: 30px 34px;
+      margin: -18px -16px;
       vertical-align: top;
     }
     .txt {
       display: inline-block;
-      -webkit-text-stroke: 12px var(--negro);
-      paint-order: stroke fill;
-      text-shadow: 0 8px 0 rgba(0, 0, 0, 0.45);
+      /* limpio: sin borde, solo una sombra suave para que se lea sobre cualquier fondo */
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.35);
     }
   </style>
 
@@ -151,9 +151,9 @@
     PALABRAS.forEach((p) => {
       const el = document.getElementById(p.id);
       const txt = el.querySelector(".txt");
-      const base = p.k ? 136 : 112;
+      const base = p.k ? 92 : 76;
       if (fit) {
-        const { fontSize } = fit(el.textContent, { fontFamily: "Montserrat", fontWeight: p.k ? 900 : 800, maxWidth: 880, baseFontSize: base, minFontSize: 64 });
+        const { fontSize } = fit(el.textContent, { fontFamily: "Montserrat", fontWeight: p.k ? 900 : 800, maxWidth: 880, baseFontSize: base, minFontSize: 52 });
         el.style.fontSize = Math.min(fontSize, base) + "px";
       }
       tl.set(el, { opacity: 1 }, p.s);
