@@ -1,0 +1,170 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Montserrat", sans-serif;
+      --blanco: #ffffff;
+      --negro: #111111;
+    }
+    .pal {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1210px;
+      overflow: visible;
+      text-align: center;
+      opacity: 0;
+      font-size: 112px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      color: var(--blanco);
+    }
+    .pal.clave {
+      font-size: 136px;
+      font-weight: 900;
+    }
+    /* La máscara: el texto sube desde abajo y se revela dentro de esta caja */
+    .msk {
+      display: inline-block;
+      overflow: hidden;
+      padding: 12px 18px 16px;
+      vertical-align: top;
+    }
+    .txt {
+      display: inline-block;
+      -webkit-text-stroke: 12px var(--negro);
+      paint-order: stroke fill;
+      text-shadow: 0 8px 0 rgba(0, 0, 0, 0.45);
+    }
+  </style>
+
+  <div id="root" data-composition-id="subtitulos" data-width="1080" data-height="1920" data-layout-allow-overlap>
+      <div class="pal" id="p0"><span class="msk"><span class="txt">MIRA</span></span></div>
+      <div class="pal" id="p1"><span class="msk"><span class="txt">CHAMO</span></span></div>
+      <div class="pal" id="p2"><span class="msk"><span class="txt">VEN</span></span></div>
+      <div class="pal" id="p3"><span class="msk"><span class="txt">ACÁ</span></span></div>
+      <div class="pal" id="p4"><span class="msk"><span class="txt">VEN</span></span></div>
+      <div class="pal" id="p5"><span class="msk"><span class="txt">RAPIDITO</span></span></div>
+      <div class="pal" id="p6"><span class="msk"><span class="txt">VALE</span></span></div>
+      <div class="pal" id="p7"><span class="msk"><span class="txt">SI</span></span></div>
+      <div class="pal" id="p8"><span class="msk"><span class="txt">TÚ QUIERES</span></span></div>
+      <div class="pal" id="p9"><span class="msk"><span class="txt">PONERTE</span></span></div>
+      <div class="pal clave" id="p10"><span class="msk"><span class="txt">FUERTE</span></span></div>
+      <div class="pal" id="p11"><span class="msk"><span class="txt">PARA</span></span></div>
+      <div class="pal clave" id="p12"><span class="msk"><span class="txt">DICIEMBRE</span></span></div>
+      <div class="pal" id="p13"><span class="msk"><span class="txt">QUIERES</span></span></div>
+      <div class="pal" id="p14"><span class="msk"><span class="txt">LUCIR</span></span></div>
+      <div class="pal clave" id="p15"><span class="msk"><span class="txt">ESE OUTFIT</span></span></div>
+      <div class="pal clave" id="p16"><span class="msk"><span class="txt">CANDELA</span></span></div>
+      <div class="pal" id="p17"><span class="msk"><span class="txt">QUIERES</span></span></div>
+      <div class="pal" id="p18"><span class="msk"><span class="txt">IR PARA</span></span></div>
+      <div class="pal clave" id="p19"><span class="msk"><span class="txt">LA PLAYITA</span></span></div>
+      <div class="pal" id="p20"><span class="msk"><span class="txt">Y LUCIR</span></span></div>
+      <div class="pal clave" id="p21"><span class="msk"><span class="txt">EL CUERPITO</span></span></div>
+      <div class="pal clave" id="p22"><span class="msk"><span class="txt">CANDELA</span></span></div>
+      <div class="pal" id="p23"><span class="msk"><span class="txt">CHAMO</span></span></div>
+      <div class="pal" id="p24"><span class="msk"><span class="txt">TIENES</span></span></div>
+      <div class="pal" id="p25"><span class="msk"><span class="txt">QUE</span></span></div>
+      <div class="pal clave" id="p26"><span class="msk"><span class="txt">ENTRENAR</span></span></div>
+      <div class="pal" id="p27"><span class="msk"><span class="txt">Y</span></span></div>
+      <div class="pal" id="p28"><span class="msk"><span class="txt">TIENES</span></span></div>
+      <div class="pal clave" id="p29"><span class="msk"><span class="txt">QUE ENTRENAR</span></span></div>
+      <div class="pal" id="p30"><span class="msk"><span class="txt">SABES</span></span></div>
+      <div class="pal" id="p31"><span class="msk"><span class="txt">CON</span></span></div>
+      <div class="pal" id="p32"><span class="msk"><span class="txt">QUIÉN?</span></span></div>
+      <div class="pal" id="p33"><span class="msk"><span class="txt">CON</span></span></div>
+      <div class="pal" id="p34"><span class="msk"><span class="txt">EL</span></span></div>
+      <div class="pal clave" id="p35"><span class="msk"><span class="txt">MEJOR</span></span></div>
+      <div class="pal" id="p36"><span class="msk"><span class="txt">CON</span></span></div>
+      <div class="pal clave" id="p37"><span class="msk"><span class="txt">GABOFIT</span></span></div>
+      <div class="pal" id="p38"><span class="msk"><span class="txt">MIRA</span></span></div>
+      <div class="pal" id="p39"><span class="msk"><span class="txt">QUE ESTAMOS</span></span></div>
+      <div class="pal clave" id="p40"><span class="msk"><span class="txt">EN TEMPORADA</span></span></div>
+      <div class="pal" id="p41"><span class="msk"><span class="txt">ALTA</span></span></div>
+      <div class="pal" id="p42"><span class="msk"><span class="txt">ESTÁ</span></span></div>
+      <div class="pal" id="p43"><span class="msk"><span class="txt">EMPEZANDO</span></span></div>
+      <div class="pal clave" id="p44"><span class="msk"><span class="txt">NOVIEMBRE</span></span></div>
+      <div class="pal" id="p45"><span class="msk"><span class="txt">Y</span></span></div>
+      <div class="pal" id="p46"><span class="msk"><span class="txt">QUIEREN</span></span></div>
+      <div class="pal" id="p47"><span class="msk"><span class="txt">PONERSE</span></span></div>
+      <div class="pal" id="p48"><span class="msk"><span class="txt">BIEN</span></span></div>
+      <div class="pal clave" id="p49"><span class="msk"><span class="txt">FINITO</span></span></div>
+      <div class="pal" id="p50"><span class="msk"><span class="txt">PARA</span></span></div>
+      <div class="pal clave" id="p51"><span class="msk"><span class="txt">DICIEMBRE</span></span></div>
+      <div class="pal" id="p52"><span class="msk"><span class="txt">Y</span></span></div>
+      <div class="pal" id="p53"><span class="msk"><span class="txt">LUCIRSE</span></span></div>
+      <div class="pal clave" id="p54"><span class="msk"><span class="txt">CUERPECITO</span></span></div>
+      <div class="pal" id="p55"><span class="msk"><span class="txt">VERDAD</span></span></div>
+      <div class="pal" id="p56"><span class="msk"><span class="txt">NO QUIEREN</span></span></div>
+      <div class="pal" id="p57"><span class="msk"><span class="txt">PARECER</span></span></div>
+      <div class="pal" id="p58"><span class="msk"><span class="txt">UNA</span></span></div>
+      <div class="pal clave" id="p59"><span class="msk"><span class="txt">BOLITA</span></span></div>
+      <div class="pal" id="p60"><span class="msk"><span class="txt">DE MIERDA</span></span></div>
+      <div class="pal" id="p61"><span class="msk"><span class="txt">NI</span></span></div>
+      <div class="pal clave" id="p62"><span class="msk"><span class="txt">UN FLAQUITO</span></span></div>
+      <div class="pal" id="p63"><span class="msk"><span class="txt">ENTONCES</span></span></div>
+      <div class="pal" id="p64"><span class="msk"><span class="txt">QUE</span></span></div>
+      <div class="pal" id="p65"><span class="msk"><span class="txt">TIENEN</span></span></div>
+      <div class="pal" id="p66"><span class="msk"><span class="txt">QUE HACER</span></span></div>
+      <div class="pal" id="p67"><span class="msk"><span class="txt">VENGAN</span></span></div>
+      <div class="pal clave" id="p68"><span class="msk"><span class="txt">A ENTRENAR</span></span></div>
+      <div class="pal clave" id="p69"><span class="msk"><span class="txt">CON GABOFIT</span></span></div>
+      <div class="pal" id="p70"><span class="msk"><span class="txt">CHAMO</span></span></div>
+      <div class="pal clave" id="p71"><span class="msk"><span class="txt">40</span></span></div>
+      <div class="pal" id="p72"><span class="msk"><span class="txt">DÓLARES</span></span></div>
+      <div class="pal" id="p73"><span class="msk"><span class="txt">A</span></span></div>
+      <div class="pal clave" id="p74"><span class="msk"><span class="txt">BCV</span></span></div>
+      <div class="pal" id="p75"><span class="msk"><span class="txt">ES</span></span></div>
+      <div class="pal" id="p76"><span class="msk"><span class="txt">LO QUE</span></span></div>
+      <div class="pal" id="p77"><span class="msk"><span class="txt">COBRO</span></span></div>
+      <div class="pal clave" id="p78"><span class="msk"><span class="txt">CON GIMNASIO</span></span></div>
+      <div class="pal clave" id="p79"><span class="msk"><span class="txt">MENSUALIDAD</span></span></div>
+      <div class="pal" id="p80"><span class="msk"><span class="txt">Y</span></span></div>
+      <div class="pal clave" id="p81"><span class="msk"><span class="txt">ENTRENADOR</span></span></div>
+      <div class="pal" id="p82"><span class="msk"><span class="txt">PERSONAL</span></span></div>
+      <div class="pal clave" id="p83"><span class="msk"><span class="txt">INCLUIDO</span></span></div>
+      <div class="pal" id="p84"><span class="msk"><span class="txt">DEJA</span></span></div>
+      <div class="pal" id="p85"><span class="msk"><span class="txt">DE PERDER</span></span></div>
+      <div class="pal clave" id="p86"><span class="msk"><span class="txt">TIEMPO</span></span></div>
+      <div class="pal" id="p87"><span class="msk"><span class="txt">Y</span></span></div>
+      <div class="pal clave" id="p88"><span class="msk"><span class="txt">LLÉGATE</span></span></div>
+      <div class="pal" id="p89"><span class="msk"><span class="txt">PARA</span></span></div>
+      <div class="pal" id="p90"><span class="msk"><span class="txt">ACÁ</span></span></div>
+      <div class="pal" id="p91"><span class="msk"><span class="txt">PARA</span></span></div>
+      <div class="pal" id="p92"><span class="msk"><span class="txt">QUE</span></span></div>
+      <div class="pal" id="p93"><span class="msk"><span class="txt">TENGAS</span></span></div>
+      <div class="pal clave" id="p94"><span class="msk"><span class="txt">ESE CUERPITO</span></span></div>
+      <div class="pal clave" id="p95"><span class="msk"><span class="txt">CANDELA</span></span></div>
+      <div class="pal clave" id="p96"><span class="msk"><span class="txt">PARA DICIEMBRE</span></span></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Generado desde transcript.json: una palabra a la vez, sincronizada con la voz.
+    // Palabras clave (k): se revelan desde una máscara. Las demás: entrada corta.
+    const PALABRAS = [{"id": "p0", "s": 0.03, "e": 0.68, "k": false}, {"id": "p1", "s": 0.68, "e": 1.2, "k": false}, {"id": "p2", "s": 1.2, "e": 1.84, "k": false}, {"id": "p3", "s": 1.84, "e": 2.46, "k": false}, {"id": "p4", "s": 2.46, "e": 2.76, "k": false}, {"id": "p5", "s": 2.76, "e": 3.3, "k": false}, {"id": "p6", "s": 3.3, "e": 3.64, "k": false}, {"id": "p7", "s": 3.64, "e": 3.86, "k": false}, {"id": "p8", "s": 3.86, "e": 4.18, "k": false}, {"id": "p9", "s": 4.18, "e": 4.54, "k": false}, {"id": "p10", "s": 4.54, "e": 4.9, "k": true}, {"id": "p11", "s": 4.9, "e": 5.28, "k": false}, {"id": "p12", "s": 5.28, "e": 5.76, "k": true}, {"id": "p13", "s": 5.76, "e": 5.92, "k": false}, {"id": "p14", "s": 5.92, "e": 6.26, "k": false}, {"id": "p15", "s": 6.26, "e": 6.64, "k": true}, {"id": "p16", "s": 6.64, "e": 7.16, "k": true}, {"id": "p17", "s": 7.16, "e": 7.3, "k": false}, {"id": "p18", "s": 7.3, "e": 7.56, "k": false}, {"id": "p19", "s": 7.56, "e": 7.96, "k": true}, {"id": "p20", "s": 7.96, "e": 8.28, "k": false}, {"id": "p21", "s": 8.28, "e": 8.72, "k": true}, {"id": "p22", "s": 8.72, "e": 9.84, "k": true}, {"id": "p23", "s": 9.84, "e": 10.4, "k": false}, {"id": "p24", "s": 10.4, "e": 10.56, "k": false}, {"id": "p25", "s": 10.56, "e": 10.78, "k": false}, {"id": "p26", "s": 10.78, "e": 11.56, "k": true}, {"id": "p27", "s": 11.56, "e": 11.88, "k": false}, {"id": "p28", "s": 11.88, "e": 12.08, "k": false}, {"id": "p29", "s": 12.08, "e": 12.66, "k": true}, {"id": "p30", "s": 12.66, "e": 12.8, "k": false}, {"id": "p31", "s": 12.8, "e": 12.96, "k": false}, {"id": "p32", "s": 12.96, "e": 13.36, "k": false}, {"id": "p33", "s": 13.36, "e": 13.52, "k": false}, {"id": "p34", "s": 13.52, "e": 13.66, "k": false}, {"id": "p35", "s": 13.66, "e": 14.2, "k": true}, {"id": "p36", "s": 14.2, "e": 14.4, "k": false}, {"id": "p37", "s": 14.4, "e": 15.22, "k": true}, {"id": "p38", "s": 15.22, "e": 15.58, "k": false}, {"id": "p39", "s": 15.58, "e": 15.88, "k": false}, {"id": "p40", "s": 15.88, "e": 16.28, "k": true}, {"id": "p41", "s": 16.28, "e": 16.68, "k": false}, {"id": "p42", "s": 16.68, "e": 16.84, "k": false}, {"id": "p43", "s": 16.84, "e": 17.16, "k": false}, {"id": "p44", "s": 17.16, "e": 17.78, "k": true}, {"id": "p45", "s": 17.78, "e": 17.92, "k": false}, {"id": "p46", "s": 17.92, "e": 18.12, "k": false}, {"id": "p47", "s": 18.12, "e": 18.52, "k": false}, {"id": "p48", "s": 18.52, "e": 18.68, "k": false}, {"id": "p49", "s": 18.68, "e": 19.18, "k": true}, {"id": "p50", "s": 19.18, "e": 19.32, "k": false}, {"id": "p51", "s": 19.32, "e": 19.64, "k": true}, {"id": "p52", "s": 19.64, "e": 19.8, "k": false}, {"id": "p53", "s": 19.8, "e": 19.98, "k": false}, {"id": "p54", "s": 19.98, "e": 20.72, "k": true}, {"id": "p55", "s": 20.72, "e": 20.9, "k": false}, {"id": "p56", "s": 20.9, "e": 21.14, "k": false}, {"id": "p57", "s": 21.14, "e": 21.32, "k": false}, {"id": "p58", "s": 21.32, "e": 21.52, "k": false}, {"id": "p59", "s": 21.52, "e": 21.74, "k": true}, {"id": "p60", "s": 21.74, "e": 22.3, "k": false}, {"id": "p61", "s": 22.3, "e": 22.78, "k": false}, {"id": "p62", "s": 22.78, "e": 23.5, "k": true}, {"id": "p63", "s": 23.5, "e": 23.98, "k": false}, {"id": "p64", "s": 23.98, "e": 24.18, "k": false}, {"id": "p65", "s": 24.18, "e": 24.36, "k": false}, {"id": "p66", "s": 24.36, "e": 24.84, "k": false}, {"id": "p67", "s": 24.84, "e": 25.3, "k": false}, {"id": "p68", "s": 25.3, "e": 25.62, "k": true}, {"id": "p69", "s": 25.62, "e": 26.24, "k": true}, {"id": "p70", "s": 26.24, "e": 26.62, "k": false}, {"id": "p71", "s": 26.62, "e": 27.02, "k": true}, {"id": "p72", "s": 27.02, "e": 27.34, "k": false}, {"id": "p73", "s": 27.34, "e": 27.56, "k": false}, {"id": "p74", "s": 27.56, "e": 27.7, "k": true}, {"id": "p75", "s": 27.7, "e": 27.86, "k": false}, {"id": "p76", "s": 27.86, "e": 28.08, "k": false}, {"id": "p77", "s": 28.08, "e": 28.44, "k": false}, {"id": "p78", "s": 28.44, "e": 29.42, "k": true}, {"id": "p79", "s": 29.42, "e": 30.32, "k": true}, {"id": "p80", "s": 30.32, "e": 30.46, "k": false}, {"id": "p81", "s": 30.46, "e": 30.82, "k": true}, {"id": "p82", "s": 30.82, "e": 31.06, "k": false}, {"id": "p83", "s": 31.06, "e": 32.06, "k": true}, {"id": "p84", "s": 32.06, "e": 32.52, "k": false}, {"id": "p85", "s": 32.52, "e": 32.84, "k": false}, {"id": "p86", "s": 32.84, "e": 33.12, "k": true}, {"id": "p87", "s": 33.12, "e": 33.48, "k": false}, {"id": "p88", "s": 33.48, "e": 33.78, "k": true}, {"id": "p89", "s": 33.78, "e": 33.96, "k": false}, {"id": "p90", "s": 33.96, "e": 34.14, "k": false}, {"id": "p91", "s": 34.14, "e": 34.42, "k": false}, {"id": "p92", "s": 34.42, "e": 34.56, "k": false}, {"id": "p93", "s": 34.56, "e": 34.82, "k": false}, {"id": "p94", "s": 34.82, "e": 35.3, "k": true}, {"id": "p95", "s": 35.3, "e": 35.82, "k": true}, {"id": "p96", "s": 35.82, "e": 36.61, "k": true}];
+
+    const fit = window.__hyperframes && window.__hyperframes.fitTextFontSize;
+    PALABRAS.forEach((p) => {
+      const el = document.getElementById(p.id);
+      const txt = el.querySelector(".txt");
+      const base = p.k ? 136 : 112;
+      if (fit) {
+        const { fontSize } = fit(el.textContent, { fontFamily: "Montserrat", fontWeight: p.k ? 900 : 800, maxWidth: 880, baseFontSize: base, minFontSize: 64 });
+        el.style.fontSize = Math.min(fontSize, base) + "px";
+      }
+      tl.set(el, { opacity: 1 }, p.s);
+      if (p.k) {
+        tl.fromTo(txt, { yPercent: 115, rotation: 4 }, { yPercent: 0, rotation: 0, duration: 0.28, ease: "expo.out" }, p.s);
+      } else {
+        tl.fromTo(txt, { scale: 0.75, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power3.out" }, p.s);
+      }
+      tl.set(el, { opacity: 0, visibility: "hidden" }, p.e);
+    });
+
+    window.__timelines["subtitulos"] = tl;
+  </script>
+</template>

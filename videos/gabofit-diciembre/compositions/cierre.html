@@ -1,0 +1,336 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      font-family: "Montserrat", sans-serif;
+      --negro: #111111;
+      --verde: #22c55e;
+      --blanco: #ffffff;
+    }
+    /* Placa final: entra en círculo desde el punto donde la mano pega en el teléfono */
+    #placa {
+      position: absolute;
+      inset: 0;
+      background: var(--verde);
+      clip-path: circle(0% at 360px 760px);
+    }
+    #placa-rayas {
+      position: absolute;
+      inset: -200px;
+      background: repeating-linear-gradient(
+        -24deg,
+        rgba(17, 17, 17, 0) 0px,
+        rgba(17, 17, 17, 0) 70px,
+        rgba(17, 17, 17, 0.07) 70px,
+        rgba(17, 17, 17, 0.07) 140px
+      );
+    }
+    #placa-caja {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #placa-logo {
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      padding: 18px 44px 22px;
+      border-radius: 34px;
+      background: var(--negro);
+      font-size: 150px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -5px;
+    }
+    #placa-gabo {
+      color: var(--blanco);
+    }
+    #placa-fit {
+      color: var(--verde);
+    }
+    #placa-pt {
+      display: block;
+      opacity: 0;
+      margin-top: 22px;
+      color: var(--negro);
+      font-size: 54px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+    #placa-cta {
+      display: inline-block;
+      opacity: 0;
+      margin-top: 44px;
+      padding: 16px 40px 20px;
+      border-radius: 22px;
+      background: var(--blanco);
+      color: var(--negro);
+      font-size: 84px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      border: 6px solid var(--negro);
+    }
+    #placa-oferta {
+      display: block;
+      opacity: 0;
+      margin-top: 30px;
+      color: var(--negro);
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    /* Grietas del vidrio y flash del impacto */
+    #grietas {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      opacity: 0;
+    }
+    #grietas .g-sombra {
+      fill: none;
+      stroke: rgba(17, 17, 17, 0.3);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #grietas .g-luz {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.95);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #flash {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="cierre"
+    data-width="1080"
+    data-height="1920"
+    data-layout-allow-overlap
+    data-composition-variables='[
+      {"id":"etiqueta","type":"string","label":"Etiqueta","default":"Personal trainer"},
+      {"id":"cta","type":"string","label":"Llamado","default":"¡Llégate!"},
+      {"id":"oferta","type":"string","label":"Oferta","default":"$40/mes · todo incluido"}
+    ]'
+  >
+    <div id="placa">
+      <div id="placa-rayas"></div>
+      <div id="placa-caja">
+        <div id="placa-logo"><span id="placa-gabo">GABO</span><span id="placa-fit">FIT</span></div>
+        <span id="placa-pt" data-var-text="etiqueta">Personal trainer</span>
+        <span id="placa-cta" data-var-text="cta">¡Llégate!</span>
+        <span id="placa-oferta" data-var-text="oferta">$40/mes · todo incluido</span>
+      </div>
+    </div>
+
+    <svg id="grietas" viewBox="0 0 1080 1920" data-layout-ignore>
+      <path class="g-sombra" d="M365 760 L449 783 L533 781 L615 769 L701 744 L768 715 L853 718 L915 625 L991 616 L1091 657 L1210 614 L1287 678 L1403 628" data-len="1152" stroke-dasharray="1152" stroke-dashoffset="1152" />
+      <path class="g-sombra" d="M533 781 L592 835 L630 871" data-len="131" stroke-dasharray="131" stroke-dashoffset="131" />
+      <path class="g-sombra" d="M768 715 L792 672 L823 615 L864 567" data-len="177" stroke-dasharray="177" stroke-dashoffset="177" />
+      <path class="g-sombra" d="M991 616 L1060 660 L1111 694 L1157 712" data-len="192" stroke-dasharray="192" stroke-dashoffset="192" />
+      <path class="g-sombra" d="M1287 678 L1343 649 L1413 628 L1473 609" data-len="199" stroke-dasharray="199" stroke-dashoffset="199" />
+      <path class="g-sombra" d="M355 759 L478 790 L549 843 L636 877 L728 909 L875 901 L1001 834 L1073 824 L1188 936" data-len="930" stroke-dasharray="930" stroke-dashoffset="930" />
+      <path class="g-sombra" d="M549 843 L607 824 L654 816" data-len="109" stroke-dasharray="109" stroke-dashoffset="109" />
+      <path class="g-sombra" d="M875 901 L905 963 L952 1037" data-len="156" stroke-dasharray="156" stroke-dashoffset="156" />
+      <path class="g-sombra" d="M353 764 L410 818 L464 906 L517 954 L604 1012 L665 1132 L727 1257 L840 1313 L921 1375 L1087 1341 L1263 1313" data-len="1207" stroke-dasharray="1207" stroke-dashoffset="1207" />
+      <path class="g-sombra" d="M464 906 L467 971 L470 1024" data-len="119" stroke-dasharray="119" stroke-dashoffset="119" />
+      <path class="g-sombra" d="M665 1132 L683 1188 L692 1269 L694 1314" data-len="185" stroke-dasharray="185" stroke-dashoffset="185" />
+      <path class="g-sombra" d="M921 1375 L967 1445 L1001 1497" data-len="145" stroke-dasharray="145" stroke-dashoffset="145" />
+      <path class="g-sombra" d="M353 756 L375 837 L391 908 L452 1013 L539 1091 L578 1142 L697 1204 L741 1278 L897 1279" data-len="835" stroke-dasharray="835" stroke-dashoffset="835" />
+      <path class="g-sombra" d="M391 908 L433 928 L474 950 L523 976" data-len="148" stroke-dasharray="148" stroke-dashoffset="148" />
+      <path class="g-sombra" d="M578 1142 L652 1149 L707 1164" data-len="131" stroke-dasharray="131" stroke-dashoffset="131" />
+      <path class="g-sombra" d="M359 757 L346 883 L368 959 L369 1029 L314 1125 L297 1220 L341 1286 L394 1370 L423 1491 L419 1563 L523 1622 L685 1691 L747 1797" data-len="1276" stroke-dasharray="1276" stroke-dashoffset="1276" />
+      <path class="g-sombra" d="M368 959 L429 1006 L502 1053" data-len="164" stroke-dasharray="164" stroke-dashoffset="164" />
+      <path class="g-sombra" d="M297 1220 L292 1273 L294 1353 L290 1401" data-len="182" stroke-dasharray="182" stroke-dashoffset="182" />
+      <path class="g-sombra" d="M423 1491 L378 1566 L357 1614 L333 1650" data-len="183" stroke-dasharray="183" stroke-dashoffset="183" />
+      <path class="g-sombra" d="M685 1691 L728 1750 L777 1796" data-len="140" stroke-dasharray="140" stroke-dashoffset="140" />
+      <path class="g-sombra" d="M365 763 L284 876 L217 914 L183 970 L122 1016 L85 1114 L83 1245 L-46 1327 L-112 1374 L-180 1424" data-len="912" stroke-dasharray="912" stroke-dashoffset="912" />
+      <path class="g-sombra" d="M217 914 L153 964 L94 1012 L30 1048" data-len="230" stroke-dasharray="230" stroke-dashoffset="230" />
+      <path class="g-sombra" d="M85 1114 L74 1162 L67 1241 L61 1285" data-len="173" stroke-dasharray="173" stroke-dashoffset="173" />
+      <path class="g-sombra" d="M-112 1374 L-195 1406 L-246 1434" data-len="147" stroke-dasharray="147" stroke-dashoffset="147" />
+      <path class="g-sombra" d="M362 761 L299 764 L184 750 L57 750 L-11 685 L-150 738 L-260 734 L-321 714 L-434 722" data-len="836" stroke-dasharray="836" stroke-dashoffset="836" />
+      <path class="g-sombra" d="M184 750 L118 696 L62 638 L22 599" data-len="222" stroke-dasharray="222" stroke-dashoffset="222" />
+      <path class="g-sombra" d="M-150 738 L-213 710 L-282 671 L-351 626" data-len="231" stroke-dasharray="231" stroke-dashoffset="231" />
+      <path class="g-sombra" d="M358 754 L222 751 L89 706 L-44 682 L-112 599 L-193 620 L-288 511 L-368 484 L-432 421 L-532 421 L-620 494" data-len="1136" stroke-dasharray="1136" stroke-dashoffset="1136" />
+      <path class="g-sombra" d="M89 706 L52 724 L-14 749" data-len="111" stroke-dasharray="111" stroke-dashoffset="111" />
+      <path class="g-sombra" d="M-193 620 L-277 642 L-341 661 L-404 673" data-len="218" stroke-dasharray="218" stroke-dashoffset="218" />
+      <path class="g-sombra" d="M-432 421 L-496 469 L-544 495 L-617 543" data-len="222" stroke-dasharray="222" stroke-dashoffset="222" />
+      <path class="g-sombra" d="M357 757 L280 700 L182 611 L91 509 L-22 499 L-102 439 L-140 311 L-197 241 L-183 59 L-326 15 L-358 -125 L-393 -205" data-len="1366" stroke-dasharray="1366" stroke-dashoffset="1366" />
+      <path class="g-sombra" d="M182 611 L134 601 L57 582" data-len="128" stroke-dasharray="128" stroke-dashoffset="128" />
+      <path class="g-sombra" d="M-102 439 L-96 399 L-80 346 L-68 258" data-len="185" stroke-dasharray="185" stroke-dashoffset="185" />
+      <path class="g-sombra" d="M-183 59 L-271 43 L-325 39" data-len="143" stroke-dasharray="143" stroke-dashoffset="143" />
+      <path class="g-sombra" d="M366 756 L334 699 L275 630 L197 546 L116 506 L31 454 L-28 396 L-138 406 L-273 445 L-349 419" data-len="875" stroke-dasharray="875" stroke-dashoffset="875" />
+      <path class="g-sombra" d="M275 630 L194 654 L134 667 L60 685" data-len="222" stroke-dasharray="222" stroke-dashoffset="222" />
+      <path class="g-sombra" d="M31 454 L-20 479 L-72 503" data-len="114" stroke-dasharray="114" stroke-dashoffset="114" />
+      <path class="g-sombra" d="M-273 445 L-357 466 L-411 474 L-491 497" data-len="225" stroke-dasharray="225" stroke-dashoffset="225" />
+      <path class="g-sombra" d="M362 764 L379 637 L365 510 L383 418 L377 285 L388 150 L520 34" data-len="794" stroke-dasharray="794" stroke-dashoffset="794" />
+      <path class="g-sombra" d="M365 510 L331 452 L296 370 L275 286" data-len="243" stroke-dasharray="243" stroke-dashoffset="243" />
+      <path class="g-sombra" d="M388 150 L370 93 L347 6" data-len="150" stroke-dasharray="150" stroke-dashoffset="150" />
+      <path class="g-sombra" d="M359 759 L428 674 L496 606 L574 543 L616 425 L673 304 L670 230 L793 194 L860 84 L1036 83 L1167 102 L1227 51 L1351 -16" data-len="1424" stroke-dasharray="1424" stroke-dashoffset="1424" />
+      <path class="g-sombra" d="M496 606 L560 590 L622 575" data-len="130" stroke-dasharray="130" stroke-dashoffset="130" />
+      <path class="g-sombra" d="M673 304 L719 228 L739 171" data-len="148" stroke-dasharray="148" stroke-dashoffset="148" />
+      <path class="g-sombra" d="M860 84 L892 36 L939 -15" data-len="128" stroke-dasharray="128" stroke-dashoffset="128" />
+      <path class="g-sombra" d="M1227 51 L1281 47 L1364 53" data-len="137" stroke-dasharray="137" stroke-dashoffset="137" />
+      <path class="g-sombra" d="M359 758 L439 727 L508 725 L588 747 L651 702 L751 691 L887 711 L970 590 L1036 598 L1118 665" data-len="872" stroke-dasharray="872" stroke-dashoffset="872" />
+      <path class="g-sombra" d="M508 725 L580 748 L625 768 L670 791" data-len="175" stroke-dasharray="175" stroke-dashoffset="175" />
+      <path class="g-sombra" d="M751 691 L820 715 L867 740 L905 760" data-len="170" stroke-dasharray="170" stroke-dashoffset="170" />
+      <path class="g-sombra" d="M1036 598 L1078 627 L1153 675" data-len="140" stroke-dasharray="140" stroke-dashoffset="140" />
+      <path class="g-sombra" d="M418 790 L411 802 L405 817" data-len="29" stroke-dasharray="29" stroke-dashoffset="29" />
+      <path class="g-sombra" d="M304 805 L298 787 L295 771" data-len="35" stroke-dasharray="35" stroke-dashoffset="35" />
+      <path class="g-sombra" d="M291 740 L301 725 L309 713" data-len="33" stroke-dasharray="33" stroke-dashoffset="33" />
+      <path class="g-sombra" d="M341 696 L354 693 L369 696" data-len="29" stroke-dasharray="29" stroke-dashoffset="29" />
+      <path class="g-sombra" d="M365 691 L377 691 L390 696" data-len="26" stroke-dasharray="26" stroke-dashoffset="26" />
+      <path class="g-sombra" d="M398 701 L407 712 L422 723" data-len="32" stroke-dasharray="32" stroke-dashoffset="32" />
+      <path class="g-sombra" d="M492 824 L482 846 L456 883" data-len="69" stroke-dasharray="69" stroke-dashoffset="69" />
+      <path class="g-sombra" d="M452 865 L426 904 L394 900" data-len="79" stroke-dasharray="79" stroke-dashoffset="79" />
+      <path class="g-sombra" d="M388 908 L368 907 L344 901" data-len="44" stroke-dasharray="44" stroke-dashoffset="44" />
+      <path class="g-sombra" d="M315 892 L284 882 L263 868" data-len="58" stroke-dasharray="58" stroke-dashoffset="58" />
+      <path class="g-sombra" d="M247 858 L233 820 L214 796" data-len="71" stroke-dasharray="71" stroke-dashoffset="71" />
+      <path class="g-sombra" d="M223 794 L219 766 L207 738" data-len="59" stroke-dasharray="59" stroke-dashoffset="59" />
+      <path class="g-sombra" d="M198 732 L218 703 L240 673" data-len="72" stroke-dasharray="72" stroke-dashoffset="72" />
+      <path class="g-sombra" d="M247 653 L263 647 L295 616" data-len="61" stroke-dasharray="61" stroke-dashoffset="61" />
+      <path class="g-sombra" d="M302 609 L330 619 L353 621" data-len="53" stroke-dasharray="53" stroke-dashoffset="53" />
+      <path class="g-sombra" d="M440 641 L468 651 L489 681" data-len="67" stroke-dasharray="67" stroke-dashoffset="67" />
+      <path class="g-sombra" d="M493 682 L517 718 L507 750" data-len="78" stroke-dasharray="78" stroke-dashoffset="78" />
+      <path class="g-sombra" d="M522 952 L473 986 L451 998" data-len="84" stroke-dasharray="84" stroke-dashoffset="84" />
+      <path class="g-sombra" d="M388 1000 L352 1010 L314 1013" data-len="75" stroke-dasharray="75" stroke-dashoffset="75" />
+      <path class="g-sombra" d="M291 1026 L245 980 L212 951" data-len="109" stroke-dasharray="109" stroke-dashoffset="109" />
+      <path class="g-sombra" d="M159 905 L112 869 L112 836" data-len="91" stroke-dasharray="91" stroke-dashoffset="91" />
+      <path class="g-sombra" d="M103 848 L112 800 L102 754" data-len="95" stroke-dasharray="95" stroke-dashoffset="95" />
+      <path class="g-sombra" d="M106 673 L153 623 L171 584" data-len="112" stroke-dasharray="112" stroke-dashoffset="112" />
+      <path class="g-sombra" d="M410 503 L477 533 L540 557" data-len="140" stroke-dasharray="140" stroke-dashoffset="140" />
+      <path class="g-luz" d="M365 760 L449 783 L533 781 L615 769 L701 744 L768 715 L853 718 L915 625 L991 616 L1091 657 L1210 614 L1287 678 L1403 628" data-len="1152" stroke-dasharray="1152" stroke-dashoffset="1152" />
+      <path class="g-luz" d="M533 781 L592 835 L630 871" data-len="131" stroke-dasharray="131" stroke-dashoffset="131" />
+      <path class="g-luz" d="M768 715 L792 672 L823 615 L864 567" data-len="177" stroke-dasharray="177" stroke-dashoffset="177" />
+      <path class="g-luz" d="M991 616 L1060 660 L1111 694 L1157 712" data-len="192" stroke-dasharray="192" stroke-dashoffset="192" />
+      <path class="g-luz" d="M1287 678 L1343 649 L1413 628 L1473 609" data-len="199" stroke-dasharray="199" stroke-dashoffset="199" />
+      <path class="g-luz" d="M355 759 L478 790 L549 843 L636 877 L728 909 L875 901 L1001 834 L1073 824 L1188 936" data-len="930" stroke-dasharray="930" stroke-dashoffset="930" />
+      <path class="g-luz" d="M549 843 L607 824 L654 816" data-len="109" stroke-dasharray="109" stroke-dashoffset="109" />
+      <path class="g-luz" d="M875 901 L905 963 L952 1037" data-len="156" stroke-dasharray="156" stroke-dashoffset="156" />
+      <path class="g-luz" d="M353 764 L410 818 L464 906 L517 954 L604 1012 L665 1132 L727 1257 L840 1313 L921 1375 L1087 1341 L1263 1313" data-len="1207" stroke-dasharray="1207" stroke-dashoffset="1207" />
+      <path class="g-luz" d="M464 906 L467 971 L470 1024" data-len="119" stroke-dasharray="119" stroke-dashoffset="119" />
+      <path class="g-luz" d="M665 1132 L683 1188 L692 1269 L694 1314" data-len="185" stroke-dasharray="185" stroke-dashoffset="185" />
+      <path class="g-luz" d="M921 1375 L967 1445 L1001 1497" data-len="145" stroke-dasharray="145" stroke-dashoffset="145" />
+      <path class="g-luz" d="M353 756 L375 837 L391 908 L452 1013 L539 1091 L578 1142 L697 1204 L741 1278 L897 1279" data-len="835" stroke-dasharray="835" stroke-dashoffset="835" />
+      <path class="g-luz" d="M391 908 L433 928 L474 950 L523 976" data-len="148" stroke-dasharray="148" stroke-dashoffset="148" />
+      <path class="g-luz" d="M578 1142 L652 1149 L707 1164" data-len="131" stroke-dasharray="131" stroke-dashoffset="131" />
+      <path class="g-luz" d="M359 757 L346 883 L368 959 L369 1029 L314 1125 L297 1220 L341 1286 L394 1370 L423 1491 L419 1563 L523 1622 L685 1691 L747 1797" data-len="1276" stroke-dasharray="1276" stroke-dashoffset="1276" />
+      <path class="g-luz" d="M368 959 L429 1006 L502 1053" data-len="164" stroke-dasharray="164" stroke-dashoffset="164" />
+      <path class="g-luz" d="M297 1220 L292 1273 L294 1353 L290 1401" data-len="182" stroke-dasharray="182" stroke-dashoffset="182" />
+      <path class="g-luz" d="M423 1491 L378 1566 L357 1614 L333 1650" data-len="183" stroke-dasharray="183" stroke-dashoffset="183" />
+      <path class="g-luz" d="M685 1691 L728 1750 L777 1796" data-len="140" stroke-dasharray="140" stroke-dashoffset="140" />
+      <path class="g-luz" d="M365 763 L284 876 L217 914 L183 970 L122 1016 L85 1114 L83 1245 L-46 1327 L-112 1374 L-180 1424" data-len="912" stroke-dasharray="912" stroke-dashoffset="912" />
+      <path class="g-luz" d="M217 914 L153 964 L94 1012 L30 1048" data-len="230" stroke-dasharray="230" stroke-dashoffset="230" />
+      <path class="g-luz" d="M85 1114 L74 1162 L67 1241 L61 1285" data-len="173" stroke-dasharray="173" stroke-dashoffset="173" />
+      <path class="g-luz" d="M-112 1374 L-195 1406 L-246 1434" data-len="147" stroke-dasharray="147" stroke-dashoffset="147" />
+      <path class="g-luz" d="M362 761 L299 764 L184 750 L57 750 L-11 685 L-150 738 L-260 734 L-321 714 L-434 722" data-len="836" stroke-dasharray="836" stroke-dashoffset="836" />
+      <path class="g-luz" d="M184 750 L118 696 L62 638 L22 599" data-len="222" stroke-dasharray="222" stroke-dashoffset="222" />
+      <path class="g-luz" d="M-150 738 L-213 710 L-282 671 L-351 626" data-len="231" stroke-dasharray="231" stroke-dashoffset="231" />
+      <path class="g-luz" d="M358 754 L222 751 L89 706 L-44 682 L-112 599 L-193 620 L-288 511 L-368 484 L-432 421 L-532 421 L-620 494" data-len="1136" stroke-dasharray="1136" stroke-dashoffset="1136" />
+      <path class="g-luz" d="M89 706 L52 724 L-14 749" data-len="111" stroke-dasharray="111" stroke-dashoffset="111" />
+      <path class="g-luz" d="M-193 620 L-277 642 L-341 661 L-404 673" data-len="218" stroke-dasharray="218" stroke-dashoffset="218" />
+      <path class="g-luz" d="M-432 421 L-496 469 L-544 495 L-617 543" data-len="222" stroke-dasharray="222" stroke-dashoffset="222" />
+      <path class="g-luz" d="M357 757 L280 700 L182 611 L91 509 L-22 499 L-102 439 L-140 311 L-197 241 L-183 59 L-326 15 L-358 -125 L-393 -205" data-len="1366" stroke-dasharray="1366" stroke-dashoffset="1366" />
+      <path class="g-luz" d="M182 611 L134 601 L57 582" data-len="128" stroke-dasharray="128" stroke-dashoffset="128" />
+      <path class="g-luz" d="M-102 439 L-96 399 L-80 346 L-68 258" data-len="185" stroke-dasharray="185" stroke-dashoffset="185" />
+      <path class="g-luz" d="M-183 59 L-271 43 L-325 39" data-len="143" stroke-dasharray="143" stroke-dashoffset="143" />
+      <path class="g-luz" d="M366 756 L334 699 L275 630 L197 546 L116 506 L31 454 L-28 396 L-138 406 L-273 445 L-349 419" data-len="875" stroke-dasharray="875" stroke-dashoffset="875" />
+      <path class="g-luz" d="M275 630 L194 654 L134 667 L60 685" data-len="222" stroke-dasharray="222" stroke-dashoffset="222" />
+      <path class="g-luz" d="M31 454 L-20 479 L-72 503" data-len="114" stroke-dasharray="114" stroke-dashoffset="114" />
+      <path class="g-luz" d="M-273 445 L-357 466 L-411 474 L-491 497" data-len="225" stroke-dasharray="225" stroke-dashoffset="225" />
+      <path class="g-luz" d="M362 764 L379 637 L365 510 L383 418 L377 285 L388 150 L520 34" data-len="794" stroke-dasharray="794" stroke-dashoffset="794" />
+      <path class="g-luz" d="M365 510 L331 452 L296 370 L275 286" data-len="243" stroke-dasharray="243" stroke-dashoffset="243" />
+      <path class="g-luz" d="M388 150 L370 93 L347 6" data-len="150" stroke-dasharray="150" stroke-dashoffset="150" />
+      <path class="g-luz" d="M359 759 L428 674 L496 606 L574 543 L616 425 L673 304 L670 230 L793 194 L860 84 L1036 83 L1167 102 L1227 51 L1351 -16" data-len="1424" stroke-dasharray="1424" stroke-dashoffset="1424" />
+      <path class="g-luz" d="M496 606 L560 590 L622 575" data-len="130" stroke-dasharray="130" stroke-dashoffset="130" />
+      <path class="g-luz" d="M673 304 L719 228 L739 171" data-len="148" stroke-dasharray="148" stroke-dashoffset="148" />
+      <path class="g-luz" d="M860 84 L892 36 L939 -15" data-len="128" stroke-dasharray="128" stroke-dashoffset="128" />
+      <path class="g-luz" d="M1227 51 L1281 47 L1364 53" data-len="137" stroke-dasharray="137" stroke-dashoffset="137" />
+      <path class="g-luz" d="M359 758 L439 727 L508 725 L588 747 L651 702 L751 691 L887 711 L970 590 L1036 598 L1118 665" data-len="872" stroke-dasharray="872" stroke-dashoffset="872" />
+      <path class="g-luz" d="M508 725 L580 748 L625 768 L670 791" data-len="175" stroke-dasharray="175" stroke-dashoffset="175" />
+      <path class="g-luz" d="M751 691 L820 715 L867 740 L905 760" data-len="170" stroke-dasharray="170" stroke-dashoffset="170" />
+      <path class="g-luz" d="M1036 598 L1078 627 L1153 675" data-len="140" stroke-dasharray="140" stroke-dashoffset="140" />
+      <path class="g-luz" d="M418 790 L411 802 L405 817" data-len="29" stroke-dasharray="29" stroke-dashoffset="29" />
+      <path class="g-luz" d="M304 805 L298 787 L295 771" data-len="35" stroke-dasharray="35" stroke-dashoffset="35" />
+      <path class="g-luz" d="M291 740 L301 725 L309 713" data-len="33" stroke-dasharray="33" stroke-dashoffset="33" />
+      <path class="g-luz" d="M341 696 L354 693 L369 696" data-len="29" stroke-dasharray="29" stroke-dashoffset="29" />
+      <path class="g-luz" d="M365 691 L377 691 L390 696" data-len="26" stroke-dasharray="26" stroke-dashoffset="26" />
+      <path class="g-luz" d="M398 701 L407 712 L422 723" data-len="32" stroke-dasharray="32" stroke-dashoffset="32" />
+      <path class="g-luz" d="M492 824 L482 846 L456 883" data-len="69" stroke-dasharray="69" stroke-dashoffset="69" />
+      <path class="g-luz" d="M452 865 L426 904 L394 900" data-len="79" stroke-dasharray="79" stroke-dashoffset="79" />
+      <path class="g-luz" d="M388 908 L368 907 L344 901" data-len="44" stroke-dasharray="44" stroke-dashoffset="44" />
+      <path class="g-luz" d="M315 892 L284 882 L263 868" data-len="58" stroke-dasharray="58" stroke-dashoffset="58" />
+      <path class="g-luz" d="M247 858 L233 820 L214 796" data-len="71" stroke-dasharray="71" stroke-dashoffset="71" />
+      <path class="g-luz" d="M223 794 L219 766 L207 738" data-len="59" stroke-dasharray="59" stroke-dashoffset="59" />
+      <path class="g-luz" d="M198 732 L218 703 L240 673" data-len="72" stroke-dasharray="72" stroke-dashoffset="72" />
+      <path class="g-luz" d="M247 653 L263 647 L295 616" data-len="61" stroke-dasharray="61" stroke-dashoffset="61" />
+      <path class="g-luz" d="M302 609 L330 619 L353 621" data-len="53" stroke-dasharray="53" stroke-dashoffset="53" />
+      <path class="g-luz" d="M440 641 L468 651 L489 681" data-len="67" stroke-dasharray="67" stroke-dashoffset="67" />
+      <path class="g-luz" d="M493 682 L517 718 L507 750" data-len="78" stroke-dasharray="78" stroke-dashoffset="78" />
+      <path class="g-luz" d="M522 952 L473 986 L451 998" data-len="84" stroke-dasharray="84" stroke-dashoffset="84" />
+      <path class="g-luz" d="M388 1000 L352 1010 L314 1013" data-len="75" stroke-dasharray="75" stroke-dashoffset="75" />
+      <path class="g-luz" d="M291 1026 L245 980 L212 951" data-len="109" stroke-dasharray="109" stroke-dashoffset="109" />
+      <path class="g-luz" d="M159 905 L112 869 L112 836" data-len="91" stroke-dasharray="91" stroke-dashoffset="91" />
+      <path class="g-luz" d="M103 848 L112 800 L102 754" data-len="95" stroke-dasharray="95" stroke-dashoffset="95" />
+      <path class="g-luz" d="M106 673 L153 623 L171 584" data-len="112" stroke-dasharray="112" stroke-dashoffset="112" />
+      <path class="g-luz" d="M410 503 L477 533 L540 557" data-len="140" stroke-dasharray="140" stroke-dashoffset="140" />
+    </svg>
+
+    <div id="flash"></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // La escena empieza 0.2 s antes del golpe; IMPACTO = momento en que la mano tapa la cámara
+    const IMPACTO = 0.2;
+
+    // Flash blanco corto
+    tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.03, ease: "none" }, IMPACTO);
+    tl.to("#flash", { opacity: 0, duration: 0.22, ease: "power2.out" }, IMPACTO + 0.03);
+
+    // Grietas: se dibujan desde el punto del golpe hacia afuera
+    tl.set("#grietas", { opacity: 1 }, IMPACTO);
+    tl.fromTo("#grietas path",
+      { strokeDashoffset: (i, el) => +el.dataset.len },
+      { strokeDashoffset: 0, duration: 0.16, ease: "power3.out", stagger: (i) => (i % 75) * 0.004 }, IMPACTO);
+
+    // Placa verde en círculo desde el punto del golpe
+    tl.to("#placa", { clipPath: "circle(150% at 360px 760px)", duration: 0.4, ease: "expo.out" }, IMPACTO + 0.05);
+
+    // La placa y las grietas tiemblan con el golpe
+    [[-26, 18], [22, -20], [-16, 12], [10, -8], [-5, 4], [0, 0]].forEach(([x, y], i) => {
+      tl.to(["#placa-caja", "#grietas"], { x, y, duration: 0.04, ease: "power1.inOut" }, IMPACTO + 0.05 + i * 0.04);
+    });
+
+    // Contenido de la placa, en cascada
+    tl.fromTo("#placa-logo", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, IMPACTO + 0.12);
+    tl.fromTo("#placa-pt", { opacity: 0, scaleX: 1.6 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "expo.out" }, IMPACTO + 0.32);
+    tl.fromTo("#placa-cta", { opacity: 0, scale: 0.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "back.out(2)" }, IMPACTO + 0.55);
+    tl.fromTo("#placa-oferta", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power4.out" }, IMPACTO + 0.75);
+
+    // Las grietas se desvanecen y la placa queda limpia
+    tl.to("#grietas", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, IMPACTO + 0.9);
+
+    window.__timelines["cierre"] = tl;
+  </script>
+</template>
