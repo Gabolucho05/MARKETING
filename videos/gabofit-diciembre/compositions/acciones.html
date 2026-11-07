@@ -5,7 +5,7 @@
       inset: 0;
       font-family: "Montserrat", sans-serif;
       --negro: #111111;
-      --verde: #22c55e;
+      --verde: #0aa061; /* verde del logo GABOFIT */
       --verde-profundo: #087a4b;
       --blanco: #ffffff;
       --rojo: #ef4444;
@@ -106,15 +106,23 @@
     #precio-bcv {
       position: absolute;
       right: 0;
-      top: 22px;
-      padding: 8px 14px 9px;
-      border-radius: 12px;
-      background: var(--verde-profundo);
-      color: var(--blanco);
+      top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px 6px 6px;
+      border-radius: 40px;
+      background: var(--blanco);
+      color: var(--negro);
       font-size: 30px;
-      font-weight: 800;
+      font-weight: 900;
       line-height: 1;
       opacity: 0;
+    }
+    #bcv-sello {
+      display: block;
+      width: 62px;
+      height: 62px;
     }
     .item {
       display: flex;
@@ -176,10 +184,10 @@
   >
     <!-- "ponerte FUERTE" / "tienes que ENTRENAR" → mancuerna -->
     <div class="icono der" id="pesa1">
-      <svg viewBox="0 0 200 200"><g class="pesa-g"><rect class="trazo" x="40" y="92" width="120" height="16" rx="6" fill="#ffffff" /><rect class="trazo" x="22" y="58" width="30" height="84" rx="8" fill="#22c55e" /><rect class="trazo" x="148" y="58" width="30" height="84" rx="8" fill="#22c55e" /><rect class="trazo" x="6" y="74" width="18" height="52" rx="6" fill="#ffffff" /><rect class="trazo" x="176" y="74" width="18" height="52" rx="6" fill="#ffffff" /></g></svg>
+      <svg viewBox="0 0 200 200"><g class="pesa-g"><rect class="trazo" x="40" y="92" width="120" height="16" rx="6" fill="#ffffff" /><rect class="trazo" x="22" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="148" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="6" y="74" width="18" height="52" rx="6" fill="#ffffff" /><rect class="trazo" x="176" y="74" width="18" height="52" rx="6" fill="#ffffff" /></g></svg>
     </div>
     <div class="icono der" id="pesa2">
-      <svg viewBox="0 0 200 200"><g class="pesa-g"><rect class="trazo" x="40" y="92" width="120" height="16" rx="6" fill="#ffffff" /><rect class="trazo" x="22" y="58" width="30" height="84" rx="8" fill="#22c55e" /><rect class="trazo" x="148" y="58" width="30" height="84" rx="8" fill="#22c55e" /><rect class="trazo" x="6" y="74" width="18" height="52" rx="6" fill="#ffffff" /><rect class="trazo" x="176" y="74" width="18" height="52" rx="6" fill="#ffffff" /></g></svg>
+      <svg viewBox="0 0 200 200"><g class="pesa-g"><rect class="trazo" x="40" y="92" width="120" height="16" rx="6" fill="#ffffff" /><rect class="trazo" x="22" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="148" y="58" width="30" height="84" rx="8" fill="#0aa061" /><rect class="trazo" x="6" y="74" width="18" height="52" rx="6" fill="#ffffff" /><rect class="trazo" x="176" y="74" width="18" height="52" rx="6" fill="#ffffff" /></g></svg>
     </div>
 
     <!-- "CANDELA" → llama -->
@@ -213,7 +221,7 @@
     <div id="precio">
       <div id="precio-fila">
         <span id="precio-num" data-var-text="precio">$40</span><span id="precio-mes">/MES</span>
-        <span id="precio-bcv">A TASA BCV</span>
+        <span id="precio-bcv"><img id="bcv-sello" src="assets/logos/bcv.png" alt="BCV" /><span>A TASA BCV</span></span>
       </div>
       <div class="item" id="inc1"><div class="check"><svg viewBox="0 0 30 30"><path d="M5 16 L12 23 L25 8" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span data-var-text="incluye1">Gimnasio</span></div>
       <div class="item" id="inc2"><div class="check"><svg viewBox="0 0 30 30"><path d="M5 16 L12 23 L25 8" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg></div><span data-var-text="incluye2">Mensualidad</span></div>
@@ -227,7 +235,7 @@
         <circle class="trazo" cx="100" cy="100" r="80" fill="#ffffff" />
         <g class="trazo" fill="none"><line x1="100" y1="30" x2="100" y2="44" /><line x1="100" y1="156" x2="100" y2="170" /><line x1="30" y1="100" x2="44" y2="100" /><line x1="156" y1="100" x2="170" y2="100" /></g>
         <line id="reloj-hora" class="trazo" x1="100" y1="100" x2="100" y2="62" />
-        <line id="reloj-min" x1="100" y1="100" x2="146" y2="100" stroke="#22c55e" stroke-width="9" stroke-linecap="round" />
+        <line id="reloj-min" x1="100" y1="100" x2="146" y2="100" stroke="#0aa061" stroke-width="9" stroke-linecap="round" />
         <circle cx="100" cy="100" r="9" fill="#111111" />
       </svg>
     </div>
@@ -236,7 +244,7 @@
     <div class="icono izq" id="pin">
       <svg viewBox="0 0 200 200">
         <ellipse id="pin-sombra" cx="100" cy="190" rx="34" ry="8" fill="rgba(0,0,0,0.35)" />
-        <path class="trazo" d="M100 10 C62 10 34 38 34 76 C34 122 100 182 100 182 C100 182 166 122 166 76 C166 38 138 10 100 10 Z" fill="#22c55e" />
+        <path class="trazo" d="M100 10 C62 10 34 38 34 76 C34 122 100 182 100 182 C100 182 166 122 166 76 C166 38 138 10 100 10 Z" fill="#0aa061" />
         <circle class="trazo" cx="100" cy="76" r="26" fill="#ffffff" />
       </svg>
     </div>
@@ -294,6 +302,7 @@
     tl.fromTo("#precio", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "expo.out" }, 26.6);
     tl.fromTo("#precio-num", { scale: 1.8 }, { scale: 1, duration: 0.32, ease: "expo.out", transformOrigin: "0% 70%" }, 26.62);
     tl.fromTo("#precio-bcv", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 27.56);
+    tl.fromTo("#bcv-sello", { rotation: -180, scale: 0.3 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 27.56);
     [["#inc1", 28.54], ["#inc2", 29.42], ["#inc3", 30.46]].forEach(([sel, t]) => {
       tl.fromTo(sel, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power4.out" }, t);
       tl.fromTo(sel + " .check", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, t + 0.05);

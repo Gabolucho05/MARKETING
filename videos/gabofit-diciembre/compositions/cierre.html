@@ -5,14 +5,14 @@
       inset: 0;
       font-family: "Montserrat", sans-serif;
       --negro: #111111;
-      --verde: #22c55e;
+      --verde: #0aa061; /* verde del logo GABOFIT */
       --blanco: #ffffff;
     }
     /* Placa final: entra en círculo desde el punto donde la mano pega en el teléfono */
     #placa {
       position: absolute;
       inset: 0;
-      background: var(--verde);
+      background: var(--blanco);
       clip-path: circle(0% at 360px 760px);
     }
     #placa-rayas {
@@ -22,43 +22,31 @@
         -24deg,
         rgba(17, 17, 17, 0) 0px,
         rgba(17, 17, 17, 0) 70px,
-        rgba(17, 17, 17, 0.07) 70px,
-        rgba(17, 17, 17, 0.07) 140px
+        rgba(10, 160, 97, 0.08) 70px,
+        rgba(10, 160, 97, 0.08) 140px
       );
     }
     #placa-caja {
       position: absolute;
       left: 0;
       right: 0;
-      top: 600px;
+      top: 470px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
     #placa-logo {
-      display: flex;
-      align-items: center;
+      display: block;
+      width: 820px;
+      height: auto;
       opacity: 0;
-      padding: 18px 44px 22px;
-      border-radius: 34px;
-      background: var(--negro);
-      font-size: 150px;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -5px;
-    }
-    #placa-gabo {
-      color: var(--blanco);
-    }
-    #placa-fit {
-      color: var(--verde);
     }
     #placa-pt {
       display: block;
       opacity: 0;
-      margin-top: 22px;
-      color: var(--negro);
+      margin-top: 34px;
+      color: var(--verde);
       font-size: 54px;
       font-weight: 900;
       line-height: 1;
@@ -71,14 +59,15 @@
       margin-top: 44px;
       padding: 16px 40px 20px;
       border-radius: 22px;
-      background: var(--blanco);
-      color: var(--negro);
+      background: var(--verde);
+      color: var(--blanco);
       font-size: 84px;
       font-weight: 900;
       line-height: 1;
       letter-spacing: -1px;
       text-transform: uppercase;
       border: 6px solid var(--negro);
+      box-shadow: 0 10px 0 var(--negro);
     }
     #placa-oferta {
       display: block;
@@ -101,14 +90,14 @@
     }
     #grietas .g-sombra {
       fill: none;
-      stroke: rgba(17, 17, 17, 0.3);
+      stroke: rgba(255, 255, 255, 0.7);
       stroke-width: 8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
     #grietas .g-luz {
       fill: none;
-      stroke: rgba(255, 255, 255, 0.95);
+      stroke: rgba(17, 17, 17, 0.85);
       stroke-width: 4;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -136,7 +125,7 @@
     <div id="placa">
       <div id="placa-rayas"></div>
       <div id="placa-caja">
-        <div id="placa-logo"><span id="placa-gabo">GABO</span><span id="placa-fit">FIT</span></div>
+        <img id="placa-logo" src="assets/logos/gabofit-logo.png" alt="GABOFIT" />
         <span id="placa-pt" data-var-text="etiqueta">Personal trainer</span>
         <span id="placa-cta" data-var-text="cta">¡Llégate!</span>
         <span id="placa-oferta" data-var-text="oferta">$40/mes · todo incluido</span>
