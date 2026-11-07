@@ -735,21 +735,27 @@
       </div>
     </div>
 
-    <!-- J · "no quieren parecer una BOLITA ... ni un FLAQUITO" -->
+    <!-- J · "no quieren parecer una BOLITA ... ni un FLAQUITO" → persona obesa y persona flaca, tachadas -->
     <div class="panel" id="p-no">
       <div class="acento"></div>
       <span class="etq">Ni uno ni otro</span>
       <div id="no-arte">
         <div class="no-celda" id="no-c1">
           <svg viewBox="0 0 120 120">
-            <circle class="d" pathLength="1" cx="60" cy="60" r="46" />
+            <!-- persona con obesidad: cabeza, cuerpo ancho, brazos y piernas -->
+            <circle class="d" pathLength="1" cx="60" cy="20" r="13" />
+            <path class="d" pathLength="1" d="M42 40 C22 46 12 70 16 88 C20 102 36 106 60 106 C84 106 100 102 104 88 C108 70 98 46 78 40 C70 37 50 37 42 40 Z" />
+            <path class="d" pathLength="1" d="M26 54 L12 76 M94 54 L108 76 M46 106 V118 M74 106 V118" />
             <path class="d r" pathLength="1" d="M18 18 L102 102 M102 18 L18 102" />
           </svg>
           <span class="no-txt" id="no-t1">BOLITA</span>
         </div>
         <div class="no-celda" id="no-c2">
           <svg viewBox="0 0 120 120">
-            <rect class="d" pathLength="1" x="48" y="8" width="24" height="104" rx="12" />
+            <!-- persona muy flaca: cabeza, cuerpo angosto, brazos y piernas finas -->
+            <circle class="d" pathLength="1" cx="60" cy="18" r="11" />
+            <path class="d" pathLength="1" d="M55 34 H65 L67 78 H53 Z" />
+            <path class="d" pathLength="1" d="M55 38 L44 70 M65 38 L76 70 M56 78 L54 116 M64 78 L66 116" />
             <path class="d r" pathLength="1" d="M18 18 L102 102 M102 18 L18 102" />
           </svg>
           <span class="no-txt" id="no-t2" style="font-size: 38px">FLAQUITO</span>
@@ -957,10 +963,10 @@
 
     // J · "una BOLITA ... ni un FLAQUITO" → cada figura se dibuja y se tacha
     entra("#p-no", 21.26);
-    dibuja("#no-c1 .d:not(.r)", 21.36, 0.4);
+    dibuja("#no-c1 .d:not(.r)", 21.3, 0.45, 0.08);
     tl.fromTo("#no-t1", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, 21.54);
     dibuja("#no-c1 .d.r", 21.62, 0.3);
-    dibuja("#no-c2 .d:not(.r)", 22.56, 0.35);
+    dibuja("#no-c2 .d:not(.r)", 22.5, 0.4, 0.08);
     tl.fromTo("#no-t2", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, 22.9);
     dibuja("#no-c2 .d.r", 22.96, 0.3);
     sale("#p-no", 23.5);
